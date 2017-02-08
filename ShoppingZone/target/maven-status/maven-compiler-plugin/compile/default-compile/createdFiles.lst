@@ -8,9 +8,11 @@ com\niit\controller\SupplierController.class
 com\niit\daoimpl\SupplierDAOImpl.class
 com\niit\dao\ProductDAO.class
 com\niit\daoimpl\ProductDAOImpl.class
+com\niit\util\FileUtil.class
 com\niit\model\Category.class
 com\niit\daoimpl\CategoryDAOImpl.class
 com\niit\controller\HomeController.class
 com\niit\controller\ProductController.class
 com\niit\daoimpl\UserDAOImpl.class
+com\niit\util\Util.class
 com\niit\dao\CategoryDAO.class

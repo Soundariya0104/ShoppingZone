@@ -2,9 +2,8 @@ package com.niit.controller;
 
 import java.util.Collection;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,11 +24,9 @@ import com.niit.model.User;
 @Controller
 public class HomeController {
 
-	// @Autowired(required=true)
-	 //private UserDAO userDao;
+	@Autowired(required=true)
+	private UserDAO userDao;
 
-	 //@Autowired(required=true)
-	//private User user;
 	Logger log = LoggerFactory.getLogger(HomeController.class);
 
 	@RequestMapping(value = "/admin") // mapping for admin page
@@ -39,41 +35,6 @@ public class HomeController {
 		ModelAndView model = new ModelAndView("admin");
 		return model;
 	}
-
-	@RequestMapping(value = "/register") // mapping for register page
-	public ModelAndView registerPage() {
-		log.debug("inside register page");
-		ModelAndView model = new ModelAndView("register", "user", new User());
-		return model;
-	}
-
-	@RequestMapping(value = "/delete") // mapping for delete page
-	public ModelAndView deletePage() {
-		log.debug("inside delete page");
-		ModelAndView model = new ModelAndView("delete", "user", new User());
-		return model;
-
-	}
-
-	// --------------------------------------delete-----------------------------------------------------------//
-	@RequestMapping("/deletesuccess")
-	public String deletesuccess(@RequestParam("userName") String username, @RequestParam("password") String password,
-			Model m) {
-		UserDAO userDAO = new UserDAOImpl();
-		m.addAttribute("msg", "Deleted");
-		userDAO.userDelete(username, password);
-		return "deletesuccess";
-
-	}
-
-	@RequestMapping(value = "/login") // mapping for login page
-	public ModelAndView loginPage() {
-		log.debug("inside login page");
-		ModelAndView model = new ModelAndView("login", "user", new User());
-		return model;
-
-	}
-
 	@RequestMapping(value = "/index") // mapping index page
 	public ModelAndView indexPage() {
 		log.debug("inside the index page");
@@ -82,63 +43,99 @@ public class HomeController {
 
 	}
 
+    //-------------------------------delete-------------------------------------------------------------//
+	@RequestMapping(value = "/delete") // mapping for delete page
+	public ModelAndView deletePage() {
+		log.debug("inside delete page");
+		ModelAndView model = new ModelAndView("delete", "user", new User());
+		return model;
+
+	}
+
+		@RequestMapping("/deletesuccess")//mapping for deletesuccess page
+	public String deletesuccess(@RequestParam("userName") String username, @RequestParam("password") String password,
+			Model m) {
+		
+		m.addAttribute("msg", "Deleted");
+		userDao.userDelete(username, password);
+		return "deletesuccess";
+
+	}
+
 	// -----------------------------------------------registration-------------------------------------//
+	
+	@RequestMapping(value = "/register") // mapping for register page
+	public ModelAndView registerPage() {
+		log.debug("inside register page");
+		ModelAndView model = new ModelAndView("register", "user", new User());
+		return model;
+	}
 	@RequestMapping(value = "/registersuccess", method = RequestMethod.POST)
 	public ModelAndView registration(@ModelAttribute("user") User user) {
 		log.debug("inside registration controller");
 		
-		UserDAO userDAO = new UserDAOImpl();
-		if (userDAO.validationRegistration(user)) { // validation of
+		if (userDao.validationRegistration(user)) { // validation of
 													// registration occurs
 			log.debug("inside register method if true");
 			ModelAndView mv = new ModelAndView("registersuccess");
+			mv.addObject("user",user);
 			return mv;
 		} else {
 			log.debug("inside register method if false");
-			ModelAndView mv = new ModelAndView("login");
+			ModelAndView mv = new ModelAndView("loginpage");
 			return mv;
 
 		}
     }
 	
 	public void registeruser(Model m) {
-		m.addAttribute("msg", "Your are successfully registered,   Begin Here ");
+		m.addAttribute("msg", "Your are successfully registered,Begin Here ");
 	}
+	
 
 	// ------------------------------------------login------------------------------------------------------------//
-	@RequestMapping(value = "/loginsuccess", method = RequestMethod.POST)
-	public ModelAndView login(@RequestParam("username") String username, @RequestParam("password") String password,
-			Model m, HttpSession session) {
-		log.debug("inside the login controller");
-		UserDAO obj = new UserDAOImpl();
+	
+	@RequestMapping(value = "/loginpage") // mapping for login page
+	public ModelAndView loginPage() {
+		log.debug("inside login page");
+		ModelAndView model = new ModelAndView("loginpage", "user", new User());
+		return model;
 
-		if (obj.validationLogin(username, password)) { // validation for login
-			log.debug("inside if login is valid ");
-			ModelAndView mv = new ModelAndView("loginsuccess", "user", new User());
-			session.setAttribute("user", obj.getById(username));
-			if (obj.getById(username).getRole().equals("ROLE_ADMIN")) { // checking of the user role 
-				log.debug("inside if login is admin ");
-				mv.addObject("isAdmin", true); // if role is admin
-				System.out.println(" admin true");
+	}	
+	
+	// ---------------------------------login-----------------------------------------
+	/*	@RequestMapping(value = "/loginresult", method = RequestMethod.POST)					//mapping for "/loginresult"
+		public ModelAndView hello4(@RequestParam("username") String username, @RequestParam("password") String password,
+				Model m, HttpSession session) {
+		    log.debug("inside controller for loginresult");
+		//UserDAO userDAO = new UserDAOImpl();
+
+		if (userDao.validationLogin(username, password) != null) { //username password validation
+			    log.debug("inside if login is valid ");
+		    ModelAndView model = new ModelAndView("loginresult", "user", new User()); //if yes adding loginresult page
+				session.setAttribute("user", userDao.getById(username));
+
+				if (userDao.getById(username).getRole().equals("ROLE_ADMIN")) {				//checking ROLE
+				    log.debug("inside if login is ROLE_ADMIN");
+					model.addObject("isAdmin", true);
+
+				} else {										//if not valid user
+				    log.debug("inside if login is ROLE_USER");
+					model.addObject("isAdmin", false);
+				}
+				return model;
 			} else {
-				log.debug("inside if login is not admin "); // if role is user
-				mv.addObject("isAdmin", false);
-				System.out.println("admin false");
-
+			    log.debug("inside if login is not valid, try again");
+		    ModelAndView model = new ModelAndView("login", "user", new User());
+				model.addObject("msg", "check your password and username");
+			return model;
 			}
-			return mv;
-		} else {
-			log.debug("inside if login is invalid "); // if invalid user login's
-			ModelAndView mv = new ModelAndView("login", "user", new User());
-			mv.addObject("result", "Check your username or password, Try again ");
-			return mv;
 		}
-
-	}
+	}*/
 	
 	
 	
-	/*@SuppressWarnings("unchecked")
+	@SuppressWarnings("unchecked")
 	    @RequestMapping(value = "/loginresult")
 	    public String login_session_attributes(HttpSession session, Model model) {
 
@@ -164,7 +161,17 @@ public class HomeController {
 		    }
 		}
 		return page;
-	    }*/
-
+	    }
+	 @RequestMapping("/logout")
+	    public ModelAndView logout(HttpServletRequest request, HttpSession session) {
+		ModelAndView mv = new ModelAndView("index");
+		session.invalidate();
+		session = request.getSession(true);
+		mv.addObject("logoutMessage", "you are successfully logged out");
+		mv.addObject("loggedOut", "true");
+		return mv;
+	    }
 }
+
+
 	

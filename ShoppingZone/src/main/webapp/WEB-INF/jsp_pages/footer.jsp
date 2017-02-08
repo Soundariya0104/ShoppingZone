@@ -1,272 +1,195 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<!doctype html>
+<html class="no-js" lang="en">
+
 <head>
-<title>Welcome to OnlineShopping</title>
- <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
-<style>
-.scroll-top-wrapper {
-    position: fixed;
-    opacity: 0;
-    visibility: hidden;
-	overflow: hidden;
-	text-align: center;
-	z-index: 99999999;
-    background-color: #777777;
-	color: #eeeeee;
-	width: 50px;
-	height: 48px;
-	line-height: 48px;
-	right: 30px;
-	bottom: 30px;
-	padding-top: 2px;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-	-webkit-transition: all 0.5s ease-in-out;
-	-moz-transition: all 0.5s ease-in-out;
-	-ms-transition: all 0.5s ease-in-out;
-	-o-transition: all 0.5s ease-in-out;
-	transition: all 0.5s ease-in-out;
-}
-.scroll-top-wrapper:hover {
-	background-color: #888888;
-}
-.scroll-top-wrapper.show {
-    visibility:visible;
-    cursor:pointer;
-	opacity: 1.0;
-}
-.scroll-top-wrapper i.fa {
-	line-height: inherit;
-}
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Home || SportsFocus</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-@import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+    <link rel="apple-touch-icon" href="<c:url value="/resources/images/icons/favicon.ico"/>">
+    <!-- Place favicon.ico in the root directory -->
 
+    <!-- All css files are included here. -->
+    <!-- Bootstrap fremwork main css -->
+    <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.min.css"/>">
+    <!-- This core.css file contents all plugings css file. -->
+    <link rel="stylesheet" href="<c:url value="/resources/css/core.css"/>">
+    <!-- Theme shortcodes/elements style -->
+    <link rel="stylesheet" href="<c:url value="/resources/css/shortcode/shortcodes.css"/>">
+    <!-- Theme main style -->
+    <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="<c:url value="/resources/css/responsive.css"/>">
+    <!-- User style -->
+    <link rel="stylesheet" href="<c:url value="/resources/css/custom.css"/>">  <link rel="stylesheet" href="<c:url value="/resources/css/color/skin-default.css"/>">
 
-footer
- {
-
-    border-top: 5px solid #CDB380;
-  
-  background: #033649 none repeat scroll 0% 0%;
     
-padding-top: 30px;
-
-    margin-top: 60px;
-    
-clear: both;
-
-    color: #AAA;
-  
-  display: block;
-
-}
-
-
-footer
- .widgettitle
- {
-
-    margin: 0px;
-  
-  padding: 0px 0px 15px;
-
-    border-bottom: medium none;
-
-}
-
-footer h4 
-{
-
-    color: #FFF;
-
-}
-
-
-footer ul 
-{
-
-    list-style: outside none none;
-
-}
-
-
-footer li {
-
-    padding: 7px 0px;
-  
-  border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
-
-    margin: 0px;
-
-}
-
-
-footer li a
-{
-
-    color: #DDD;
-
-}
-
-
-sub-floor {
-   
- color: #AAA;
-    
-background: #031634 none repeat scroll 0% 0%;
-   
- padding: 10px 0px;
-
-}
-</style>
-
+    <!-- Modernizr JS -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
-
 <body>
-<script>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->  
 
-$(document).ready(function(){
-
-$(function(){
- 
-    $(document).on( 'scroll', function(){
- 
-    	if ($(window).scrollTop() > 100) {
-			$('.scroll-top-wrapper').addClass('show');
-		} else {
-			$('.scroll-top-wrapper').removeClass('show');
-		}
-	});
- 
-	$('.scroll-top-wrapper').on('click', scrollToTop);
-});
- 
-function scrollToTop() {
-	verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
-	element = $('body');
-	offset = element.offset();
-	offsetTop = offset.top;
-	$('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
-}
-
-});
-</script>
-    <footer id="footer" class="clearfix">
-    
- 
- <div id="footer-widgets">
-
-
-
-        <div class="container-fluid">
-
-
-
-        <div id="footer-wrapper">
-
-
-          <div class="row">
-   
-         <div class="col-sm-6 ">
-      
-        <div id="meta-3" class="widget widgetFooter widget_meta">
-      
-        <h4 class="widgettitle">Importent Page :</h4>
-         
-     <ul>
-    		
-  <li><a href="index"><i class="fa fa-home fa-fw"></i> Home</a></li>
-			  
-<li><a href="AboutUs"><i class="fa fa-link"></i> About Us</a></li>
-			  
-<li><a href="contactus"><i class="fa fa-envelope fa-fw"></i> Contact Us</a></li>
-  
-           </ul>
-</div>      </div> <!-- end widget1 -->
-
-         
-   <div class="col-sm-6">
-              	
-	<div id="recent-posts-3" class="widget widgetFooter widget_recent_entries">
-         
-           <h4 class="widgettitle">Our social media :</h4>
-        
-            <ul>
-			
-		<li>
-				
-     <a href="https://www.facebook.com/search/top/?q=wall%20paints" target="_blank"><i class="fa fa-facebook"></i> Facebook</a>
-					</li>
-
-					<li>
-				      
-<a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i> Twitter</a>
-					
-</li>
-					
-<li>
-				   
-   <a href="http://www.youtube.com" target="_blank"><i class="fa fa-youtube"></i> Youtube</a>
-			
-	 
-  </li>
-			
-	</ul>
-
-		</div>     
-       </div> <!-- end widget1 -->
-
-
-           
-                </div>        
-    </div> <!-- end widget1 -->
-
-          </div> <!-- end .row -->
-
-   
-     </div> <!-- end #footer-wrapper -->
-
-        </div> <!-- end .container -->
-      
-</div> <!-- end #footer-widgets -->
-
-   
-   <div id="sub-floor">
- 
-       <div class="container">
-
-  
-        <div class="row">
-            
-<div class="col-md-4 copyright">
- Copy right for Jaffa © 2017
+    <!-- Body main wrapper start -->
+    <div class="wrapper home-one">
+    <!-- footer area start-->
+        <div class="footer-area ptb-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                        <div class="single-footer contact-us">
+                            <div class="footer-title uppercase">
+                                <h5>Contact US</h5> </div>
+                            <ul>
+                                <li>
+                                    <div class="contact-icon"> <i class="zmdi zmdi-pin-drop"></i> </div>
+                                    <div class="contact-text">
+                                        <p><span>777/a  Seventh Street,</span> <span>Rampura, Bonosri</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-icon"> <i class="zmdi zmdi-email-open"></i> </div>
+                                    <div class="contact-text">
+                                        <p><span><a href="#">SportsFocus@gmail.com</a></span> <span><a href="#">admin@sportsfocus.com</a></span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-icon"> <i class="zmdi zmdi-phone-paused"></i> </div>
+                                    <div class="contact-text">
+                                        <p><span>+11 (019) 25184203</span> <span>+11 (018) 50950555</span></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                        <div class="single-footer informaton-area">
+                            <div class="footer-title uppercase">
+                                <h5>Information</h5> </div>
+                            <div class="informatoin">
+                                <ul>
+                                    <li><a href="#">My Account</a></li>
+                                    <li><a href="#">Order History</a></li>
+                                    <li><a href="#">Wishlist</a></li>
+                                    <li><a href="#">Returnes</a></li>
+                                    <li><a href="#">Private Policy</a></li>
+                                    <li><a href="#">Site Map</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 hidden-sm col-xs-12">
+                        <div class="single-footer instagrm-area">
+                            <div class="footer-title uppercase">
+                                <h5>InstaGram</h5> 
+                            </div>
+                            <div class="instagrm">
+                                <ul>
+                                    <li><a href="#"><img src="<c:url value="/resources/images/gallery/01.jpg"/>" alt=""/></li>
+                                    <li><a href="#"><img src="<c:url value="/resources/images/gallery/02.jpg"/>" alt=""/></li>
+                                    <li><a href="#"><img src="<c:url value="/resources/images/gallery/03.jpg" />"alt=""/></li>
+                                    <li><a href="#"><img src="<c:url value="/resources/images/gallery/04.jpg"/>" alt=""/></li>
+                                    <li><a href="#"><img src="<c:url value="/resources/images/gallery/05.jpg" />"alt=""/></li>
+                                    <li><a href="#"><img src="<c:url value="/resources/images/gallery/06.jpg" />"alt=""/></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-lg-offset-1 col-xs-12">
+                        <div class="single-footer newslatter-area">
+                            <div class="footer-title uppercase">
+                                <h5>Get Newsletters</h5> 
+                            </div>
+                            <div class="newslatter">
+                                <form action="#" method="post">
+                                    <div class="input-box pos-rltv">
+                                        <input placeholder="Type Your Email hear" type="text"> 
+                                        <a href="#">
+                                            <i class="zmdi zmdi-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </form>
+                                <div class="social-icon socile-icon-style-3 mt-40">
+                                    <div class="footer-title uppercase">
+                                        <h5>Social Network</h5> 
+                                    </div>
+                                    <ul>
+                                        <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-linkedin"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-pinterest"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-google"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          
-  <div class="col-md-4 col-md-offset-4 attribution">
-             Developer by  <a target="_blank" href="#">makesh maki</a> .
-            </div>
-
-          </div> <!-- end .row -->
-          <div class="scroll-top-wrapper ">
-  <span class="scroll-top-inner">
-    <i class="fa fa-2x fa-arrow-circle-up"></i>
-  </span>
-</div>
         </div>
-      </div>
+        <!--footer area start-->
+        
+        <!--footer bottom area start-->
+        <div class="footer-bottom global-table">
+            <div class="global-row">
+                <div class="global-cell">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="copyrigth"> Copyright @ 
+									<a href="devitems.com">SportsFocus 2016</a> All right reserved 
+								</div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <ul class="payment-support text-right">
+                                    <li>
+                                        <a href="#"><img src="<c:url value="/resources/images/icons/pay1.png"/>" alt="" />
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="<c:url value="/resources/images/icons/pay2.png"/>" alt="" />
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="<c:url value="/resources/images/icons/pay3.png"/>" alt="" />
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="<c:url value="/resources/images/icons/pay4.png"/>" alt="" />
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="<c:url value="/resources/images/icons/pay5.png"/> "alt="" />
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--footer bottom area end-->
+        <!-- Body main wrapper end -->
 
-   
- </footer>
+    <!-- Placed js at the end of the document so the pages load faster -->
 
-</body>
-</html>
+    <!-- jquery latest version -->
+    <script src="<c:url value="/resources/js/vendor/jquery-1.12.0.min.js"/>"></script>
+    <!-- Bootstrap framework js -->
+    <script src="<c:url value="/resources/js/bootstrap.min.js"/>"></script>
+    <!-- Slider js -->
+    <script src="<c:url value="/resources/js/slider/jquery.nivo.slider.pack.js"/>"></script>
+    
+    <!-- counterUp-->
+    <script src="<c:url value="/resources/js/jquery.countdown.min.js"/>"></script>
+    <!-- All js plugins included in this file. -->
+    <script src="<c:url value="/resources/js/plugins.js"/>"></script>
+    <!-- Main js file that contents all jQuery plugins activation. -->
+    <script src="<c:url value="/resources/js/main.js"/>"></script>
+    </div>
+    </body>
+    </html>

@@ -1,26 +1,49 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!doctype html>
+<html class="no-js" lang="en">
+
 <head>
-<title>Register</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Home || SportsFocus</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="<c:url value="/resources/images/icons/favicon.ico"/>">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- All css files are included here. -->
+    <!-- Bootstrap fremwork main css -->
+    <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.min.css"/>">
+    <!-- This core.css file contents all plugings css file. -->
+    <link rel="stylesheet" href="<c:url value="/resources/css/core.css"/>">
+    <!-- Theme shortcodes/elements style -->
+    <link rel="stylesheet" href="<c:url value="/resources/css/shortcode/shortcodes.css"/>">
+    <!-- Theme main style -->
+    <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="<c:url value="/resources/css/responsive.css"/>">
+    <!-- User style -->
+    <link rel="stylesheet" href="<c:url value="/resources/css/custom.css"/>">  <link rel="stylesheet" href="<c:url value="/resources/css/color/skin-default.css"/>">
+
+    
+    <!-- Modernizr JS -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
+
 <body>
+<%@ include file="header.jsp" %>
 	<h2>
 		Welcome to OnlineShopping</a>
 	</h2>
 	<h5>Register with us!!</h5>
-	<c:url var="action" value="registersuccess"></c:url>
-	<form:form action="${action}" method="post" commandName="user">
+	<form:form action="registersuccess" method="post" commandName="user">
 		<table>
 			<tr>
 				<td>Your good name:</td>
-				<td><form:input type="text"
-						title="id should have max 15 min 3 char" path="username"
-						pattern="[A-Za-z]{3,15}" required="true" autocomplete="on" /></td>
+				<td><form:input type="text" path="username"/></td>
 			</tr>
 
 			<tr>
@@ -30,8 +53,8 @@
 
 			<tr>
 				<td>Password:</td>
-				<td><form:input type="password" pattern="{5,}[a-z0-9]"
-						path="password" required="true" /></td>
+				<td><form:input type="password" 
+						path="password" /></td>
 			</tr>
 
 			<tr>
@@ -65,7 +88,9 @@
 				<td><form:input type="text" path="pinCode" /></td>
 			</tr>
        </table>
+       
+       <input type="submit" value="Register"/>
 	</form:form>
-<input type="submit" value="Register">
+
 </body>
 </html>

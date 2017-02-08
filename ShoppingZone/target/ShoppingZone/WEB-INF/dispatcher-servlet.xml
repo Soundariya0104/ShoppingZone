@@ -13,5 +13,10 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 			<property name="prefix" value="/WEB-INF/jsp_pages/"/>	
 			<property name="suffix" value=".jsp"/>
 		</bean>
+		<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="100000" />
+</bean>
+	
+	<mvc:resources mapping="/resources/**" location="/WEB-INF/resources/" />
 		
 </beans>       

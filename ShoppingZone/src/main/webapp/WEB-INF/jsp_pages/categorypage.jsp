@@ -22,214 +22,292 @@
     <!-- Theme shortcodes/elements style -->
     <link rel="stylesheet" href="<c:url value="/resources/css/shortcode/shortcodes.css"/>">
     <!-- Theme main style -->
-    <link rel="stylesheet" href="<c:url value="/resources/style.css"/>">
+    <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>">
     <!-- Responsive css -->
     <link rel="stylesheet" href="<c:url value="/resources/css/responsive.css"/>">
     <!-- User style -->
-    <link rel="stylesheet" href="<c:url value="/resources/css/custom.css"/>">
-    <link rel="stylesheet" href="<c:url value="/resources/css/color/skin-default.css"/>">
+    <link rel="stylesheet" href="<c:url value="/resources/css/custom.css"/>">  <link rel="stylesheet" href="<c:url value="/resources/css/color/skin-default.css"/>">
 
     
     <!-- Modernizr JS -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="<c:url value="/resources/js/vendor/modernizr-2.8.3.min.js"/>"></script>
 </head>
+
 <body>
-<%@ include file="WEB-INF/jsp_pages/header.jsp"%>
-  <!-- catg header banner section -->
-  <section id="aa-catg-head-banner">
-   <img src="img/fashion/fashion-header-bg-8.jpg" alt="fashion img">
-   <div class="aa-catg-head-banner-area">
-     <div class="container">
-      <div class="aa-catg-head-banner-content">
-        <h2>$categoryName</h2>
-        <ol class="breadcrumb">
-          <li><a href="index.html">Home</a></li>         
-          <li class="active">$categoryName</li>
-        </ol>
-      </div>
-     </div>
-   </div>
-  </section>
-  <!-- / catg header banner section -->
+  <c:forEach var="listValue" items="${values}">
+                 
+                  
+                  </c:forEach>
+<%@ include file="header.jsp" %>
 
-  <!-- product category -->
-  <section id="aa-product-category">
-    <div class="container">
-      <div class="row">
-      
-        <div class="col-lg-9 col-md-9 col-sm-8 col-md-push-3">
-          <div class="aa-product-catg-content">
-            <div class="aa-product-catg-head">
-              <div class="aa-product-catg-head-right">
-                <a id="grid-catg" href="#"><span class="fa fa-th"></span></a>
-                <a id="list-catg" href="#"><span class="fa fa-list"></span></a>
-              </div>
-            </div>
-            <div class="aa-product-catg-body">
-              <ul class="aa-product-catg">
-                <!-- start single product item -->
-                <c:forEach var="productList" items="${values}">
-   
-                <li>
-                  <figure>
-                    <a class="aa-product-img" href="#"><img src="<c:url value="/resources/product/${productList.productId}.jpeg"/>"   alt="${productList.productId }"></a>
-                    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                    <figcaption>
-                      <h4 class="aa-product-title"><a href="#">${productList.productName}</a></h4>
-                      <span class="aa-product-price">Rs.${productList.productPrice} </span>
-                      <p class="aa-product-descrip"> ${productList.productDescription} </p>
-                    </figcaption>
-                  </figure>                         
-                  <div class="aa-product-hvr-content">
-                    <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
-                  </div></li></c:forEach>
-              </ul>
-              <!-- quick view modal -->                  
-              <div class="modal fade" id="quick-view-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">                      
-                    <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      <div class="row">
-                        <!-- Modal view slider -->
-                        <div class="col-md-6 col-sm-6 col-xs-12">                              
-                          <div class="aa-product-view-slider">                                
-                            <div class="simpleLens-gallery-container" id="demo-1">
-                              <div class="simpleLens-container">
-                                  <div class="simpleLens-big-image-container">
-                                      <a class="simpleLens-lens-image" data-lens-image="<c:url value="/resources/product/${productList.productId}.png"/>">
-                                          <img src="<c:url value="/resources/product/${productList.productId}.png"/>" class="simpleLens-big-image">
-                                      </a>
-                                  </div>
-                              </div>
-                              <div class="simpleLens-thumbnails-container">
-                                  <a href="#" class="simpleLens-thumbnail-wrapper"
-                                     data-lens-image="<c:url value="/resources/product/${productList.productId}.png"/>"
-                                     data-big-image="<c:url value="/resources/product/${productList.productId}.png"/>">
-                                      <img src=""<c:url value="/resources/product/${productList.productId}.png"/>">
-                                  </a>                                    
-<!--                                   <a href="#" class="simpleLens-thumbnail-wrapper" -->
-<!--                                      data-lens-image="img/view-slider/large/polo-shirt-3.png" -->
-<!--                                      data-big-image="img/view-slider/medium/polo-shirt-3.png"> -->
-<!--                                       <img src="img/view-slider/thumbnail/polo-shirt-3.png"> -->
-<!--                                   </a> -->
 
-<!--                                   <a href="#" class="simpleLens-thumbnail-wrapper" -->
-<!--                                      data-lens-image="img/view-slider/large/polo-shirt-4.png" -->
-<!--                                      data-big-image="img/view-slider/medium/polo-shirt-4.png"> -->
-<!--                                       <img src="img/view-slider/thumbnail/polo-shirt-4.png"> -->
-<!--                                   </a> -->
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- Modal view content -->
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <div class="aa-product-view-content">
-                            <h3>${productList.productName }</h3>
-                            <div class="aa-price-block">
-                              <span class="aa-product-view-price">Rs.${productList.productPrice}</span>
-                              <p class="aa-product-avilability">Avilability: <span>$stockstatus</span></p>
-                            </div>
-                            <p>${ productList.productDescription}</p>
-                              
-                              <p class="aa-prod-category">
-                                Category: <a href="#">$categoryname</a>
-                              </p>
-                            </div>
-                            <div class="aa-prod-view-bottom">
-                              <a href="#" class="aa-add-to-cart-btn"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                              <a href="#" class="aa-add-to-cart-btn">View Details</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>                        
-                  </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-              </div>
-              <!-- / quick view modal -->   
+
+        <!--breadcumb area start -->
+        <div class="breadcumb-area breadcumb-2 overlay pos-rltv">
+            <div class="bread-main">
+                <div class="bred-hading text-center">
+                    <h5>Shop Details</h5> </div>
+                <ol class="breadcrumb">
+                    <li class="home"><a title="Go to Home Page" href="index">Home</a></li>
+                    <li class="active">Shop List</li>
+                </ol>
             </div>
-            <div class="aa-product-catg-pagination">
-              <nav>
-                <ul class="pagination">
-                  <li>
-                    <a href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                    </a>
-                  </li>
-                  <li><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li>
-                    <a href="#" aria-label="Next">
-                      <span aria-hidden="true">&raquo;</span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-4 col-md-pull-9">
-          <aside class="aa-sidebar">
-            <!-- single sidebar -->
-            <div class="aa-sidebar-widget">
-              <h3>Category</h3>
-              <ul class="aa-catg-nav">
-                <li><a href="#">${categorynamelist}</a></li>
-              </ul>
-            </div>
-            <!-- single sidebar -->
-            <div class="aa-sidebar-widget">
-              <h3>Shop By Price</h3>              
-              <!-- price range -->
-              <div class="aa-sidebar-price-range">
-               <form action="">
-                  <div id="skipstep" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
-                  </div>
-                  <span id="skip-value-lower" class="example-val">30.00</span>
-                 <span id="skip-value-upper" class="example-val">100.00</span>
-                 <button class="aa-filter-btn" type="submit">Filter</button>
-               </form>
-              </div>              
+        <!--breadcumb area end -->
+        
+        <!--shop main area are start-->
+        <div class="shop-main-area ptb-70">
+            <div class="container">
+                <div class="row">
+                    <!--shop sidebar start-->
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <div class="row">
+                            <div class="shop-sidebar">
+                               <!--single aside start-->
+                                <aside class="single-aside search-aside search-box">
+                                    <form action="#">
+                                        <div class="input-box">
+                                            <input class="single-input" placeholder="Search...." type="text">
+                                            <button class="src-btn sb-2"><i class="fa fa-search"></i></button>
+                                        </div>
+                                    </form>
+                                 </aside>
+                                <!--single aside end-->
+                                
+                                <!--single aside start-->
+                                <aside class="single-aside catagories-aside">
+                                    <div class="heading-title aside-title pos-rltv">
+                                        <h5 class="uppercase">categories</h5> 
+                                    </div>
+                                    <div id="cat-treeview" class="product-cat">
+                                        <ul>
+                                            <li class="closed"><a href="#">Men (05)</a>
+                                                <ul>
+                                                    <li><a href="#">T-Shirt</a></li>
+                                                    </ul>
+                                             </li>
+                                        </ul>
+                                    </div>
+                                </aside>
+                                <!--single aside end-->
+                                
+                                <!--single aside start-->
+                                <aside class="single-aside price-aside fix">
+                                    <div class="heading-title aside-title pos-rltv">
+                                        <h5 class="uppercase">price</h5> 
+                                    </div>
+                                    <div class="price_filter">
+                                        <div id="slider-range"></div>
+                                        <div class="price_slider_amount">
+                                            <input type="text" id="amount" name="price" placeholder="Add Your Price" />
+                                            <input type="submit" value="Filter" /> 
+                                        </div>
+                                    </div>
+                                </aside>
+                                <!--single aside end-->
+                                
+                                <!--single aside start-->
+                                <aside class="single-aside product-aside">
+                                    <div class="heading-title aside-title pos-rltv">
+                                        <h5 class="uppercase">Recent Product</h5> 
+                                    </div>
+                                    <div class="recent-prodcut-wraper total-rectnt-slider">
+                                        <div class="single-rectnt-slider">
+                                            <!-- single product start-->
+                                            <div class="single-product recent-single-product">
+                                                <div class="product-img">
+                                                    <div class="single-prodcut-img  product-overlay pos-rltv">
+                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/rp01.jpg"/>" class="primary-image"> <img alt="" src="images/product/rp02.jpg" class="secondary-image"> </a>
+                                                    </div>
+                                                </div>
+                                                <div class="product-text">
+                                                    <div class="prodcut-name"> <a href="single-product.html">Copenhagen Spitfire Chair</a> </div>
+                                                    <div class="prodcut-ratting-price">
+                                                        <div class="prodcut-ratting"> <a href="#"><i class="fa fa-star"></i></a> <a href="#"><i class="fa fa-star"></i></a> <a href="#"><i class="fa fa-star"></i></a> <a href="#"><i class="fa fa-star"></i></a> <a href="#"><i class="fa fa-star-o"></i></a> </div>
+                                                        <div class="prodcut-price">
+                                                            <div class="new-price"> $220 </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- single product end-->
+                                           
+                                        </div>
+                                    </div>
 
+                                </aside>
+                                <!--single aside end-->
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!--shop sidebar end-->
+                    
+                    <!--main-shop-product start-->
+                    <div class="col-md-9 col-sm-8 col-xs-12">
+                        <div class="shop-wraper">
+                          <div class="col-xs-12">
+                               <div class="shop-area-top">
+                                  <div class="row">
+                                       <div class="col-lg-6 col-md-9 col-sm-9 col-xs-12">
+                                       <div class="sort product-show">
+                                           <label>View</label>
+                                            <select id="input-amount">
+                                              <option value="volvo">10</option>
+                                              <option value="saab">15</option>
+                                              <option value="vw">20</option>
+                                              <option value="audi" selected>25</option>
+                                            </select>
+                                        </div>
+                                        
+                                    </div>
+                                       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <div class="list-grid-view text-center">
+                                            <ul class="nav" role="tablist">
+                                                <li role="presentation"  class=""><a href="#grid" aria-controls="grid" role="tab" data-toggle="tab"><i class="zmdi zmdi-widgets"></i></a></li>
+                                                <li role="presentation" class="active"><a href="#list" aria-controls="list" role="tab" data-toggle="tab"><i class="zmdi zmdi-view-list-alt"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                       <div class="col-lg-3 hidden-md hidden-sm hidden-xs">
+                                        <div class="total-showing text-right">
+                                            Showing - <span>10</span> to <span>18</span>  Of  Total <span>36</span>
+                                        </div>
+                                    </div>
+                                   </div>
+                               </div>
+                           </div>
+                       <div class="clearfix"></div>
+                       <div class="shop-total-product-area clearfix mt-35">
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <!--tab grid are start-->
+                            <div role="tabpanel" class="tab-pane fade in" id="grid">
+                                <div class="total-shop-product-grid">
+        
+        
+                  
+                                    <div class="col-md-4 col-sm-6 item">
+                                       
+
+
+									   <!-- single product start-->
+ 
+                    <c:forEach var="listValue" items="${values}">
+                                        <div class="single-product">
+                                            <div class="product-img">
+                                                <div class="product-label red">
+                                                    <div class="new">New</div>
+                                                </div>
+                                                <div class="single-prodcut-img  product-overlay pos-rltv">
+                                                    <a href="productpage"> <img alt="" src="<c:url value="/resources/images/product/01.jpg"/>" > </a>
+                                                </div>
+                                                <div class="product-icon socile-icon-tooltip text-center">
+                                                    <ul>
+                                                        <li><a href="cart" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
+                                                        <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
+                                                        <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-text">
+                                                <div class="prodcut-name"> <a href="single-product.html">${listValue.productName}</a> </div>
+                                                <div class="prodcut-ratting-price">
+                                                    <div class="prodcut-price">
+                                                        <div class="new-price"> ${listValue.productPrice} </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+ </c:forEach>                                       <!-- single product end-->
+                                    </div>    
+                                </div>
+                            </div>
+                            <!--shop grid are end-->
+                          
+                            
+                            <!--shop product list start-->
+                            <div role="tabpanel" class="tab-pane  fade in active" id="list">
+                                <div class="total-shop-product-list">
+                                    <div class="col-md-12 item">
+                                        <!-- single product start-->
+                                        <div class="single-product single-product-list">
+                                            <div class="product-img">
+                                                <div class="product-label red">
+                                                    <div class="new">Sale</div>
+                                                </div>
+                                                <div class="single-prodcut-img  product-overlay pos-rltv">
+                                                    <a href="productpage"> <img alt="" src="<c:url value="/resources/images/product/02.jpg"/>" >  </a>
+                                                </div>
+                                            </div>
+                                            <div class="product-text prodcut-text-list fix">
+                                                <div class="prodcut-name list-name montserrat"> <a href="single-product.html">Magnetic Force Bralette</a> </div>
+                                                <div class="prodcut-ratting-price">
+                                                    <div class="prodcut-ratting list-ratting">  
+                                                        <a href="#"><i class="fa fa-star-o"></i></a> 
+                                                        <a href="#"><i class="fa fa-star-o"></i></a> 
+                                                        <a href="#"><i class="fa fa-star-o"></i></a> 
+                                                        <a href="#"><i class="fa fa-star-o"></i></a> 
+                                                        <a href="#"><i class="fa fa-star-o"></i></a> 
+                                                    </div>
+                                                    <div class="prodcut-price list-price">
+                                                        <div class="new-price"> $220 </div>
+                                                        <div class="old-price"> <del>$250</del> </div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-product-content">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dolor tellus, bibendum eu lacus ids suscipit 
+                                                    blandit tortor. Aenean eget posuere augue, vel molestie turpis. Ut tempor mauris ut justo luctus aliquam. Nullam 
+                                                    id quam vitae odio scelerisque ultrices.</p>
+                                                </div>
+                                                <div class="social-icon-wraper mt-25">
+                                                    <div class="social-icon socile-icon-style-1">
+                                                        <ul>
+                                                            <li><a href="#"><i class="zmdi zmdi-shopping-cart"></i></a></li>
+                                                            <li><a href="#"><i class="zmdi zmdi-favorite-outline"></i></a></li>
+                                                            <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal" tabindex="0"><i class="zmdi zmdi-eye"></i></a></li>
+                                                            <li><a href="#"><i class="zmdi zmdi-repeat"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- single product end--></div>  
+                                </div>
+                            </div>
+                            <!--shop product list end-->
+                            <!--pagination start-->
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="pagination-btn text-center">
+                                    <ul class="page-numbers">
+                                       <li><a href="#" class="next page-numbers"><i class="zmdi zmdi-long-arrow-left"></i></a></li>
+                                        <li><span class="page-numbers current">1</span></li>
+                                        <li><a href="#" class="page-numbers">2</a></li>
+                                        <li><a href="#" class="page-numbers">3</a></li>
+                                        <li><a href="#" class="next page-numbers"><i class="zmdi zmdi-long-arrow-right"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--pagination end-->
+                            </div>
+                       </div>
+                    </div>
+                    </div>
+                    <!--main-shop-product start-->
+                </div>
             </div>
-            <!-- single sidebar -->
-            <div class="aa-sidebar-widget">
-              <h3>Top Rated Products</h3>
-              <div class="aa-recently-views">
-                <ul>
-                  <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-2.jpg"></a>
-                    <div class="aa-cartbox-info">
-                      <h4><a href="#">${list.productname}</a></h4>
-                      <p>${list.productprice}</p>
-                    </div>                    
-                  </li>
-                   </ul>
-              </div>                            
-            </div>
-          </aside>
         </div>
-       
-      </div>
-   
-  </section>
-  <!-- / product category -->
+        <!--shop main area are end-->
+        
 
 
 
 
-  <%@ include file="footer.jsp"%>
 
 
-<!-- End of header area -->
-        <!-- Body main wrapper end -->
 
-    <!-- Placed js at the end of the document so the pages load faster -->
 
     <!-- jquery latest version -->
     <script src="<c:url value="/resources/js/vendor/jquery-1.12.0.min.js"/>"></script>
@@ -244,6 +322,5 @@
     <script src="<c:url value="/resources/js/plugins.js"/>"></script>
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="<c:url value="/resources/js/main.js"/>"></script>
-    </div>
     </body>
     </html>

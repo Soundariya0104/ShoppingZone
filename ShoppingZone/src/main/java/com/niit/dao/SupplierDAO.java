@@ -13,4 +13,8 @@ public interface SupplierDAO {
 	public List<Supplier> getSupplierList();
 	
 	public Supplier getById(String supplierId);
+	
+	public void saveOrUpdate(Supplier supplier);
+
+    public Supplier getByName(String name);
 }

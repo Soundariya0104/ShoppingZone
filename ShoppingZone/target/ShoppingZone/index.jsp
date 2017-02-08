@@ -1,21 +1,68 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
+<!doctype html>
+<html class="no-js" lang="en">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Welcome to OnlineShopping</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Home || SportsFocus</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="<c:url value="/resources/images/icons/favicon.ico"/>">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- All css files are included here. -->
+    <!-- Bootstrap fremwork main css -->
+    <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.min.css"/>">
+    <!-- This core.css file contents all plugings css file. -->
+    <link rel="stylesheet" href="<c:url value="/resources/css/core.css"/>">
+    <!-- Theme shortcodes/elements style -->
+    <link rel="stylesheet" href="<c:url value="/resources/css/shortcode/shortcodes.css"/>">
+    <!-- Theme main style -->
+    <link rel="stylesheet" href="<c:url value="/resources/style.css"/>">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="<c:url value="/resources/css/responsive.css"/>">
+    <!-- User style -->
+    <link rel="stylesheet" href="<c:url value="/resources/css/custom.css"/>">
+    <link rel="stylesheet" href="<c:url value="/resources/css/color/skin-default.css"/>">
+
+    
+    <!-- Modernizr JS -->
+    <script src="<c:url value="/resources/js/vendor/modernizr-2.8.3.min.js"/>"></script>
 </head>
 <body>
-<h2>Welcome to OnlineShopping</h2>
+  
+ 
+ 
+ <%@ include file="WEB-INF/jsp_pages/header.jsp"%>
 
+ <%@ include file="WEB-INF/jsp_pages/carousel.jsp"%>
 
-<a href="login"><h4>Login</h4></a>
-<a href="register"><h4>Register</h4></a>
+ <%@ include file="WEB-INF/jsp_pages/index-productlist.jsp" %>
+  
+ <%@ include file="WEB-INF/jsp_pages/footer.jsp"%>
+ <!-- End of header area -->
+        <!-- Body main wrapper end -->
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-Manage account: <a href="delete">delete account</a><br>
-Admin Page:<a href="admin">Click here...</a>
+    <!-- Placed js at the end of the document so the pages load faster -->
 
+    <!-- jquery latest version -->
+    <script src="<c:url value="/resources/js/vendor/jquery-1.12.0.min.js"/>"></script>
+    <!-- Bootstrap framework js -->
+    <script src="<c:url value="/resources/js/bootstrap.min.js"/>"></script>
+    <!-- Slider js -->
+    <script src="<c:url value="/resources/js/slider/jquery.nivo.slider.pack.js"/>"></script>
+    
+    <!-- counterUp-->
+    <script src="<c:url value="/resources/js/jquery.countdown.min.js"/>"></script>
+    <!-- All js plugins included in this file. -->
+    <script src="<c:url value="/resources/js/plugins.js"/>"></script>
+    <!-- Main js file that contents all jQuery plugins activation. -->
+    <script src="<c:url value="/resources/js/main.js"/>"></script>
+ 
 </body>
 </html>

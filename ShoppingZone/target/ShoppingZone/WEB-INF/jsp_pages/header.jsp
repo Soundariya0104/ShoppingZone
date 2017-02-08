@@ -32,7 +32,7 @@
 
     
     <!-- Modernizr JS -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="<c:url value="/resources/js/vendor/modernizr-2.8.3.min.js"/>"></script>
 </head>
 
 <body>
@@ -52,7 +52,7 @@
                             <div class="login-register-area">
                                 <ul>
                                     <li><a href="loginpage">Login</a></li>
-                                    <li><a href="#">Register</a></li>
+                                    <li><a href="register">Register</a></li>
 									<li><a href="#">About us</a></li>
                                 </ul>
                             </div>
@@ -86,7 +86,7 @@
                                     </li>
                                     <li>
                                         <div class="header-cart">
-                                            <div class="cart-icon"> <a href="#">Cart<i class="zmdi zmdi-shopping-cart"></i></a> <span>2</span> </div>
+                                            <div class="cart-icon"> <a href="#">Cart<i class="zmdi zmdi-shopping-cart"></i></a> <span>0</span> </div>
                                             <div class="cart-content-wraper">
                                                 <div class="cart-single-wraper">
                                                     <div class="cart-img">
@@ -140,7 +140,7 @@
                             <div class="col-md-7 col-sm-10 hidden-xs">
                                 <nav id="primary-menu">
                                     <ul class="main-menu">
-                                        <li class="current"><a href="index.html">Home</a>
+                                        <li class="current"><a href="index">Home</a>
                                         </li>
                                         <li class="mega-parent pos-rltv"><a href="shop.html">CRICKET</a>
                                             

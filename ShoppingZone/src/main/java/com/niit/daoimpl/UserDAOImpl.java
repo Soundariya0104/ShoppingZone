@@ -1,110 +1,76 @@
 package com.niit.daoimpl;
 
-import java.util.List;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.dao.UserDAO;
 import com.niit.model.User;
 
-@Repository("userObjDAO")
+@Transactional
+@EnableTransactionManagement
+@Repository("userDAO")
 public class UserDAOImpl implements UserDAO {
-	
-	Logger log=LoggerFactory.getLogger(UserDAOImpl.class);
-	//--------------------------------------------login------------------------------------------------------//
-	public boolean validationLogin(String username, String password) {
-        log.info("Start of Login method");
-		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
-		boolean userFound = false;
-		String sqlQuery = " from User as o where o.username=? and o.password=?";
-		Query query = session.createQuery(sqlQuery);
-		query.setParameter(0, username);
-		query.setParameter(1, password);
-		List list = query.list();
-        log.debug("Query is executed");
-		if ((list != null) && (list.size() > 0)) {
-			userFound = true;
-		}
 
-		session.close();
-		log.info("End of the Login method");
+    Logger log = LoggerFactory.getLogger(UserDAOImpl.class);
+	@Autowired(required = true)
+	private SessionFactory sessionFactory;
 
-		return userFound;
-		
+	public UserDAOImpl() {
+
 	}
-//---------------------------------------------register-------------------------------------------------//
+	@SuppressWarnings("deprecation")
+	public User validationLogin(String username, String password) {
+		log.debug("inside validationLogin method");
+	String hql = "from User where username ='" + username + "'  and password='" + password + "'";
+
+	Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		log.debug("query executed");
+	return (User) query.uniqueResult();
+
+	}
+
 	public boolean validationRegistration(User user) {
+		log.debug("inside validation registration method");
+	   Session session = sessionFactory.openSession();
+	   Transaction trans = session.beginTransaction();
 
-		log.info("Start of the Registration method");
-		user.setUsername(user.getUsername());
-		user.setEmailId(user.getEmailId());
-		user.setEmailId(user.getPassword());
-		user.setDob(user.getDob());
-		user.setMobile(user.getMobile());
-		user.setStreetname(user.getStreetname());
-		user.setCityname(user.getCityname());
-		user.setPinCode(user.getPinCode());
-
-		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
-		session.save(user);
-		
-		session.getTransaction().commit();
+		session.saveOrUpdate(user);
+	    trans.commit();
 		session.close();
-        log.info("End of the registration method");
+
 		return true;
 	}
-//------------------------------------delete-----------------------------------------------------------//
-	public boolean userDelete(String userName, String password) {
-        log.info("start of the Delete method"); 
-		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+
+	public boolean userDelete(String username, String password) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 
 		User User = new User();
-		User.setUsername(userName);
+		User.setUsername(username);
 		User.setPassword(password);
 
 		session.delete(User);
 		session.getTransaction().commit();
 		session.close();
-        log.info("end of the delete method");
+
 		return true;
 	}
-//----------------------------------------------retrive id------------------------------------------------------//
-	
-	public User getById(String userName) {
-		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
 
-		return (User) session.get(User.class, userName);
+    public User getById(String userName) {
 
-	}
-	public User getbyId(String userName) {
-		log.debug("inside getbyid in userdaoimpl");
-		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
-        log.debug("query execute");
-		String hql = "from User where id =" + "'" + userName + "'";
-		Query query = session.createQuery(hql);
+	Session session = sessionFactory.openSession();
+	session.beginTransaction();
 
-		List<User> list = (List<User>) query.list();
-		if (list != null && !list.isEmpty()) {
-			log.debug("end of the getById method");
-			return list.get(0);
-			
-		}
-		return null;
-      }
-	}
+	return (User) session.get(User.class, userName);
+    }
+
+   	
+}

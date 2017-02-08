@@ -5,21 +5,22 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.dao.SupplierDAO;
-import com.niit.model.Product;
 import com.niit.model.Supplier;
 
+
+
+@Repository
 public class SupplierDAOImpl implements SupplierDAO {
-	Logger log=LoggerFactory.getLogger(SupplierDAOImpl.class);
-//------------------------------------------add-------------------------------------------------------//
+    @Autowired
+    SessionFactory sessionFactory;
+    //---------------------------------------add & edit Supplier------------------------------------//
 	public boolean addSupplier(Supplier supplier) {
-		log.debug("start of the add supplier method");
-		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 
@@ -27,57 +28,64 @@ public class SupplierDAOImpl implements SupplierDAO {
 
 		session.getTransaction().commit();
 		session.close();
-        log.debug("end of the add supplier method");
+
 		return true;
 
 	}
-//--------------------------------------------------delete---------------------------------------------//
-	public boolean deleteSupplier(String supplierId) {
-		log.debug("start of the delete supplier method");
-		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+    //---------------------------------------delete Supplier----------------------------------------//
+    public boolean deleteSupplier(String supplierId) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 
-		Supplier supplierModel = new Supplier();
-		supplierModel.setSupplierId(supplierId);
+		Supplier supplier = new Supplier();
+		supplier.setSupplierId(supplierId);
 
-		session.delete(supplierModel);
+		session.delete(supplier);
 		session.getTransaction().commit();
 		session.close();
-        log.debug("end of the delete supplier method");
+
 		return true;
 
 	}
-//--------------------------------------------------retrieve id-------------------------------------------------------//
+    //----------------------------------------------retrieve by Id------------------------------------//
 	public Supplier getById(String supplierId) {
-		log.debug("start of the getbyid method");
-		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 
-		String hql = "from supplier where id =" + "'" + supplierId + "'";
-		Query query = session.createQuery(hql);
-
-		List<Supplier> list = (List<Supplier>) query.list();
-		if (list != null && !list.isEmpty()) {
-			return list.get(0);
-		}
-		log.debug("end of the getbyid method");
-		return null;
+		return session.get(Supplier.class, supplierId);
 	}
-//---------------------------------------list---------------------------------------------------------//
+    //--------------------------------------------list Supplier----------------------------------------//
 	@SuppressWarnings({ "deprecation", "unchecked" })
 	public List<Supplier> getSupplierList() {
-		log.debug("start of the list method");
-		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 
 		List<Supplier> list = (List<Supplier>) session.createCriteria(Supplier.class)
 				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-        log.debug("end of the list method");
+
 		return list;
 
 	}
+	
+	 @Transactional
+	    public void saveOrUpdate(Supplier supplier) {
+		sessionFactory.getCurrentSession().saveOrUpdate(supplier);
+
+	    }
+
+	    //--------------------------------------------get by Name-------------------------------------------------------------
+	    @SuppressWarnings("deprecation")
+	    @Transactional
+	    public Supplier getByName(String name) {
+		String hql = "from Supplier where name =" + "'" + name + "'";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		@SuppressWarnings("unchecked")
+		List<Supplier> list = (List<Supplier>) query.list();
+		if (list != null && !list.isEmpty()) {
+		    return list.get(0);
+		}
+		return null;
+	    }
+
 
 }

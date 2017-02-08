@@ -12,11 +12,11 @@
 </head>
 <body>
 
-<c:if test="${isAdmin==true}">
+<c:if test="${LoggedIn==true}">
 <%@ include file="./admin.jsp" %>
 </c:if>
 
-<c:if test="${isAdmin==false}">
+<c:if test="${UserLoggedIn==false}">
 <%@ include file="./loginsuccess.jsp" %>
 </c:if>
 

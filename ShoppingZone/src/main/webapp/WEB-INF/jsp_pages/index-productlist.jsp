@@ -40,8 +40,8 @@
             <div class="container">
                 <div class="row">
                    <div class="col-xs-12 text-center">
-                       <div class="heading-title heading-style pos-rltv mb-50 text-center">
-                           <h5 class="uppercase">New Arrival</h5>
+                       <div class="heading-title heading-style pos-rltv mb-50 text-left">
+                           <h4 class="uppercamelcase">Enjoy your shopping from here.....</h4>
                        </div>
                    </div>
                    <div class="clearfix"></div>
@@ -54,15 +54,13 @@
 							<!-- single product start-->
                             <div class="single-product">
                                 <div class="product-img">
-                                    <div class="product-label">
-                                        <div class="new">New</div>
-                                    </div>
+                                    
                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/01.jpg"/>" class="primary-image"> <img alt="" src="<c:url value="/resources/images/product/01.jpg"/>" class="secondary-image"> </a>
+                                        <a href="productpage"> <img alt="" src="<c:url value="/resources/images/product/01.jpg"/>"> </a>
                                     </div>
                                     <div class="product-icon socile-icon-tooltip text-center">
                                         <ul>
-                                            <li><a href="#" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
+                                            <li><a href="cart" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
                                             <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
                                             <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>
@@ -102,11 +100,11 @@
                             <div class="single-product">
                                 <div class="product-img">
                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/03.jpg"/>" class="primary-image"> <img alt="" src="<c:url value="/resources/images/product/03.jpg"/>" class="secondary-image"> </a>
+                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/03.jpg"/>">  </a>
                                     </div>
                                     <div class="product-icon socile-icon-tooltip text-center">
                                         <ul>
-                                            <li><a href="#" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
+                                            <li><a href="cart" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
                                             <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
                                             <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>
@@ -136,15 +134,12 @@
                             <!-- single product start-->
                             <div class="single-product">
                                 <div class="product-img">
-                                    <div class="product-label">
-                                        <div class="new">Sale</div>
-                                    </div>
-                                    <div class="single-prodcut-img  product-overlay pos-rltv">
-                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/02.jpg"/>" class="primary-image"> <img alt="" src="<c:url value="/resources/images/product/02.jpg"/>" class="secondary-image"> </a>
+                                     <div class="single-prodcut-img  product-overlay pos-rltv">
+                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/02.jpg"/>" >  </a>
                                     </div>
                                     <div class="product-icon socile-icon-tooltip text-center">
                                         <ul>
-                                            <li><a href="#" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
+                                            <li><a href="cart" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
                                             <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
                                             <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>
@@ -174,11 +169,11 @@
                             <div class="single-product">
                                 <div class="product-img">
                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/04.jpeg"/>" class="primary-image"> <img alt="" src="<c:url value="/resources/images/product/04.jpeg"/>" class="secondary-image"> </a>
+                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/04.jpeg"/>"> </a>
                                     </div>
                                     <div class="product-icon socile-icon-tooltip text-center">
                                         <ul>
-                                            <li><a href="#" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
+                                            <li><a href="cart" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
                                             <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
                                             <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>
@@ -208,11 +203,11 @@
                             <div class="single-product">
                                 <div class="product-img">
                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/05.jpg"/>" class="primary-image"> <img alt="" src="<c:url value="/resources/images/product/06.jpg"/>" class="secondary-image"> </a>
+                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/05.jpg"/>">  </a>
                                     </div>
                                     <div class="product-icon socile-icon-tooltip text-center">
                                         <ul>
-                                            <li><a href="#" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
+                                            <li><a href="cart" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
                                             <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
                                             <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>
@@ -272,7 +267,7 @@
                                             <div class="social-icon-wraper mt-25">
                                                 <div class="social-icon socile-icon-style-1">
                                                     <ul>
-                                                        <li><a href="#"><i class="zmdi zmdi-shopping-cart"></i></a></li>
+                                                        <li><a href="cart"><i class="zmdi zmdi-shopping-cart"></i></a></li>
                                                         <li><a href="#"><i class="zmdi zmdi-favorite-outline"></i></a></li>
                                                         <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal" tabindex="0"><i class="zmdi zmdi-eye"></i></a></li>
                                                         <li><a href="#"><i class="zmdi zmdi-repeat"></i></a></li>
@@ -290,7 +285,7 @@
                             <div class="row">
                                 <div class="col-md-6 col-sm-6">
                                     <div class="sb-img text-center">
-                                        <img src="<c:url value="/resources/images/banner/001.jpeg"/> alt="">
+                                        <img src="<c:url value="/resources/images/banner/001.jpeg"/>" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-6">
@@ -307,7 +302,7 @@
 													<li>Head and Hand Bands</li>
                                                 </ul>
                                             </div>
-                                            <a class="btn-def btn2" href="#">Shop Now</a>
+                                            <a class="btn-def btn2" href="checkout">Shop Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -343,15 +338,13 @@
                                             <!-- single product start-->
                                             <div class="single-product">
                                                 <div class="product-img">
-                                                    <div class="product-label">
-                                                        <div class="new">New</div>
-                                                    </div>
+                                                    
                                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/05.jpeg"/>" class="primary-image"> <img alt="" src="<c:url value="/resources/images/product/05.jpeg"/>" class="secondary-image"> </a>
+                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/05.jpeg"/>" >  </a>
                                                     </div>
                                                     <div class="product-icon socile-icon-tooltip text-center">
                                                         <ul>
-                                                            <li><a href="#" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
+                                                            <li><a href="cart" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
                                                             <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
                                                             <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
                                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>
@@ -380,11 +373,11 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/06.jpeg"/>" class="primary-image"> <img alt="" src="<c:url value="/resources/images/product/06.jpeg"/>" class="secondary-image"> </a>
+                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/06.jpeg"/>" > </a>
                                                     </div>
                                                     <div class="product-icon socile-icon-tooltip text-center">
                                                         <ul>
-                                                            <li><a href="#" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
+                                                            <li><a href="cart" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
                                                             <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
                                                             <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
                                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>
@@ -412,15 +405,13 @@
                                             <!-- single product start-->
                                             <div class="single-product">
                                                 <div class="product-img">
-                                                    <div class="product-label">
-                                                        <div class="new">Sale</div>
-                                                    </div>
+                                                    
                                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/07.jpg"/>" class="primary-image"> <img alt="" src="<c:url value="/resources/images/product/07.jpg"/>" class="secondary-image"> </a>
+                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/07.jpg"/>" >  </a>
                                                     </div>
                                                     <div class="product-icon socile-icon-tooltip text-center">
                                                         <ul>
-                                                            <li><a href="#" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
+                                                            <li><a href="cart" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
                                                             <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
                                                             <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
                                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>
@@ -428,7 +419,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-text">
-                                                    <div class="prodcut-name"> <a href="single-product.html">Hockey sticks</a> </div>
+                                                    <div class="prodcut-name" style="color:balck";> <a href="single-product.html">Hockey sticks</a> </div>
                                                     <div class="prodcut-ratting-price">
                                                         <div class="prodcut-ratting"> 
                                                             <a href="#"><i class="fa fa-star"></i></a> 
@@ -450,11 +441,11 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/08.jpg"/>" class="primary-image"> <img alt="" src="<c:url value="/resources/images/product/08.jpg"/>" class="secondary-image"> </a>
+                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/08.jpg"/>">  </a>
                                                     </div>
                                                     <div class="product-icon socile-icon-tooltip text-center">
                                                         <ul>
-                                                            <li><a href="#" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
+                                                            <li><a href="cart" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
                                                             <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
                                                             <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
                                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>
@@ -483,11 +474,11 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/09.jpeg"/>" class="primary-image"> <img alt="" src="<c:url value="/resources/images/product/09.jpeg"/>" class="secondary-image"> </a>
+                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/09.jpeg"/>" > </a>
                                                     </div>
                                                     <div class="product-icon socile-icon-tooltip text-center">
                                                         <ul>
-                                                            <li><a href="#" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
+                                                            <li><a href="cart" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
                                                             <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
                                                             <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
                                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>
@@ -524,11 +515,11 @@
                                                         <div class="new">New</div>
                                                     </div>
                                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/09.jpg"/>" class="primary-image"> <img alt="" src="<c:url value="/resources/images/product/09.jpg"/>" class="secondary-image"> </a>
+                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/09.jpg"/>" ></a>
                                                     </div>
                                                     <div class="product-icon socile-icon-tooltip text-center">
                                                         <ul>
-                                                            <li><a href="#" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
+                                                            <li><a href="cart" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
                                                             <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
                                                             <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
                                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>
@@ -560,11 +551,11 @@
                                                         <div class="new">Sale</div>
                                                     </div>
                                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/10.jpg"/>" class="primary-image"> <img alt="" src="<c:url value="/resources/images/product/10.jpg"/>" class="secondary-image"> </a>
+                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/10.jpg"/>" >  </a>
                                                     </div>
                                                     <div class="product-icon socile-icon-tooltip text-center">
                                                         <ul>
-                                                            <li><a href="#" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
+                                                            <li><a href="cart" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
                                                             <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
                                                             <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
                                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>
@@ -594,11 +585,11 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/11.jpeg"/>" class="primary-image"> <img alt="" src="<c:url value="/resources/images/product/11.jpeg"/>" class="secondary-image"> </a>
+                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/11.jpeg"/>" >  </a>
                                                     </div>
                                                     <div class="product-icon socile-icon-tooltip text-center">
                                                         <ul>
-                                                            <li><a href="#" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
+                                                            <li><a href="cart" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
                                                             <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
                                                             <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
                                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>
@@ -627,11 +618,11 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/12.jpg"/>" class="primary-image"> <img alt="" src="<c:url value="/resources/images/product/12.jpg"/>" class="secondary-image"> </a>
+                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/12.jpg"/>" >  </a>
                                                     </div>
                                                     <div class="product-icon socile-icon-tooltip text-center">
                                                         <ul>
-                                                            <li><a href="#" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
+                                                            <li><a href="cart" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
                                                             <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
                                                             <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
                                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>
@@ -660,11 +651,11 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/05.jpg"/>" class="primary-image"> <img alt="" src="<c:url value="/resources/images/product/06.jpg"/>" class="secondary-image"> </a>
+                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/05.jpg"/>" > </a>
                                                     </div>
                                                     <div class="product-icon socile-icon-tooltip text-center">
                                                         <ul>
-                                                            <li><a href="#" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
+                                                            <li><a href="cart" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
                                                             <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
                                                             <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
                                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>
@@ -698,11 +689,11 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/13.jpeg"/>' class="primary-image"> <img alt="" src="<c:url value="/resources/images/product/13.jpeg"/>" class="secondary-image"> </a>
+                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/13.jpeg"/>"> </a>
                                                     </div>
                                                     <div class="product-icon socile-icon-tooltip text-center">
                                                         <ul>
-                                                            <li><a href="#" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
+                                                            <li><a href="cart" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
                                                             <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
                                                             <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
                                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>
@@ -731,11 +722,11 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/14.jpeg"/>" class="primary-image"> <img alt="" src="<c:url value="/resources/images/product/14.jpeg"/>" class="secondary-image"> </a>
+                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/14.jpeg"/>" > </a>
                                                     </div>
                                                     <div class="product-icon socile-icon-tooltip text-center">
                                                         <ul>
-                                                            <li><a href="#" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
+                                                            <li><a href="cart" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
                                                             <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
                                                             <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
                                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>
@@ -768,11 +759,11 @@
                                                         <div class="new">New</div>
                                                     </div>
                                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/15.jpg"/>" class="primary-image"> <img alt="" src="<c:url value="/resources/images/product/15.jpg"/>" class="secondary-image"> </a>
+                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/15.jpg"/>" >  </a>
                                                     </div>
                                                     <div class="product-icon socile-icon-tooltip text-center">
                                                         <ul>
-                                                            <li><a href="#" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
+                                                            <li><a href="cart" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
                                                             <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
                                                             <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
                                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>
@@ -801,11 +792,11 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/16.jpeg"/>" class="primary-image"> <img alt="" src="<c:url value="/resources/images/product/16.jpeg"/>" class="secondary-image"> </a>
+                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/16.jpeg"/>" > </a>
                                                     </div>
                                                     <div class="product-icon socile-icon-tooltip text-center">
                                                         <ul>
-                                                            <li><a href="#" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
+                                                            <li><a href="cart" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
                                                             <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
                                                             <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
                                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>
@@ -837,11 +828,11 @@
                                                         <div class="new">Sale</div>
                                                     </div>
                                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/02.jpg"/>" class="primary-image"> <img alt="" src="<c:url value="/resources/images/product/03.jpg"/>" class="secondary-image"> </a>
+                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/02.jpg"/>" >  </a>
                                                     </div>
                                                     <div class="product-icon socile-icon-tooltip text-center">
                                                         <ul>
-                                                            <li><a href="#" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
+                                                            <li><a href="cart" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
                                                             <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
                                                             <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
                                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>
@@ -901,7 +892,7 @@
                                                <p class="font-bold">Rs.699</p>
                                                 <div class="social-icon socile-icon-style-1 mt-15">
                                                     <ul>
-                                                        <li><a href="#"><i class="zmdi zmdi-shopping-cart"></i></a></li>
+                                                        <li><a href="cart"><i class="zmdi zmdi-shopping-cart"></i></a></li>
                                                         <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal" tabindex="0"><i class="zmdi zmdi-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -922,7 +913,7 @@
                                                <p class="font-bold">Rs.99</p>
                                                 <div class="social-icon socile-icon-style-1 mt-15">
                                                     <ul>
-                                                        <li><a href="#"><i class="zmdi zmdi-shopping-cart"></i></a></li>
+                                                        <li><a href="cart"><i class="zmdi zmdi-shopping-cart"></i></a></li>
                                                         <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal" tabindex="0"><i class="zmdi zmdi-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -945,7 +936,7 @@
                                            <p class="font-bold">Rs.369</p>
                                             <div class="social-icon socile-icon-style-1 mt-15">
                                                 <ul>
-                                                    <li><a href="#"><i class="zmdi zmdi-shopping-cart"></i></a></li>
+                                                    <li><a href="cart"><i class="zmdi zmdi-shopping-cart"></i></a></li>
                                                     <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal" tabindex="0"><i class="zmdi zmdi-eye"></i></a></li>
                                                 </ul>
                                             </div>
@@ -966,7 +957,7 @@
                                            <p class="font-bold">$236.99</p>
                                             <div class="social-icon socile-icon-style-1 mt-15">
                                                 <ul>
-                                                    <li><a href="#"><i class="zmdi zmdi-shopping-cart"></i></a></li>
+                                                    <li><a href="cart"><i class="zmdi zmdi-shopping-cart"></i></a></li>
                                                     <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal" tabindex="0"><i class="zmdi zmdi-eye"></i></a></li>
                                                 </ul>
                                             </div>
@@ -997,7 +988,7 @@
                                                    <p class="font-bold">Rs.450</p>
                                                     <div class="social-icon socile-icon-style-1 mt-15">
                                                         <ul>
-                                                            <li><a href="#"><i class="zmdi zmdi-shopping-cart"></i></a></li>
+                                                            <li><a href="cart"><i class="zmdi zmdi-shopping-cart"></i></a></li>
                                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal" tabindex="0"><i class="zmdi zmdi-eye"></i></a></li>
                                                         </ul>
                                                     </div>
@@ -1018,7 +1009,7 @@
                                                    <p class="font-bold">Rs.699</p>
                                                     <div class="social-icon socile-icon-style-1 mt-15">
                                                         <ul>
-                                                            <li><a href="#"><i class="zmdi zmdi-shopping-cart"></i></a></li>
+                                                            <li><a href="cart"><i class="zmdi zmdi-shopping-cart"></i></a></li>
                                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal" tabindex="0"><i class="zmdi zmdi-eye"></i></a></li>
                                                         </ul>
                                                     </div>
@@ -1041,7 +1032,7 @@
                                                <p class="font-bold">$236.99</p>
                                                 <div class="social-icon socile-icon-style-1 mt-15">
                                                     <ul>
-                                                        <li><a href="#"><i class="zmdi zmdi-shopping-cart"></i></a></li>
+                                                        <li><a href="cart"><i class="zmdi zmdi-shopping-cart"></i></a></li>
                                                         <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal" tabindex="0"><i class="zmdi zmdi-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -1062,7 +1053,7 @@
                                            <p class="font-bold">$236.99</p>
                                             <div class="social-icon socile-icon-style-1 mt-15">
                                                 <ul>
-                                                    <li><a href="#"><i class="zmdi zmdi-shopping-cart"></i></a></li>
+                                                    <li><a href="cart"><i class="zmdi zmdi-shopping-cart"></i></a></li>
                                                     <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal" tabindex="0"><i class="zmdi zmdi-eye"></i></a></li>
                                                 </ul>
                                             </div>
@@ -1094,7 +1085,7 @@
                                                    <p class="font-bold">Rs.1999</p>
                                                     <div class="social-icon socile-icon-style-1 mt-15">
                                                         <ul>
-                                                            <li><a href="#"><i class="zmdi zmdi-shopping-cart"></i></a></li>
+                                                            <li><a href="cart"><i class="zmdi zmdi-shopping-cart"></i></a></li>
                                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal" tabindex="0"><i class="zmdi zmdi-eye"></i></a></li>
                                                         </ul>
                                                     </div>
@@ -1115,7 +1106,7 @@
                                                    <p class="font-bold">Rs.380</p>
                                                     <div class="social-icon socile-icon-style-1 mt-15">
                                                         <ul>
-                                                            <li><a href="#"><i class="zmdi zmdi-shopping-cart"></i></a></li>
+                                                            <li><a href="cart"><i class="zmdi zmdi-shopping-cart"></i></a></li>
                                                             <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal" tabindex="0"><i class="zmdi zmdi-eye"></i></a></li>
                                                         </ul>
                                                     </div>
@@ -1138,7 +1129,7 @@
                                            <p class="font-bold">$236.99</p>
                                             <div class="social-icon socile-icon-style-1 mt-15">
                                                 <ul>
-                                                    <li><a href="#"><i class="zmdi zmdi-shopping-cart"></i></a></li>
+                                                    <li><a href="cart"><i class="zmdi zmdi-shopping-cart"></i></a></li>
                                                     <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal" tabindex="0"><i class="zmdi zmdi-eye"></i></a></li>
                                                 </ul>
                                             </div>
@@ -1159,7 +1150,7 @@
                                            <p class="font-bold">$236.99</p>
                                             <div class="social-icon socile-icon-style-1 mt-15">
                                                 <ul>
-                                                    <li><a href="#"><i class="zmdi zmdi-shopping-cart"></i></a></li>
+                                                    <li><a href="cart"><i class="zmdi zmdi-shopping-cart"></i></a></li>
                                                     <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal" tabindex="0"><i class="zmdi zmdi-eye"></i></a></li>
                                                 </ul>
                                             </div>
