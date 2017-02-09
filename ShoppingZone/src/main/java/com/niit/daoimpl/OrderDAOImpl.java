@@ -57,9 +57,9 @@ public class OrderDAOImpl implements OrderDAO {
 	    	Session session = sessionFactory.openSession();
 			session.beginTransaction();
 			
-			Order orderModel= new Order();
-			orderModel.setOrderId(orderId);
-			session.delete(orderModel);
+			Order order= new Order();
+			order.setOrderId(orderId);
+			session.delete(order);
 			session.getTransaction().commit();
 			session.close();
 

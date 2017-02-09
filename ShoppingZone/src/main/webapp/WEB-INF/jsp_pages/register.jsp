@@ -35,10 +35,8 @@
 
 <body>
 <%@ include file="header.jsp" %>
-	<h2>
-		Welcome to OnlineShopping</a>
-	</h2>
-	<h5>Register with us!!</h5>
+	
+	<h3>Register with us!!</h3>
 	<form:form action="registersuccess" method="post" commandName="user">
 		<table>
 			<tr>
@@ -91,6 +89,23 @@
        
        <input type="submit" value="Register"/>
 	</form:form>
+<%@ include file="footer.jsp" %>
+<!-- Body main wrapper end -->
 
+    <!-- Placed js at the end of the document so the pages load faster -->
+
+    <!-- jquery latest version -->
+    <script src="<c:url value="/resources/js/vendor/jquery-1.12.0.min.js"/>"></script>
+    <!-- Bootstrap framework js -->
+    <script src="<c:url value="/resources/js/bootstrap.min.js"/>"></script>
+    <!-- Slider js -->
+    <script src="<c:url value="/resources/js/slider/jquery.nivo.slider.pack.js"/>"></script>
+
+    <!-- counterUp-->
+    <script src="<c:url value="/resources/js/jquery.countdown.min.js"/>"></script>
+    <!-- All js plugins included in this file. -->
+    <script src="<c:url value="/resources/js/plugins.js"/>"></script>
+    <!-- Main js file that contents all jQuery plugins activation. -->
+    <script src="<c:url value="/resources/js/main.js"/>"></script>
 </body>
 </html>

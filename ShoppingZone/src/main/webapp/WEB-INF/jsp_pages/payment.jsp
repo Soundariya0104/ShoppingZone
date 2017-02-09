@@ -1,7 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -57,12 +53,12 @@
 </head>
 <body>
  
- <%@ include file="header.jsp"%>
+ <%@ include file="header_user.jsp"%>
  <div class="container">
     <div class="row">
         <div class="col-xs-12">
     		<div class="invoice-title">
-    			<h2>Invoice Details</h2><h3 class="pull-right">Order Id: #$orderid</h3>
+    			<h2>Invoice Details</h2><h3 class="pull-right">Order Id: #${orderid}</h3>
     		</div>
     		<hr>
     		<div class="row">
@@ -84,7 +80,7 @@
 	$billingPincode<br>
     
 	Email: $billingEmail<br>
-	Mobile: private String billingPhone;
+	Mobile: $billingPhone;
 						
     					
     					

@@ -36,9 +36,10 @@ public class CartController {
 	  
 
 	   
-	 @RequestMapping(value="/addtocart",method=RequestMethod.GET)
+	 @RequestMapping(value="/cart",method=RequestMethod.GET)
 	    public String addtocart(@RequestParam("username")String username, @RequestParam("productId")String productId, Model model){
 		 orderDAO.add(productDAO.getById(productId),userDAO.getById(username));
+		 System.out.println("hiii");
 		 model.addAttribute("cartList", orderDAO.getOrderListbyname(username));
 		 return "cart";
 	    }
@@ -65,13 +66,22 @@ public class CartController {
 			 }
 	
 	 @RequestMapping(value="/carddetails",method=RequestMethod.GET)
-	    public String paymentbycard( @RequestParam("address")Address address, Model model){
+	    public String paymentbycard( Address address, Model model){
 
 		 model.addAttribute("address", address);
 		 model.addAttribute("categoryList", categoryDAO.getCategoryList());
 		 model.addAttribute("carddetail",new Carddetail());
+		 
 	return "carddetails";
 	
 		 }
+	 
+	 @RequestMapping(value = "/payment") // mapping index page
+		public ModelAndView cartPage() {
+			
+			ModelAndView model = new ModelAndView("payment");
+			return model;
 		 
+}
+	 
 }

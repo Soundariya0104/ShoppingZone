@@ -54,7 +54,7 @@
                       <div class="panel-heading">
                         <h4 class="panel-title">
                          <!--  <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"> -->
-                            <strong class="title"><h4>Shipping Address</h4></strong>
+                            <strong class="title"><h4>Billing Address</h4></strong>
                          <!-- </a> -->
                         </h4>
                       </div>
@@ -63,7 +63,7 @@
                           <div class="row">
                             <div class="col-md-12">
                               <div class="aa-checkout-single-bill">
-                                 <form:input type="text" placeholder="Name" path="billingFirstname"/> 
+                                 Name*:<form:input type="text" placeholder="Name" path="billingFirstname"/> 
                               </div>                             
                             </div>
                              </div> 
@@ -71,41 +71,42 @@
                           <div class="row">
                             <div class="col-md-6">
                               <div class="aa-checkout-single-bill">
-                                <form:input type="email" placeholder="Email Address*" path="billingEmail"/>
+                                Email*:<form:input type="email" placeholder="Email Address" path="billingEmail"/>
                               </div>                             
                             </div>
                             <div class="col-md-6">
                               <div class="aa-checkout-single-bill">
-                                <form:input type="tel" placeholder="Phone*" path="billingPhone" />
+                                Phone*:<form:input type="tel" placeholder="Phone" path="billingPhone" />
                               </div>
                             </div>
                           </div> 
                           <div class="row">
                             <div class="col-md-12">
                               <div class="aa-checkout-single-bill">
-                                <form:textarea cols="8" rows="3" path="billingAddress"/>Address*</textarea>
+                                Address*<form:textarea cols="8" rows="3" path="billingAddress"/>
                               </div>                             
                             </div>                            
                           </div>   
-                          <div class="row">
+                          +<div class="row">
                             <div class="col-md-6">
                               <div class="aa-checkout-single-bill">
-                                <form:select path="billingCity">
+                               City name*: <form:select path="billingCity">
                                   <option value="0">Select Your City</option>
                                   <option value="1">Chennai</option>
-                                  <option value="2">Allahabad</option>
-                                  <option value="3">Bangalore</option>
+                                  <option value="2">Bangalore</option>
+                                  <option value="3">Ranchi</option>
                                   <option value="4">Hyderabad</option>
                                   <option value="5">Mumbai</option>
-                                  <option value="6">Goa</option>
+                                  <option value="6">Delhi</option>
                                   <option value="7">Kolkata</option>
                                   <option value="8">Cochin</option>
+                                  <option value="9">Telungana</option>
                                    </form:select>
                               </div>                             
                             </div>
-<div class="col-md-6">
+                              <div class="col-md-6">
                               <div class="aa-checkout-single-bill">
-                                <form:input type="text" placeholder="Postcode / ZIP*" path="billingPincode"/>
+                                Postal Code*:<form:input type="text" placeholder="Postcode / ZIP" path="billingPincode"/>
                               </div>
                             </div>                            
                           </div>
@@ -148,10 +149,10 @@
                   </div>
                   <h4><strong>Payment Method</strong></h4>
                   <div class="aa-payment-method">                    
-                   <label for=""><form:radiobutton path="paymentOption" value="Cash on delivery" />Cash on Delivery</label>
-                   <label for=""><form:radiobutton path="paymentOption" value="By Card" />Pay by Bank Card</label>
+                  <label for=""><form:radiobutton path="paymentOption" value="Cash on delivery" />Cash on Delivery</label> 
+                  <label for=""><form:radiobutton path="paymentOption" value="By Card" />Pay by Bank Card</label> 
                   <br><br><br>  <img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" border="0" alt="PayPal Acceptance Mark">    
-                    <input type="submit" value="Place Order" class="aa-browse-btn">                
+                   <b><input type="submit" value="Place Order" class="aa-browse-btn"> </b>               
                   </div>
                 </div>
               </div>

@@ -167,13 +167,13 @@ System.out.println(productDAO.getProductListbycategory(categoryId));
 		return model;
 
 	}
-    @RequestMapping(value = "/cart") // mapping index page
+   /* @RequestMapping(value = "/cart") // mapping index page
 	public ModelAndView cartPage() {
 		log.debug("inside the cart page");
 		ModelAndView model = new ModelAndView("cart");
 		return model;
 
-	}
+	}*/
 
 
 }

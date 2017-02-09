@@ -49,7 +49,7 @@
               <div class="col-md-6">
                 <div class="aa-myaccount-register">                 
                  <h4>Enter Your Card Details</h4>
-                 <form:form action="cardpaymentsuccess" class="aa-login-form" commandName="carddetails">
+                 <form:form action="payment" class="aa-login-form" commandName="carddetail">
                    
                     <label for="">Card Number</label><br>
                     <form:input type="text" placeholder="First Name" path="cardNumber" />

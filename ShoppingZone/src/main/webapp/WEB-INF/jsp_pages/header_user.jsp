@@ -73,17 +73,7 @@
                         <div class="col-md-3 col-sm-3 col-xs-6">
                             <div class="cart-currency-area login-register-area text-right">
                                 <ul>
-                                    <li>
-                                        <div class="header-currency">
-                                            <select>
-											    <option value="1">Rupees</option>
-                                                <option value="1">USD</option>
-                                                <option value="2">Pound</option>
-                                                <option value="3">Euro</option>
-                                                <option value="4">Dinar</option>
-                                            </select>
-                                        </div>
-                                    </li>
+                                    <li><a href="#"><i class="fa fa-user">Welcome!!</i></a></li>
                                     <li>
                                         <div class="header-cart">
                                             <div class="cart-icon"> <a href="#">Cart<i class="zmdi zmdi-shopping-cart"></i></a> <span>2</span> </div>

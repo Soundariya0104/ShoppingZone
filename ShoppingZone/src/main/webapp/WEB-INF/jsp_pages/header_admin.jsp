@@ -74,6 +74,7 @@
                         <div class="col-md-3 col-sm-3 col-xs-6">
                             <div class="cart-currency-area login-register-area text-right">
                                 <ul>
+                                <li><a href="#">Admin's account</a></li>
                                     <li><a href="loginpage">Logout</a></li>
                                      </ul>
                                     </div>
@@ -148,6 +149,7 @@
                 </div>
                 
             </div>
+            
            
         
         <!-- End of header area -->
@@ -168,6 +170,6 @@
     <script src="<c:url value="/resources/js/plugins.js"/>"></script>
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="<c:url value="/resources/js/main.js"/>"></script>
-    </div>
+    
     </body>
     </html>

@@ -51,7 +51,7 @@
                         <div class="col-md-3 col-sm-3 col-xs-6">
                             <div class="login-register-area">
                                 <ul>
-                                    <li><a href="loginpage">Login</a></li>
+                                    <li><a href="loginpage"><span class="glyphicon glyphicon-user"></span>Login</a></li>
                                     <li><a href="register">Register</a></li>
 									<li><a href="aboutus">About us</a></li>
                                 </ul>

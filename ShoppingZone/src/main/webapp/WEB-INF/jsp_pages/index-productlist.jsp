@@ -68,14 +68,14 @@
                                     </div>
                                 </div>
                                 <div class="product-text">
-                                    <div class="prodcut-name"> <a href="single-product.html">Adidas</a> </div>
+                                    <div class="prodcut-name"> <h4>Adidas</h4> </div>
                                     <div class="prodcut-ratting-price">
 									<div class="prodcut-ratting"> 
-                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                            <a href="#"><i class="fa fa-star-o"></i></a> 
+                                            <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star-o"></i> 
                                         </div>
                                         <div class="prodcut-price">
                                             <div class="new-price"> RS.490 </div>
@@ -112,14 +112,14 @@
                                     </div>
                                 </div>
                                 <div class="product-text">
-                                    <div class="prodcut-name"> <a href="single-product.html"> Ash Stumps</a> </div>
+                                    <div class="prodcut-name"> <h4> Ash Stumps</h4> </div>
                                     <div class="prodcut-ratting-price">
 									<div class="prodcut-ratting"> 
-                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                            <a href="#"><i class="fa fa-star-o"></i></a> 
+                                            <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star-o"></i>
                                         </div>
                                         <div class="prodcut-price">
 										
@@ -147,14 +147,14 @@
                                     </div>
                                 </div>
                                 <div class="product-text">
-                                    <div class="prodcut-name"> <a href="single-product.html">Puma</a> </div>
+                                    <div class="prodcut-name"> <h4>Puma</h4> </div>
                                     <div class="prodcut-ratting-price">
                                         <div class="prodcut-ratting"> 
-                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                            <a href="#"><i class="fa fa-star-o"></i></a> 
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star-o"></i> 
                                         </div>
                                         <div class="prodcut-price">
                                             <div class="new-price"> Rs.220 </div>
@@ -181,14 +181,14 @@
                                     </div>
                                 </div>
                                 <div class="product-text">
-                                    <div class="prodcut-name"> <a href="single-product.html">Kookaburra Bats</a> </div>
+                                    <div class="prodcut-name"> <h4>Kookaburra Bats</h4> </div>
                                     <div class="prodcut-ratting-price">
 									<div class="prodcut-ratting"> 
-                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                            <a href="#"><i class="fa fa-star-o"></i></a> 
-                                            <a href="#"><i class="fa fa-star-o"></i></a> 
+                                            <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star-o"></i> 
+                                            <i class="fa fa-star-o"></i>
                                         </div>
                                         <div class="prodcut-price">
                                             <div class="new-price"> Rs.320 </div>
@@ -215,14 +215,14 @@
                                     </div>
                                 </div>
                                 <div class="product-text">
-                                    <div class="prodcut-name"> <a href="single-product.html">Quisque fringilla</a> </div>
+                                    <div class="prodcut-name"> <h4>Quisque fringilla</h4> </div>
                                     <div class="prodcut-ratting-price">
                                         <div class="prodcut-ratting"> 
-                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                            <a href="#"><i class="fa fa-star-o"></i></a> </div>
+                                           <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star-o"></i> </div>
                                         <div class="prodcut-price">
                                             <div class="new-price"> $220 </div>
                                             <div class="old-price"> <del>$250</del> </div>
@@ -352,14 +352,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-text">
-                                                    <div class="prodcut-name"> <a href="single-product.html">Cycling Helmet</a> </div>
+                                                    <div class="prodcut-name"> <h4>Cycling Helmet</h4> </div>
                                                     <div class="prodcut-ratting-price">
 													<div class="prodcut-ratting"> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star-o"></i></a> </div>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star-o"></i> </div>
                                                         <div class="prodcut-price">
                                                             <div class="new-price"> Rs.220 </div>
                                                         </div>
@@ -385,14 +385,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-text">
-                                                    <div class="prodcut-name"> <a href="single-product.html">Foot Ball</a> </div>
+                                                    <div class="prodcut-name"> <h4>Foot Ball</h4> </div>
                                                     <div class="prodcut-ratting-price">
 													<div class="prodcut-ratting"> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star-o"></i></a> </div>
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star-o"></i> </div>
                                                         <div class="prodcut-price">
                                                             <div class="new-price"> Rs.520 </div>
                                                         </div>
@@ -419,14 +419,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-text">
-                                                    <div class="prodcut-name" style="color:balck";> <a href="single-product.html">Hockey sticks</a> </div>
+                                                    <div class="prodcut-name"> <h4>Hockey sticks</h4> </div>
                                                     <div class="prodcut-ratting-price">
                                                         <div class="prodcut-ratting"> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star-o"></i></a> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star-o"></i> 
                                                         </div>
                                                         <div class="prodcut-price">
                                                             <div class="new-price"> RS.340 </div>
@@ -453,14 +453,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-text">
-                                                    <div class="prodcut-name"> <a href="single-product.html">Digital Stop Watch</a> </div>
+                                                    <div class="prodcut-name"> <h4>Digital Stop Watch</h4> </div>
                                                     <div class="prodcut-ratting-price">
 													<div class="prodcut-ratting"> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star-o"></i></a> 
-                                                            <a href="#"><i class="fa fa-star-o"></i></a> </div>
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star-o"></i> 
+                                                            <i class="fa fa-star-o"></i> </div>
                                                         <div class="prodcut-price">
                                                             <div class="new-price"> Rs.290 </div>
                                                         </div>
@@ -486,14 +486,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-text">
-                                                    <div class="prodcut-name"> <a href="single-product.html">Quisque fringilla</a> </div>
+                                                    <div class="prodcut-name"> <h4>Quisque fringilla</h4> </div>
                                                     <div class="prodcut-ratting-price">
                                                         <div class="prodcut-ratting"> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star-o"></i></a> </div>
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star-o"></i> </div>
                                                         <div class="prodcut-price">
                                                             <div class="new-price"> $220 </div>
                                                             <div class="old-price"> <del>$250</del> </div>
@@ -527,14 +527,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-text">
-                                                    <div class="prodcut-name"> <a href="single-product.html">Glasses</a> </div>
+                                                    <div class="prodcut-name"> <h4>Glasses</h4> </div>
                                                     <div class="prodcut-ratting-price">
 													<div class="prodcut-ratting"> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star-o"></i></a> </div>
+                                                           <i class="fa fa-star"></i> 
+                                                           <i class="fa fa-star"></i> 
+                                                           <i class="fa fa-star"></i> 
+                                                           <i class="fa fa-star"></i> 
+                                                           <i class="fa fa-star-o"></i> </div>
                                                         <div class="prodcut-price">
                                                             <div class="new-price"> Rs.700 </div>
                                                         </div>
@@ -563,14 +563,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-text">
-                                                    <div class="prodcut-name"> <a href="single-product.html">Swimming Goggles</a> </div>
+                                                    <div class="prodcut-name"> <h4>Swimming Goggles</h4> </div>
                                                     <div class="prodcut-ratting-price">
                                                         <div class="prodcut-ratting"> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star-o"></i></a> 
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star-o"></i>
                                                         </div>
                                                         <div class="prodcut-price">
                                                             <div class="new-price"> Rs.520 </div>
@@ -597,14 +597,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-text">
-                                                    <div class="prodcut-name"> <a href="single-product.html">Table Tennis</a> </div>
+                                                    <div class="prodcut-name"> <h4>Table Tennis</h4> </div>
                                                     <div class="prodcut-ratting-price">
 													<div class="prodcut-ratting"> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star-o"></i></a> </div>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star-o"></i></div>
                                                         <div class="prodcut-price">
                                                             <div class="new-price"> Rs.470 </div>
                                                         </div>
@@ -630,14 +630,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-text">
-                                                    <div class="prodcut-name"> <a href="single-product.html">Chess Board</a> </div>
+                                                    <div class="prodcut-name"> <h4>Chess Board</h4> </div>
                                                     <div class="prodcut-ratting-price">
 													<div class="prodcut-ratting"> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star-o"></i></a> 
-                                                            <a href="#"><i class="fa fa-star-o"></i></a> </div>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                            <i class="fa fa-star-o"></i></div>
                                                         <div class="prodcut-price">
                                                             <div class="new-price"> Rs.220 </div>
                                                         </div>
@@ -663,14 +663,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-text">
-                                                    <div class="prodcut-name"> <a href="single-product.html">Quisque fringilla</a> </div>
+                                                    <div class="prodcut-name"> <h4>Quisque fringilla</h4> </div>
                                                     <div class="prodcut-ratting-price">
                                                         <div class="prodcut-ratting"> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star-o"></i></a> </div>
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star-o"></i></div>
                                                         <div class="prodcut-price">
                                                             <div class="new-price"> $220 </div>
                                                             <div class="old-price"> <del>$250</del> </div>
@@ -701,14 +701,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-text">
-                                                    <div class="prodcut-name"> <a href="single-product.html">Skate Board</a> </div>
+                                                    <div class="prodcut-name"> <h4>Skate Board<h4> </div>
                                                     <div class="prodcut-ratting-price">
 													<div class="prodcut-ratting"> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star-o"></i></a> </div>
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star-o"></i> </div>
                                                         <div class="prodcut-price">
                                                             <div class="new-price"> Rs.790 </div>
                                                         </div>
@@ -734,14 +734,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-text">
-                                                    <div class="prodcut-name"> <a href="single-product.html">Scooter</a> </div>
+                                                    <div class="prodcut-name"> <h4>Scooter</h4> </div>
                                                     <div class="prodcut-ratting-price">
                                                         <div class="prodcut-ratting"> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star-o"></i></a> </div>
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star-o"></i> </div>
                                                         <div class="prodcut-price">
                                                             <div class="new-price"> Rs.999 </div>
                                                             <div class="old-price"> <del>Rs.1499</del> </div>
@@ -771,14 +771,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-text">
-                                                    <div class="prodcut-name"> <a href="single-product.html">Boxing Helmet</a> </div>
+                                                    <div class="prodcut-name"> <h4>Boxing Helmet</h4> </div>
                                                     <div class="prodcut-ratting-price">
 													<div class="prodcut-ratting"> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star-o"></i></a> 
-                                                            <a href="#"><i class="fa fa-star-o"></i></a> 
-                                                            <a href="#"><i class="fa fa-star-o"></i></a> </div>
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star-o"></i> 
+                                                            <i class="fa fa-star-o"></i> 
+                                                            <i class="fa fa-star-o"></i> </div>
                                                         <div class="prodcut-price">
                                                             <div class="new-price"> Rs.499 </div>
                                                         </div>
@@ -804,14 +804,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-text">
-                                                    <div class="prodcut-name"> <a href="single-product.html">Adjustable Skater</a> </div>
+                                                    <div class="prodcut-name"> <h4>Adjustable Skater</h4> </div>
                                                     <div class="prodcut-ratting-price">
 													<div class="prodcut-ratting"> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star-o"></i></a> 
-                                                            <a href="#"><i class="fa fa-star-o"></i></a> </div>
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star-o"></i> 
+                                                            <i class="fa fa-star-o"></i> </div>
                                                         <div class="prodcut-price">
                                                             <div class="new-price"> Rs.899 </div>
                                                         </div>
@@ -840,14 +840,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-text">
-                                                    <div class="prodcut-name"> <a href="single-product.html">Quisque fringilla</a> </div>
+                                                    <div class="prodcut-name"> <h4>Quisque fringilla</h4> </div>
                                                     <div class="prodcut-ratting-price">
                                                         <div class="prodcut-ratting"> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star"></i></a> 
-                                                            <a href="#"><i class="fa fa-star-o"></i></a> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star"></i> 
+                                                            <i class="fa fa-star-o"></i> 
                                                         </div>
                                                         <div class="prodcut-price">
                                                             <div class="new-price"> $220 </div>

@@ -39,22 +39,18 @@
  <%@ include file="header.jsp"%>
  
  
- <!-- catg header banner section -->
+ <!--  header  section -->
   <section id="aa-catg-head-banner">
   
    <div class="aa-catg-head-banner-area">
      <div class="container">
       <div class="aa-catg-head-banner-content">
-        <h2>Cart Page</h2>
-        <ol class="breadcrumb">
-          <li><a href="index" style="color:red">Home</a></li>                   
-          <li class="active">Cart</li>
-        </ol>
-      </div>
+        <h2><center>Add to Cart</center></h2>
+              </div>
      </div>
    </div>
   </section>
-  <!-- / catg header banner section -->
+  <!-- /  header  section -->
 
  <!-- Cart view section -->
  <section id="cart-view">
@@ -72,7 +68,7 @@
                         <th>Product Display</th>
                         <th>Product</th>
                         <th>Price</th>
-                        <th>Quantity</th>
+                       <!--  <th>Quantity</th>-->
                         <th>Total</th>
 						<th>Remove</th>
 					  </tr>
@@ -107,7 +103,7 @@
                    </tr>
                  </tbody>
                </table>
-               <a href="checkout?username=${User}" class="aa-cart-view-btn">Proceed to Checkout</a>
+               <a href="checkout?username=${User}" class="aa-cart-view-btn" style="color:black"><input type="button" value="Proceed to Checkout"></a>
              </div>
            </div>
          </div>

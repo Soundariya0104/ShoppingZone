@@ -36,7 +36,6 @@
 <body>
 <%@ include file="header.jsp" %>
 <br><br><br>
-<h2>Welcome to OnlineShopping </h2>
 
 <h4>Login here!!</h4>
 <c:url var="action" value="loginresult"></c:url>
