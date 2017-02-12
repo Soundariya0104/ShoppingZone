@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.niit.dao.CategoryDAO;
 import com.niit.dao.UserDAO;
 import com.niit.daoimpl.UserDAOImpl;
 import com.niit.model.User;
@@ -26,6 +27,10 @@ public class HomeController {
 
 	@Autowired(required=true)
 	private UserDAO userDao;
+	
+	
+	@Autowired(required = true)
+    private CategoryDAO categoryDAO;
 
 	Logger log = LoggerFactory.getLogger(HomeController.class);
 
@@ -35,10 +40,25 @@ public class HomeController {
 		ModelAndView model = new ModelAndView("admin");
 		return model;
 	}
-	@RequestMapping(value = "/index") // mapping index page
-	public ModelAndView indexPage() {
+	@RequestMapping(value = "/") // mapping index page
+	public String indexPage(Model m) {
 		log.debug("inside the index page");
-		ModelAndView model = new ModelAndView("index");
+		m.addAttribute("categoryList",categoryDAO.getCategoryList());
+        return "index";
+	}
+	
+	@RequestMapping(value = "/aboutus") // mapping aboutus page
+	public ModelAndView aboutPage() {
+		log.debug("inside the aboutus page");
+		ModelAndView model = new ModelAndView("aboutus");
+		return model;
+
+	}
+	
+	@RequestMapping(value = "/contactus") // mapping aboutus page
+	public ModelAndView contactPage() {
+		log.debug("inside the contactus page");
+		ModelAndView model = new ModelAndView("contactus");
 		return model;
 
 	}
@@ -104,71 +124,49 @@ public class HomeController {
 	}	
 	
 	// ---------------------------------login-----------------------------------------
-	/*	@RequestMapping(value = "/loginresult", method = RequestMethod.POST)					//mapping for "/loginresult"
-		public ModelAndView hello4(@RequestParam("username") String username, @RequestParam("password") String password,
-				Model m, HttpSession session) {
-		    log.debug("inside controller for loginresult");
-		//UserDAO userDAO = new UserDAOImpl();
-
-		if (userDao.validationLogin(username, password) != null) { //username password validation
-			    log.debug("inside if login is valid ");
-		    ModelAndView model = new ModelAndView("loginresult", "user", new User()); //if yes adding loginresult page
-				session.setAttribute("user", userDao.getById(username));
-
-				if (userDao.getById(username).getRole().equals("ROLE_ADMIN")) {				//checking ROLE
-				    log.debug("inside if login is ROLE_ADMIN");
-					model.addObject("isAdmin", true);
-
-				} else {										//if not valid user
-				    log.debug("inside if login is ROLE_USER");
-					model.addObject("isAdmin", false);
-				}
-				return model;
-			} else {
-			    log.debug("inside if login is not valid, try again");
-		    ModelAndView model = new ModelAndView("login", "user", new User());
-				model.addObject("msg", "check your password and username");
-			return model;
-			}
-		}
-	}*/
 	
 	
 	
 	@SuppressWarnings("unchecked")
-	    @RequestMapping(value = "/loginresult")
-	    public String login_session_attributes(HttpSession session, Model model) {
+    @RequestMapping(value = "/loginresult", method = RequestMethod.POST)
+    public String login_session_attributes(@RequestParam("username") String username,@RequestParam("password") String password, HttpSession session, Model model) {
+	String userid = SecurityContextHolder.getContext().getAuthentication().getName();
 
-		String userid = SecurityContextHolder.getContext().getAuthentication().getName();
+	Collection<GrantedAuthority> authorities = (Collection<GrantedAuthority>) SecurityContextHolder.getContext()
+		.getAuthentication().getAuthorities();
+	String page = "";
+System.out.println("hi am insed method");
+	String role = "ROLE_USER";
+	for (GrantedAuthority authority : authorities) {
+	    System.out.println(authority.getAuthority());
+	    if (authority.getAuthority().equals(role)) {
+		session.setAttribute("Loggedin", "true");
+		session.setAttribute("isUser", "true");
+		session.setAttribute("User", userid);
+		page = "index";
+		model.addAttribute("categoryList", categoryDAO.getCategoryList());
 
-		Collection<GrantedAuthority> authorities = (Collection<GrantedAuthority>) SecurityContextHolder.getContext()
-			.getAuthentication().getAuthorities();
-		String page = "";
-
-		String role = "ROLE_USER";
-		for (GrantedAuthority authority : authorities) {
-		    if (authority.getAuthority().equals(role)) {
-
-			session.setAttribute("UserLoggedIn", "true");
-			session.setAttribute("Username", userid);
-			page = "loginsuccess";
-			break;
-		    } else {
-			session.setAttribute("LoggedIn", "true");
-			session.setAttribute("Administrator", "true");
-			page = "admin";
-			break;
-		    }
-		}
-		return page;
+		break;
+	    } else {
+		session.setAttribute("Loggedin", "true");
+		session.setAttribute("isAdmin", "true");
+		session.setAttribute("User", userid);
+		page = "admin";
+		break;
 	    }
-	 @RequestMapping("/logout")
+	}
+	return page;
+    }
+	
+	//------------------------------------logout----------------------------------------------//
+	 @RequestMapping("/logout")//mapping for logout
 	    public ModelAndView logout(HttpServletRequest request, HttpSession session) {
 		ModelAndView mv = new ModelAndView("index");
 		session.invalidate();
 		session = request.getSession(true);
 		mv.addObject("logoutMessage", "you are successfully logged out");
 		mv.addObject("loggedOut", "true");
+		mv.addObject("categoryList", categoryDAO.getCategoryList());
 		return mv;
 	    }
 }

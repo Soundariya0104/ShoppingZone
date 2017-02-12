@@ -12,4 +12,5 @@ public interface OrderDAO {
 	public boolean add(Product product, User user);	
 	  public List<Order> getOrderListbyname(String username);
 	  public Boolean remove(int orderId);
+	  public void removeorderbycartid(String username);
 }

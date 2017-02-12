@@ -36,7 +36,7 @@
 </head>
 <body>
  
- <%@ include file="header.jsp"%>
+ <%@ include file="header_user.jsp"%>
  
  
  <!--  header  section -->
@@ -70,6 +70,7 @@
                         <th>Price</th>
                        <!--  <th>Quantity</th>-->
                         <th>Total</th>
+                        <th>Product Total Price</th>
 						<th>Remove</th>
 					  </tr>
                     </thead>
@@ -77,11 +78,11 @@
                     <c:forEach var="cartList" items="${cartList}">
                                <tr>			
                         <td><a href="#"><img src="<c:url value="/resources/product/${cartList.product.productId }.jpeg"/>" alt="img"></a></td>
-                        <td><a class="aa-cart-title" href="#">${cartList.product.productName}</a></td>
+                        <td><a class="aa-cart-title" style="color:black">${cartList.product.productName}</a></td>
                         <td><i class="fa fa-inr" ></i> ${cartList.product.productPrice} /-</td>
                         <td><input class="aa-cart-quantity" id="quantity" type="number" value="1"></td>
                         <td>$cartList.producttotalprice</td>
-						<td><a href="removeorder?orderId=${cartList.orderId}&username=${cartList.user.username}">Remove</a></td>
+						<td><a href="removeorder?orderId=${cartList.orderId}&username=${cartList.user.username}" style="color:black">Remove</a></td>
 			 </tr>
 	
 				     

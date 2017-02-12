@@ -24,6 +24,7 @@ Logger log= LoggerFactory.getLogger(SupplierController.class);
 	public ModelAndView supplierPage(Model m) {
 		ModelAndView model = new ModelAndView("supplier", "supplier", new Supplier());
 		model.addObject("list", supplierDAO.getSupplierList());
+		model.addObject("page_name","Supplier");
 		return model;
 	}
 
@@ -53,6 +54,7 @@ Logger log= LoggerFactory.getLogger(SupplierController.class);
 	model.addObject("list", supplierDAO.getSupplierList());
 
 	model.addObject("values", supplierDAO.getById(supplierId));
+	model.addObject("page_name","Supplier");
 	return model;
     }
 

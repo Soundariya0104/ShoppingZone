@@ -36,7 +36,7 @@
 </head>
 <body>
  
- <%@ include file="header.jsp"%>
+ <%@ include file="header_user.jsp"%>
  
 <!-- Cart view section -->
  <section id="checkout">

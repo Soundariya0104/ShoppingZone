@@ -117,7 +117,7 @@
                                             <div class="single-product recent-single-product">
                                                 <div class="product-img">
                                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/rp01.jpg"/>" class="primary-image"> <img alt="" src="images/product/rp02.jpg" class="secondary-image"> </a>
+                                                        <a href="single-product.html"> <img alt="" src="<c:url value="/resources/images/product/rp01.jpg"/>" > </a>
                                                     </div>
                                                 </div>
                                                 <div class="product-text">
@@ -200,11 +200,11 @@
                                                     <div class="new">New</div>
                                                 </div>
                                                 <div class="single-prodcut-img  product-overlay pos-rltv">
-                                                    <a href="productpage"> <img alt="" src="<c:url value="/resources/images/product/01.jpg"/>" > </a>
+                                                    <a href="productpage?productId=${productList.productId}"> <img alt="" src="<c:url value="/resources/images/product/01.jpg"/>" > </a>
                                                 </div>
                                                 <div class="product-icon socile-icon-tooltip text-center">
                                                     <ul>
-                                                        <li><a href="cart?username=${User}&productId=P01" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
+                                                        <li><a href="cart?username=${User}&productId=${productList.productId}" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="fa fa-cart-plus"></i></a></li>
                                                         <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
                                                         <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
                                                         <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>

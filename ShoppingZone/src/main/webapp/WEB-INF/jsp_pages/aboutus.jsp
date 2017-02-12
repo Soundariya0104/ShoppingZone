@@ -39,11 +39,7 @@
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->  
-<%@ include file="header.jsp"%>
-<%@ include file="deliveryservice.jsp" %>
-<%@ include file="footer.jsp"%>
-
-
+<%@ include file="header_user.jsp"%>
 
 <p><h4>About Us</h4></p>
 
@@ -51,6 +47,19 @@
 
 
 All Consumers on SportsFocus and the SportsFocus Mobile Shopping App for Android and iOS have an easy and convenient access to 80 million products across hundreds of categories.<br> They benefit from a safe and secure ordering experience, convenient electronic payments, Cash on Delivery, SportsFocus’s 24x7 customer service support, and a globally recognized and comprehensive 100% purchase protection provided by SportsFocus’s A-to-Z Guarantee.<br> They can also enjoy SportsFocus’s guaranteed next-day, two day delivery, Sunday and Morning delivery on products fulfilled by SportsFocus.</p> 
+
+<br>
+<br>
+
+<h4>Our services provided for customers</h4><br> <%@ include file="deliveryservice.jsp" %>
+
+
+
+<%@ include file="footer.jsp"%>
+
+
+
+
 <!-- End of header area -->
         <!-- Body main wrapper end -->
 

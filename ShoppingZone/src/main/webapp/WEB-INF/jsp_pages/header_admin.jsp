@@ -75,7 +75,7 @@
                             <div class="cart-currency-area login-register-area text-right">
                                 <ul>
                                 <li><a href="#">Admin's account</a></li>
-                                    <li><a href="loginpage">Logout</a></li>
+                                    <li><a href="index">Logout</a></li>
                                      </ul>
                                     </div>
                                   </div>

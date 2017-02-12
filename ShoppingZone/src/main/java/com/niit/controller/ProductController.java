@@ -23,8 +23,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.google.gson.Gson;
 import com.niit.dao.CategoryDAO;
+import com.niit.dao.OrderDAO;
 import com.niit.dao.ProductDAO;
 import com.niit.dao.SupplierDAO;
+import com.niit.dao.UserDAO;
 import com.niit.daoimpl.CategoryDAOImpl;
 import com.niit.model.Category;
 import com.niit.model.Product;
@@ -43,6 +45,16 @@ public class ProductController {
 
     @Autowired
     private SupplierDAO supplierDAO;
+    
+    @Autowired
+    private UserDAO userDAO;
+
+    @Autowired
+    private OrderDAO cartDAO;
+    
+
+    @Autowired
+    private OrderDAO orderDAO;
 
     String path ="F:\\MyProject\\ShoppingZone\\src\\main\\webapp\\WEB-INF\\resources\\images\\";
     // ---------------------------------product---------------------------------
@@ -56,7 +68,7 @@ public class ProductController {
 	model.addAttribute("productlist", productDAO.getProductList()); //object for productList
 	model.addAttribute("categorylist", categoryDAO.getCategoryList()); //object for categoryList
 	model.addAttribute("supplierlist", supplierDAO.getSupplierList());//object for supplierList
-
+    model.addAttribute("page_name","Product");
 	return "product";
 
 	}
@@ -147,8 +159,8 @@ public class ProductController {
     public String productPageUser(Model model, @RequestParam("categoryId") String categoryId) {
 
 	model.addAttribute("values", productDAO.getProductListbycategory(categoryId));
-System.out.println(productDAO.getProductListbycategory(categoryId));
-
+    System.out.println(productDAO.getProductListbycategory(categoryId));
+    model.addAttribute("categoryList", categoryDAO.getCategoryList());
 	//	model.addAttribute("productModel", new ProductModel());
 	//	model.addAttribute("supplierModel", new SupplierModel());
 	//	model.addAttribute("categoryModel", new CategoryModel());
@@ -161,11 +173,13 @@ System.out.println(productDAO.getProductListbycategory(categoryId));
 
     }
     @RequestMapping(value = "/productpage") // mapping index page
-	public ModelAndView productPage() {
-		log.debug("inside the product page");
-		ModelAndView model = new ModelAndView("productpage");
-		return model;
+    public String productPage(Model model, @RequestParam("productId") String productId) {
 
+    	model.addAttribute("productbyId", productDAO.getById(productId));
+    	model.addAttribute("productId", "productId");
+    	model.addAttribute("categoryList", categoryDAO.getCategoryList());
+    	model.addAttribute("productList", productDAO.getProductListbycategory(productDAO.getById(productId).getCategoryId()));
+    	return "productpage";
 	}
    /* @RequestMapping(value = "/cart") // mapping index page
 	public ModelAndView cartPage() {

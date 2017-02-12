@@ -27,6 +27,7 @@ public class CategoryController {
         log.debug("inside category controller");		                        //performing a logger debug
 	    ModelAndView model = new ModelAndView("category", "category", new Category()); //adding a page to ModelAndView with empty constructor
 		model.addObject("list", categoryDAO.getCategoryList());						//adding a Object to value "list"
+		
 		return model;
 		}
 
