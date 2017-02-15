@@ -16,5 +16,5 @@ public interface ProductDAO {
 
     public void saveOrUpdate(Product product);
 
-    public List<Product> getProductListbycategory(String categoryId);
+    public List<Product> getProductListbycategory(String string);
 }

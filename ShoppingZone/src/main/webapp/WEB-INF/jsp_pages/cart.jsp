@@ -68,24 +68,24 @@
                         <th>Product Display</th>
                         <th>Product</th>
                         <th>Price</th>
-                       <!--  <th>Quantity</th>-->
+                        <th>Quantity</th>
                         <th>Total</th>
-                        <th>Product Total Price</th>
 						<th>Remove</th>
 					  </tr>
                     </thead>
                     <tbody >
+                    <c:set var="grandtotal" value="${0}"/>
                     <c:forEach var="cartList" items="${cartList}">
                                <tr>			
-                        <td><a href="#"><img src="<c:url value="/resources/product/${cartList.product.productId }.jpeg"/>" alt="img"></a></td>
-                        <td><a class="aa-cart-title" style="color:black">${cartList.product.productName}</a></td>
+                        <td><a href="productpage?productId=${cartList.product.productId}">><img src="<c:url value="/resources/product/${cartList.product.productId }.png"/>" alt="img"></a></td>
+                        <td><a class="aa-cart-title" href="#">${cartList.product.productName}</a></td>
                         <td><i class="fa fa-inr" ></i> ${cartList.product.productPrice} /-</td>
-                        <td><input class="aa-cart-quantity" id="quantity" type="number" value="1"></td>
-                        <td>$cartList.producttotalprice</td>
-						<td><a href="removeorder?orderId=${cartList.orderId}&username=${cartList.user.username}" style="color:black">Remove</a></td>
+                        <td>${cartList.quantity}</td>
+                        <td>${cartList.total}</td>
+						<td><a href="removeorder?orderId=${cartList.orderId}&username=${cartList.user.username}">Remove</a></td>
 			 </tr>
 	
-				     
+				     <c:set var="grandtotal" value="${grandtotal + cartList.total}" />
 				      
                 		</c:forEach>
                       
@@ -100,11 +100,13 @@
                  <tbody>
                    <tr>
                      <th>Grand Total</th>
-                     <td><strong id="total"><span id="sum">0.00</span></strong></td>
+                     <td><strong id="total"><span id="sum"><i class="fa fa-inr" ></i> ${grandtotal} /-</span></strong></td>
                    </tr>
                  </tbody>
                </table>
-               <a href="checkout?username=${User}" class="aa-cart-view-btn" style="color:black"><input type="button" value="Proceed to Checkout"></a>
+                <%--<a href="checkout?username=${User}" class="aa-cart-view-btn">Proceed to Checkout</a> --%>
+               <a href="webflow" class="aa-cart-view-btn">Proceed to Checkout</a>
+             
              </div>
            </div>
          </div>

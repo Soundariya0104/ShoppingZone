@@ -15,6 +15,8 @@ import com.niit.model.Order;
 import com.niit.model.Product;
 import com.niit.model.User;
 
+
+
 @Repository("cartDAO")
 public class OrderDAOImpl implements OrderDAO {
 
@@ -22,14 +24,17 @@ public class OrderDAOImpl implements OrderDAO {
 	  @Autowired
 	    SessionFactory sessionFactory;
 
-	  public boolean add(Product product, User user) {
+	  public boolean add(Product product, User user, int quantity, int total) {
 			Session session = sessionFactory.openSession();
 			session.beginTransaction();
 		
+			
 			Order order= new Order();
 		order.setUser(user);
 		order.setProduct(product);
-			
+		order.setQuantity(quantity);
+		order.setTotal(total);	
+		
 			session.saveOrUpdate(order);
 
 			session.getTransaction().commit();
@@ -58,9 +63,9 @@ public class OrderDAOImpl implements OrderDAO {
 	    	Session session = sessionFactory.openSession();
 			session.beginTransaction();
 			
-			Order order= new Order();
-			order.setOrderId(orderId);
-			session.delete(order);
+			Order orderModel= new Order();
+			orderModel.setOrderId(orderId);
+			session.delete(orderModel);
 			session.getTransaction().commit();
 			session.close();
 
@@ -83,5 +88,6 @@ public class OrderDAOImpl implements OrderDAO {
 
 
 	    }
+
 
 }

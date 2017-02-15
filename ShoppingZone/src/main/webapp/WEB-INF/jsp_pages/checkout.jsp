@@ -44,7 +44,7 @@
      <div class="row">
        <div class="col-md-12">
         <div class="checkout-area">
-          <form:form action="carddetails" commandName="address" method="GET">
+          <form:form  commandName="user" action="${flowExecutionUrl }"> <!-- action="carddetails" -->
             <div class="row">
               <div class="col-md-8">
                 <div class="checkout-left">
@@ -54,7 +54,7 @@
                       <div class="panel-heading">
                         <h4 class="panel-title">
                          <!--  <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"> -->
-                            <strong class="title"><h4>Billing Address</h4></strong>
+                            <strong class="title"><h4>Shipping Address</h4></strong>
                          <!-- </a> -->
                         </h4>
                       </div>
@@ -63,7 +63,7 @@
                           <div class="row">
                             <div class="col-md-12">
                               <div class="aa-checkout-single-bill">
-                                 Name*:<form:input type="text" placeholder="Name" path="billingFirstname"/> 
+                                 <form:input type="text" placeholder="Name" path="billingFirstname"/> 
                               </div>                             
                             </div>
                              </div> 
@@ -71,42 +71,41 @@
                           <div class="row">
                             <div class="col-md-6">
                               <div class="aa-checkout-single-bill">
-                                Email*:<form:input type="email" placeholder="Email Address" path="billingEmail"/>
+                                <form:input type="email" placeholder="Email Address*" path="billingEmail"/>
                               </div>                             
                             </div>
                             <div class="col-md-6">
                               <div class="aa-checkout-single-bill">
-                                Phone*:<form:input type="tel" placeholder="Phone" path="billingPhone" />
+                                <form:input type="tel" placeholder="Phone*" path="billingPhone" />
                               </div>
                             </div>
                           </div> 
                           <div class="row">
                             <div class="col-md-12">
                               <div class="aa-checkout-single-bill">
-                                Address*<form:textarea cols="8" rows="3" path="billingAddress"/>
+                                <form:textarea cols="8" rows="3" path="billingAddress"/>Address*</textarea>
                               </div>                             
                             </div>                            
                           </div>   
-                          +<div class="row">
+                          <div class="row">
                             <div class="col-md-6">
                               <div class="aa-checkout-single-bill">
-                               City name*: <form:select path="billingCity">
+                                <form:select path="billingCity">
                                   <option value="0">Select Your City</option>
                                   <option value="1">Chennai</option>
-                                  <option value="2">Bangalore</option>
-                                  <option value="3">Ranchi</option>
+                                  <option value="2">Allahabad</option>
+                                  <option value="3">Bangalore</option>
                                   <option value="4">Hyderabad</option>
                                   <option value="5">Mumbai</option>
-                                  <option value="6">Delhi</option>
+                                  <option value="6">Goa</option>
                                   <option value="7">Kolkata</option>
                                   <option value="8">Cochin</option>
-                                  <option value="9">Telungana</option>
                                    </form:select>
                               </div>                             
                             </div>
-                              <div class="col-md-6">
+<div class="col-md-6">
                               <div class="aa-checkout-single-bill">
-                                Postal Code*:<form:input type="text" placeholder="Postcode / ZIP" path="billingPincode"/>
+                                <form:input type="text" placeholder="Postcode / ZIP*" path="billingPincode"/>
                               </div>
                             </div>                            
                           </div>
@@ -119,40 +118,47 @@
               </div>
               <div class="col-md-4">
                 <div class="checkout-right">
-                  <h4><strong>Order Summary</strong></h4>
-                  <div class="aa-order-summary-area">
-                    <table class="table table-responsive">
-                      <thead>
-                        <tr>
-                          <th>Product</th>
-                          <th>Total</th>
-                        </tr>
-                      </thead>
-                      <tbody>
+<!--                   <h4><strong>Order Summary</strong></h4> -->
+<!--                   <div class="aa-order-summary-area"> -->
+<!--                     <table class="table table-responsive"> -->
+<!--                       <thead> -->
+<!--                         <tr> -->
+<!--                           <th>Product</th> -->
+<!--                           <th>Total</th> -->
+<!--                         </tr> -->
+<!--                       </thead> -->
+<!--                       <tbody> -->
                        
-                        <c:forEach var="cartList" items="${cartList}">
-                    <tr>
-                          <td>${cartList.product.productName} <strong> x 
-<%--                            ${cartList.quantity} --%>
-                           </strong></td>
-                          <td>${cartList.product.productPrice}</td>
-                        </tr>
-                        </c:forEach>
-                      </tbody>
-                      <tfoot>
-                         <tr>
-                          <th>Total</th>
-                          <td>$grandtotal</td>
-                        </tr>
-                      </tfoot>
-                    </table>
-                  </div>
+<%--                         <c:forEach var="cartList" items="${cartList}"> --%>
+<!--                     <tr> -->
+<%--                           <td>${cartList.productModel.productName} <strong> x  --%> 
+<!-- <%--                            ${cartList.quantity} --%> -->
+<!--                            </strong></td> -->
+<%--                           <td>${cartList.productModel.productPrice}</td> --%>
+<!--                         </tr> -->
+<%--                         </c:forEach> --%>
+<!--                       </tbody> -->
+<!--                       <tfoot> -->
+<!--                          <tr> -->
+<!--                           <th>Total</th> -->
+<%--                           <td>${grandtotal}</td> --%>
+<!--                         </tr> -->
+<!--                       </tfoot> -->
+<!--                     </table> -->
+<!--                   </div> -->
                   <h4><strong>Payment Method</strong></h4>
                   <div class="aa-payment-method">                    
-                  <label for=""><form:radiobutton path="paymentOption" value="Cash on delivery" />Cash on Delivery</label> 
-                  <label for=""><form:radiobutton path="paymentOption" value="By Card" />Pay by Bank Card</label> 
+                   <label for=""><form:radiobutton path="paymentOption" value="Cash on delivery" />Cash on Delivery</label>
+                   <label for=""><form:radiobutton path="paymentOption" value="By Card" />Pay by Bank Card</label>
                   <br><br><br>  <img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" border="0" alt="PayPal Acceptance Mark">    
-                   <b><input type="submit" value="Place Order" class="aa-browse-btn"> </b>               
+                  
+                    <input type="submit" value="Submit" name="_eventId_submit"  class="aa-browse-btn">                
+                    <input type="submit" value="Cancel" name="_eventId_cancel" class="aa-browse-btn">                
+                  
+                  
+<%--                   <a href="${flowExecutionUrl }&_eventId=submit">submit</a> --%>
+<%--                   <a href="${flowExecutionUrl }&_eventId=cancel">cancel</a> --%>
+                  
                   </div>
                 </div>
               </div>
@@ -164,7 +170,6 @@
    </div>
  </section>
  <!-- / Cart view section -->
-
 
  
   <%@ include file="footer.jsp"%>

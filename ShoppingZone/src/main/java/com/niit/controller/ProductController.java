@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -155,39 +156,43 @@ public class ProductController {
 
     }
 
+//  -------------------------------------------------USER COMMMON----------------------------------------------
     @RequestMapping(value = "/categorypage", method = RequestMethod.GET) //mapping for "/product"
-    public String productPageUser(Model model, @RequestParam("categoryId") String categoryId) {
-
+  public String categoryPageUser(Model model, @RequestParam("categoryId") String categoryId,HttpSession session) {
 	model.addAttribute("values", productDAO.getProductListbycategory(categoryId));
-    System.out.println(productDAO.getProductListbycategory(categoryId));
-    model.addAttribute("categoryList", categoryDAO.getCategoryList());
-	//	model.addAttribute("productModel", new ProductModel());
-	//	model.addAttribute("supplierModel", new SupplierModel());
-	//	model.addAttribute("categoryModel", new CategoryModel());
-
-	//	model.addAttribute("productlist", productDAO.getProductList()); //object for productList
-	//	model.addAttribute("categorylist", categoryDAO.getCategoryList()); //object for categoryList
-	//	model.addAttribute("supplierlist", supplierDAO.getSupplierList()); //object for supplierList
-	//	model.addAttribute("page_name", "Product");
+	model.addAttribute("categoryList", categoryDAO.getCategoryList());
+	
+	String User = (String)session.getAttribute("User");
+//	model.addAttribute("cartList", orderDAO.getOrderListbyname(User));
+//	model.addAttribute("cartsize", orderDAO.getOrderListbyname(User).size());
+	
+	
 	return "categorypage";
 
-    }
-    @RequestMapping(value = "/productpage") // mapping index page
-    public String productPage(Model model, @RequestParam("productId") String productId) {
+  }
 
-    	model.addAttribute("productbyId", productDAO.getById(productId));
-    	model.addAttribute("productId", "productId");
-    	model.addAttribute("categoryList", categoryDAO.getCategoryList());
-    	model.addAttribute("productList", productDAO.getProductListbycategory(productDAO.getById(productId).getCategoryId()));
-    	return "productpage";
-	}
-   /* @RequestMapping(value = "/cart") // mapping index page
-	public ModelAndView cartPage() {
-		log.debug("inside the cart page");
-		ModelAndView model = new ModelAndView("cart");
-		return model;
+     
+  
+  @RequestMapping(value = "/productpage", method = RequestMethod.GET) //mapping for "/product"
+  public String productPageUser(Model model, @RequestParam("productId") String productId,HttpSession session) {
 
-	}*/
-
+	model.addAttribute("productbyId", productDAO.getById(productId));
+//	model.addAttribute("productId", "productId");
+//	model.addAttribute("categoryList", categoryDAO.getCategoryList());
+//	model.addAttribute("productList", productDAO.getProductListbycategory(productDAO.getById(productId).getCategoryId()));
+//	model.addAttribute("category", categoryDAO.getById(productDAO.getById(productId).getCategoryId()));
+//	
+//	String User = (String)session.getAttribute("User");
+//	model.addAttribute("cartList", orderDAO.getOrderListbyname(User));
+//	model.addAttribute("cartsize", orderDAO.getOrderListbyname(User).size());
+//	
+//	
+//	if(productDAO.getById(productId).getProductQuantity()!=0){
+//	model.addAttribute( "stock","in-Stock" );
+//	}else{
+//		model.addAttribute( "stock","out of Stock" );	
+//	}
+	return "productpage";
+  }
 
 }

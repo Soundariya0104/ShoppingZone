@@ -9,8 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -29,9 +27,24 @@ public class Order implements Serializable {
 	@JoinColumn(name="productId")
 	private Product product;
 	 
-	/*@Column
+	@Column
 	private int quantity=1;
 	
+	@Column
+	private int total;
+	
+	
+	
+	
+	
+	public int getTotal() {
+		return total;
+	}
+
+	public void setTotal(int total) {
+		this.total = total;
+	}
+
 	public int getQuantity() {
 		return quantity;
 	}
@@ -39,7 +52,7 @@ public class Order implements Serializable {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-*/
+
 	public Product getProduct() {
 		return product;
 	}

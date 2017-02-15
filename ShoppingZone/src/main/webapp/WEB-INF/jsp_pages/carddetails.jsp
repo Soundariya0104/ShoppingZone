@@ -49,10 +49,10 @@
               <div class="col-md-6">
                 <div class="aa-myaccount-register">                 
                  <h4>Enter Your Card Details</h4>
-                 <form:form action="payment" class="aa-login-form" commandName="carddetail">
+                 <form:form action="cardpaymentsuccess" class="aa-login-form" commandName="carddetailModel">
                    
                     <label for="">Card Number</label><br>
-                    <form:input type="text" placeholder="First Name" path="cardNumber" />
+                    <form:input type="text" placeholder="First Name" path="cardNumber" value=""/>
                     
                     <label for="">Expiration Month</label>
                     <form:select path="expDate">
@@ -66,7 +66,7 @@
     <option value="08">Aug</option>
     <option value="09">Sep</option>
     <option value="10">Oct</option>
-    <option value="11">Nov</option>
+ <option value="11">Nov</option>
     <option value="12">Dec</option>
   </form:select>
                     
@@ -84,17 +84,18 @@
     <option value="2026">2026</option>
  <option value="2027">2027</option>
     <option value="2028">2028</option>
-  </form:select>  
+  </form:select>  <br>
                     
                     <label for="">CVV/CVC</label>
-                    <form:input type="password"  placeholder="cvv" path="cvv"/>
+                    <form:input type="password"  placeholder="cvv" path="cvv" value=""/>
              
                        
                     <label for="">Card Holder's Name:</label>
                     <form:input type="text"  placeholder="Name" path="cardholderName" />    
-                    
-                    <button type="submit" class="aa-browse-btn">Make Payment</button>                    
-                  </form:form>
+                  </form:form>  
+<%--                     <a href="paymentsuccess?username=${User}"><button  class="aa-browse-btn">Make Payment</button></a>                     --%>
+                     <a href="${flowExecutionUrl }&_eventId=submit"><button  class="aa-browse-btn">Make Payment</button></a>                    
+                 
                   <br><br><br>
                   <span style="font-size:14px">* Fields mandatory</span> 
                 </div>
@@ -111,7 +112,9 @@
    </div>
  </section>
  <!-- / Cart view section -->
- 
+    <a href="${flowExecutionUrl }&_eventId=submit?username=${$User}">submit</a>
+                  <a href="${flowExecutionUrl }&_eventId=back">back</a>
+               
 
 <%@ include file="footer.jsp"%>
  

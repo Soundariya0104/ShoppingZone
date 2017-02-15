@@ -26,10 +26,10 @@ public class Product implements Serializable { //Serializable is a markup interf
 	private String productDescription;
 
     @Column(name = "productprice")
-    private String productPrice;
+    private int productPrice;
     
-    //@Column(name = "productquantity")
-    //private int productQuantity;
+    @Column(name = "productquantity")
+    private int productQuantity=1;
 
 
     @Column(name = "categoryid")
@@ -87,11 +87,11 @@ public class Product implements Serializable { //Serializable is a markup interf
     }
 
     //-------------------------getter setter for ProductPrice------------------------------
-    public String getProductPrice() {
+    public int getProductPrice() {
 	return productPrice;
     }
 
-    public void setProductPrice(String productPrice) {
+    public void setProductPrice(int productPrice) {
 	this.productPrice = productPrice;
     }
 
@@ -132,13 +132,15 @@ public class Product implements Serializable { //Serializable is a markup interf
 	this.supplier = supplier;
     }
 
+	
+
    /* public Supplier getSupplierModel() {
     	return supplier;
         }
 
         public void setSupplierModel(Supplier supplier) {
     	this.supplier = supplier;
-        }
+        }*/
 
     	public int getProductQuantity() {
     		return productQuantity;
@@ -146,7 +148,7 @@ public class Product implements Serializable { //Serializable is a markup interf
 
     	public void setProductQuantity(int productQuantity) {
     		this.productQuantity = productQuantity;
-    	}*/
+    	}
 
 
 }
