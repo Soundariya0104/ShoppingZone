@@ -67,7 +67,7 @@
 					
 						<label for="">Category Id:</label>
 						<form:input type="text"
-								value="${values.getCategoryId() }" path="categoryId"   disabled="true" readonly="true" style="border: 1px solid #ccc;
+								value="${values.getCategoryId() }" path="categoryId"    readonly="true" style="border: 1px solid #ccc;
   font-size: 16px;
   height: 40px;
   margin-bottom: 15px;
@@ -127,7 +127,7 @@
                     <thead>
                       <tr>
 				<th>Category Id</th>
-				<th>CategoryName</th>
+				<th>Category Name</th>
 				<th colspan="2">Options</th>
 			</tr></thead>
 			<tbody>

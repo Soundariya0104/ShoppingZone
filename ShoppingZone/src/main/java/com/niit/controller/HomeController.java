@@ -55,7 +55,7 @@ public class HomeController {
 
 	}
 	
-	@RequestMapping(value = "/contactus") // mapping aboutus page
+	@RequestMapping(value = "/contactus") // mapping contactus page
 	public ModelAndView contactPage() {
 		log.debug("inside the contactus page");
 		ModelAndView model = new ModelAndView("contactus");
@@ -123,10 +123,6 @@ public class HomeController {
 
 	}	
 	
-	// ---------------------------------login-----------------------------------------
-	
-	
-	
 	@SuppressWarnings("unchecked")
     @RequestMapping(value = "/loginresult", method = RequestMethod.POST)
     public String login_session_attributes(@RequestParam("username") String username,@RequestParam("password") String password, HttpSession session, Model model) {
@@ -135,7 +131,7 @@ public class HomeController {
 	Collection<GrantedAuthority> authorities = (Collection<GrantedAuthority>) SecurityContextHolder.getContext()
 		.getAuthentication().getAuthorities();
 	String page = "";
-System.out.println("hi am insed method");
+    System.out.println("hi am inside method");
 	String role = "ROLE_USER";
 	for (GrantedAuthority authority : authorities) {
 	    System.out.println(authority.getAuthority());

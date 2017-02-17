@@ -60,12 +60,13 @@
                  
                 <li>
                   <figure> 
-                    <a class="aa-product-img" href="productpage?productId=${productList.productId}"><img src="<c:url value="/resources/product/${productList.productId }.jpg"/>" style="height:250px;width:250px" alt="${productList.productId }"></a>
-                    <a class="aa-add-card-btn" href="addtocart?username=${User}&productId=${productList.productId}&quantity=1"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                    <a class="aa-product-img" href="productpage?productId=${productList.productId}"><img src="<c:url value="/resources/images/product/${productList.productId }.jpeg"/>" style="height:250px;width:250px" alt="${productList.productId }"></a>
+                    
                     <figcaption>
                       <h4 class="aa-product-title"><a href="#">${productList.productName }</a></h4>
                       <span class="aa-product-price"><i class="fa fa-inr"></i> ${productList.productPrice }-/</span>
                       <p class="aa-product-descrip">${productList.productDescription }</p>
+                      <a class="aa-add-card-btn" style="color:black"href="addtocart?username=${User}&productId=${productList.productId}&quantity=1"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                     </figcaption>
                   </figure>                         
                   <div class="aa-product-hvr-content">
@@ -87,16 +88,16 @@
                             <div class="simpleLens-gallery-container" id="demo-1">
                               <div class="simpleLens-container">
                                   <div class="simpleLens-big-image-container">
-                                      <a class="simpleLens-lens-image" data-lens-image="<c:url value="/resources/product/${productList.productId }.png"/>">
-                                          <img src="<c:url value="/resources/product/${productList.productId }.png"/>" class="simpleLens-big-image">
+                                      <a class="simpleLens-lens-image" data-lens-image="<c:url value="/resources/images/product/${productList.productId }.jpeg"/>">
+                                          <img src="<c:url value="/resources/images/product/${productList.productId }.jpeg"/>" class="simpleLens-big-image">
                                       </a>
                                   </div>
                               </div>
                               <div class="simpleLens-thumbnails-container">
                                   <a href="#" class="simpleLens-thumbnail-wrapper"
-                                     data-lens-image="<c:url value="/resources/product/${productList.productId }.png"/>"
-                                     data-big-image="<c:url value="/resources/product/${productList.productId }.png"/>">
-                                      <img src="<c:url value="/resources/product/${productList.productId }.png"/>">
+                                     data-lens-image="<c:url value="/resources/images/product/${productList.productId }.jpeg"/>"
+                                     data-big-image="<c:url value="/resources/images/product/${productList.productId }.jpeg"/>">
+                                      <img src="<c:url value="/resources/images/product/${productList.productId }.jpeg"/>">
                                   </a>                               </div>
                             </div>
                           </div>

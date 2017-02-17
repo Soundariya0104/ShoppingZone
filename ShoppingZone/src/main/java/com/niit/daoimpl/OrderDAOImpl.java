@@ -81,7 +81,7 @@ public class OrderDAOImpl implements OrderDAO {
 			
 			
 	    	@SuppressWarnings("rawtypes")
-			Query q = session.createQuery("delete OrderModel where username = username");
+			Query q = session.createQuery("delete Order where username = username");
 	    	q.executeUpdate();
 	    	session.getTransaction().commit();
 			session.close();

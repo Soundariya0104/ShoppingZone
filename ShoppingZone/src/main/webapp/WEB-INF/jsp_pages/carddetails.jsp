@@ -49,7 +49,7 @@
               <div class="col-md-6">
                 <div class="aa-myaccount-register">                 
                  <h4>Enter Your Card Details</h4>
-                 <form:form action="cardpaymentsuccess" class="aa-login-form" commandName="carddetailModel">
+                 <form:form action="cardpaymentsuccess" class="aa-login-form" commandName="carddetail">
                    
                     <label for="">Card Number</label><br>
                     <form:input type="text" placeholder="First Name" path="cardNumber" value=""/>
@@ -94,7 +94,7 @@
                     <form:input type="text"  placeholder="Name" path="cardholderName" />    
                   </form:form>  
 <%--                     <a href="paymentsuccess?username=${User}"><button  class="aa-browse-btn">Make Payment</button></a>                     --%>
-                     <a href="${flowExecutionUrl }&_eventId=submit"><button  class="aa-browse-btn">Make Payment</button></a>                    
+                     <a href="${flowExecutionUrl }&_eventId=submit"><button  class="aa-browse-btn" style="color:black">Make Payment</button></a>                    
                  
                   <br><br><br>
                   <span style="font-size:14px">* Fields mandatory</span> 

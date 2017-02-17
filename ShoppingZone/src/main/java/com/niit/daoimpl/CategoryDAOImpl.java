@@ -38,7 +38,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 	public boolean deleteCategory(String categoryId) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
-
+        System.out.println("hii");
 		Category category = new Category();
 		category.setCategoryId(categoryId);
 

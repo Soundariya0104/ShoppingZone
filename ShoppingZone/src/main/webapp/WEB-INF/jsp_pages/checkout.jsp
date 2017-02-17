@@ -44,7 +44,7 @@
      <div class="row">
        <div class="col-md-12">
         <div class="checkout-area">
-          <form:form  commandName="user" action="${flowExecutionUrl }"> <!-- action="carddetails" -->
+          <form:form  commandName="address" action="${flowExecutionUrl }"> <!-- action="carddetails" -->
             <div class="row">
               <div class="col-md-8">
                 <div class="checkout-left">
@@ -195,5 +195,3 @@
 </body>
 </html>
 
-</body>
-</html>

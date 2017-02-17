@@ -57,7 +57,7 @@ public class ProductController {
     @Autowired
     private OrderDAO orderDAO;
 
-    String path ="F:\\MyProject\\ShoppingZone\\src\\main\\webapp\\WEB-INF\\resources\\images\\";
+    String path ="F:\\MyProject\\ShoppingZone\\src\\main\\webapp\\WEB-INF\\resources\\images\\product\\";
     // ---------------------------------product---------------------------------
     @RequestMapping(value = "/product") //mapping for "/product"
     public String productPage(Model model) {
@@ -75,7 +75,7 @@ public class ProductController {
 	}
 
  // ---------------------------------add---------------------------------
-    @RequestMapping(value = "/addProduct", method = RequestMethod.GET) //mapping for "/addproduct"
+    @RequestMapping(value = "/addProduct", method = RequestMethod.POST) //mapping for "/addproduct"
     public String addProduct(@ModelAttribute("product") Product product, HttpServletRequest request,
 	    RedirectAttributes attributes, BindingResult result)
 	{
@@ -83,18 +83,6 @@ public class ProductController {
 	if (result.hasErrors()) {
 	    System.out.println("Error ::: " + result.toString());
 	} else {
-
-	    Category category = categoryDAO.getByName(product.getCategory().getCategoryName());
-	    categoryDAO.saveOrUpdate(category);
-	    Supplier supplier = supplierDAO.getByName(product.getSupplier().getSupplierName());
-	   
-		supplierDAO.saveOrUpdate(supplier);
-
-	    product.setCategory(category);
-	    product.setSupplier(supplier);
-
-	    product.setCategoryId(category.getCategoryId());
-	    product.setSupplierId(supplier.getSupplierId());
 
 	    productDAO.saveOrUpdate(product);
 		

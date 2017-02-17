@@ -31,6 +31,8 @@
     
     <!-- Modernizr JS -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    
+        
 </head>
 
 <body>
@@ -41,23 +43,23 @@
 		<table>
 			<tr>
 				<td>Your good name:</td>
-				<td><form:input type="text" path="username"/></td>
+				<td><form:input type="text" path="username" /></td>
 			</tr>
 
 			<tr>
 				<td>Email_id:</td>
-				<td><form:input type="email" path="emailId" /></td>
+				<td><form:input type="email" id="emailId" path="emailId"  /> </td>
 			</tr>
 
 			<tr>
 				<td>Password:</td>
 				<td><form:input type="password" 
-						path="password" /></td>
+						path="password"  /></td>
 			</tr>
 
 			<tr>
 				<td>Confirm Password:</td>
-				<td><input type="password" /></td>
+				<td><input type="password"/> </td>
 			</tr>
 
 			<tr>
@@ -66,7 +68,7 @@
 			</tr>
 			<tr>
 				<td>Mobile_No:</td>
-				<td><form:input type="text" path="mobile" /></td>
+				<td><form:input type="text" path="mobile" pattern="[7|8|9]{10}"/> </td>
 			</tr>
 		</table>
 		<table>
@@ -83,7 +85,7 @@
 			</tr>
 			<tr>
 				<td>Pincode:</td>
-				<td><form:input type="text" path="pinCode" /></td>
+				<td><form:input type="text" path="pinCode" pattern="[6]{6}"/></td>
 			</tr>
        </table>
        

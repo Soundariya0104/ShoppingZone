@@ -66,7 +66,7 @@
 					<tr>
 						<td>Supplier Id:</td>
 						<td><form:input type="text"
-								value="${values.getSupplierId() }" path="supplierId"  disabled="true" readonly="true" /></td>
+								value="${values.getSupplierId() }" path="supplierId"   readonly="true" /></td>
 					</tr>
 					<tr>
 						<td>Supplier Name:</td>

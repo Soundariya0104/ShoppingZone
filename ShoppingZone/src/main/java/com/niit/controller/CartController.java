@@ -61,7 +61,7 @@ public class CartController {
 
 		orderDAO.remove(orderId);
 		model.addAttribute("cartList", orderDAO.getOrderListbyname(username));
-		return "cartpage";
+		return "cart";
 	}
 
 	@RequestMapping(value = "/checkout", method = RequestMethod.GET)

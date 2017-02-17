@@ -59,7 +59,7 @@
 <c:choose><c:when test="${ not empty values}">
 	<!-- spring form -->
 	<h4>Product Page</h4>
-	<form:form action="addProduct" method="get" enctype="multipart/form-data" commandName="product">
+	<form:form action="addProduct" method="post" enctype="multipart/form-data" commandName="product">
 					
 						<label for="" style="width:51%">Product Id: </label> 
 						<form:input type="text"
@@ -125,7 +125,7 @@
 				</c:when>
 				<c:otherwise>
 	<c:url var="action" value="/addProduct"></c:url><h4>Product page</h4>
-	<form:form action="addProduct" method="get"  enctype="multipart/form-data" commandName="product">
+	<form:form action="addProduct" method="post"  enctype="multipart/form-data" commandName="product">
 	
 						<label for="" style="width:49%">Product Id:</label> <br>
 						<form:input type="text"

@@ -43,6 +43,7 @@ public class CategoryController {
 	// ---------------------------------delete---------------------------------
 	@RequestMapping(value = "/deletecategory", method = RequestMethod.GET)		//mapping for "/deletecategory"
 	public String deleteCategory(@RequestParam("categoryId") String categoryId) {
+		System.out.println("hiii");
 		log.debug("inside deletecategory Controller");
 		categoryDAO.deleteCategory(categoryId);
 		return "redirect:/category";

@@ -105,7 +105,7 @@
                  </tbody>
                </table>
                 <%--<a href="checkout?username=${User}" class="aa-cart-view-btn">Proceed to Checkout</a> --%>
-               <a href="webflow" class="aa-cart-view-btn">Proceed to Checkout</a>
+               <a href="webflow" class="aa-cart-view-btn" style="color:black">Proceed to Checkout</a>
              
              </div>
            </div>
