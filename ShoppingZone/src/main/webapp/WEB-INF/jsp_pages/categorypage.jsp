@@ -66,7 +66,7 @@
                       <h4 class="aa-product-title"><a href="#">${productList.productName }</a></h4>
                       <span class="aa-product-price"><i class="fa fa-inr"></i> ${productList.productPrice }-/</span>
                       <p class="aa-product-descrip">${productList.productDescription }</p>
-                      <a class="aa-add-card-btn" style="color:black"href="addtocart?username=${User}&productId=${productList.productId}&quantity=1"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                      <a class="aa-add-card-btn" style="color:red"href="addtocart?username=${User}&productId=${productList.productId}&quantity=1"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                     </figcaption>
                   </figure>                         
                   <div class="aa-product-hvr-content">
@@ -173,7 +173,7 @@
           <aside class="aa-sidebar">
             <!-- single sidebar -->
             <div class="aa-sidebar-widget">
-              <h3>Category</h3>
+             
               <ul class="aa-catg-nav">
                 <li><a href="#">${categorynamelist}</a></li>
               </ul>
@@ -186,9 +186,9 @@
                <form action="">
                   <div id="skipstep" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
                   </div>
-                  <span id="skip-value-lower" class="example-val">30.00</span>
-                 <span id="skip-value-upper" class="example-val">100.00</span>
-                 <button class="aa-filter-btn" type="submit">Filter</button>
+                  <span id="skip-value-lower" class="example-val">30.00</span><br>
+                 <span id="skip-value-upper" class="example-val">100.00</span><br>
+                 <button class="aa-filter-btn" type="submit" style="color:black">Filter</button>
                </form>
               </div>              
 
@@ -199,10 +199,10 @@
               <div class="aa-recently-views">
                 <ul>
                   <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-2.jpg"></a>
+                    <a href="#" class="aa-cartbox-img"><img alt="img" src="<c:url value="/resources/images/product/07.jpg"/>"></a>
                     <div class="aa-cartbox-info">
-                      <h4><a href="#">${list.productName}</a></h4>
-                      <p><i class="fa fa-inr"></i>${list.productPrice}</p>
+                      <h4><a href="#">Hockey Sticks</a></h4>
+                      <p><i class="fa fa-inr"></i>Rs.499</p>
                     </div>                    
                   </li>
                    </ul>

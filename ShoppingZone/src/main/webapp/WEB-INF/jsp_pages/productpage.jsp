@@ -50,7 +50,7 @@
                   <div class="aa-product-view-slider">                                
                     <div id="demo-1" class="simpleLens-gallery-container">
                       <div class="simpleLens-container">
-                        <div class="simpleLens-big-image-container"><a data-lens-image="<c:url value="/resources/product/${productbyId.productId }.png"/>" class="simpleLens-lens-image"><img src="<c:url value="/resources/product/${productbyId.productId }.png"/>" class="simpleLens-big-image"></a></div>
+                        <div class="simpleLens-big-image-container"><a data-lens-image="<c:url value="/resources/images/product/${productbyId.productId }.jpeg"/>" class="simpleLens-lens-image"><img src="<c:url value="/resources/images/product/${productbyId.productId }.jpeg"/>" class="simpleLens-big-image"></a></div>
                       </div>
                       <!-- <div class="simpleLens-thumbnails-container">
                           <a data-big-image="img/view-slider/medium/polo-shirt-1.png" data-lens-image="img/view-slider/large/polo-shirt-1.png" class="simpleLens-thumbnail-wrapper" href="#">
@@ -72,9 +72,9 @@
                     <h3>${productbyId.productName}</h3>
                     <div class="aa-price-block">
                       <span class="aa-product-view-price"><i class="fa fa-inr"></i> ${productbyId.productPrice}/-</span>
-                      <p class="aa-product-avilability">Availability: <span>${stock}</span></p>
+                      <p class="aa-product-avilability">Availability: <span>15</span></p>
                     </div>
-                    <p>${productbyId.productDescription}</p>
+                    Product details:<p>${productbyId.productDescription}</p>
                     <div class="aa-prod-quantity">
       
 <form action="addtocart">
@@ -103,7 +103,7 @@
             
               <!-- Related product -->
             <div class="aa-product-related-item">
-              <h3>Related Products</h3>
+              
               <ul class="aa-product-catg aa-related-item-slider">
                
                 <c:forEach var="productList" items="${productList}">
@@ -111,7 +111,7 @@
                 <!-- start single product item -->
                 <li>
                   <figure>
-                    <a class="aa-product-img" href="productpage?productId=${productList.productId}"><img src="<c:url value="/resources/product/${productList.productId }.png"/>" style="height:250px;width:250px" alt="${productList.productId}"></a>
+                    <a class="aa-product-img" href="productpage?productId=${productList.productId}"><img src="<c:url value="/resources/product/${productList.productId }.jpeg"/>" style="height:250px;width:250px" alt="${productList.productId}"></a>
                     <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                      <figcaption>
                       <h4 class="aa-product-title"><a href="#">${productList.productName}</a></h4>

@@ -48,7 +48,7 @@
 </td></tr></table>
 <input type="hidden" name="${_csrf.paramterName }" value="${_csrf.token }">
 </form:form><br>
- Are you a new user?<a href="register" style="text-decoration: none; color:black;"><u>signup</u></a> here...
+ <h5>Are you a new user?<a href="register" style="text-decoration: none; color:black;"><u>SignUp</u></a> here...</h5>
 <br><br>
 ${result}<br><br><br>
 <%@ include file="footer.jsp" %>

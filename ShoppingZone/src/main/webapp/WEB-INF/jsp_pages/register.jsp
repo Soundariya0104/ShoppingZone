@@ -32,65 +32,226 @@
     <!-- Modernizr JS -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     
-        
+    <!-- ------------------------password strength password matching-------------------------------- -->
+ 
+<script>
+$(document).ready(function() {
+	$('#password').keyup(function() {
+	$('#result').html(checkStrength($('#password').val()))
+	})
+	function checkStrength(password) {
+	var strength = 0
+	if (password.length < 6) {
+	$('#result').removeClass()
+	$('#result').addClass('short')
+	return 'very short'
+	}
+	if (password.length > 7) strength += 1
+	// If password contains both lower and uppercase characters, increase strength value.
+	if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) strength += 1
+	// If it has numbers and characters, increase strength value.
+	if (password.match(/([a-zA-Z])/) && password.match(/([0-9])/)) strength += 1
+	// If it has one special character, increase strength value.
+	if (password.match(/([!,%,&,@,#,$,^,*,?,_,~])/)) strength += 1
+	// If it has two special characters, increase strength value.
+	if (password.match(/(.*[!,%,&,@,#,$,^,*,?,_,~].*[!,%,&,@,#,$,^,*,?,_,~])/)) strength += 1
+	// Calculated strength value, we can return messages
+	// If value is less than 2
+	if (strength < 2) {
+	$('#result').removeClass()
+	$('#result').addClass('weak')
+	return 'Weak'
+	} else if (strength == 2) {
+	$('#result').removeClass()
+	$('#result').addClass('good')
+	return 'Good'
+	} else {
+	$('#result').removeClass()
+	$('#result').addClass('strong')
+	return 'Strong'
+	}
+	}
+	});
+</script>
+
+<!-- ------------------------username strength validating-------------------------------- -->
+
+<script>
+$(document).ready(function() {
+	$('#username').keyup(function() {
+	$('#resultusername').html(checkStrength($('#username').val()))
+	})
+	function checkStrength(username) {
+	
+	if (username.length <= 3) {
+	$('#resultusername').removeClass()
+	$('#resultusername').addClass('weak')
+	return 'Enter atleast 4 Characters'
+	}
+
+	if (username.length >=4) {
+	$('#resultusername').removeClass()
+	$('#resultusername').addClass('short')
+	return ''
+	}}
+	});
+</script>
+
+<!-- ------------------------password and confirm password matching-------------------------------- -->
+
+<script>
+$(document).ready(function() {
+	$('#confirmpassword').keyup(function() {
+	$('#resultconfirmpassword').html(check($().val()))
+	})
+	function check() {
+		var a = document.getElementById("password").value;
+        var b = document.getElementById("confirmpassword").value;
+	if (a==b) {
+	$('#resultconfirmpassword').removeClass()
+	$('#resultconfirmpassword').addClass('short')
+	return ''
+	}
+
+	if (a!=b) {
+	$('#resultconfirmpassword').removeClass()
+	$('#resultconfirmpassword').addClass('short')
+	return 'Password doesnt match'
+	}}
+	});
+	
+</script>
+
+
+
+<!-- ------------------------email validation-------------------------------- -->
+
+<script>
+ $(document).ready(function() {
+ 	$('#emailId').keyup(function() {
+ 	$('#resultemail').html(check($().val()))
+ 	})
+ 	function check() {
+ 		var a = document.getElementById("emailId").value;
+ 		var regExpEmail = /^([_a-zA-Z0-9-]+)(\.[_a-zA-Z0-9-]+)*@([a-zA-Z0-9-]+\.)+([a-zA-Z]{2,3})$/;
+ 	if (regExpMail.test(emailid) == false) {
+ 	$('#resultemail').removeClass()
+ 	$('#resultemail').addClass('short')
+ 	return 'Enter valid email address'
+ 	}
+
+ 	if (regExpMail.test(emailId) == true) {
+ 		$('#resultemail').removeClass()
+ 		$('#resultemail').addClass('short')
+ 		return ''
+ 		}
+ }
+ 	});
+	
+ </script> 
+
+
+<!-- ------------------------mobile strength validating-------------------------------- -->
+
+<script>
+$(document).ready(function() {
+	$('#mobile').keyup(function() {
+	$('#resultmobile').html(checkStrength($('#mobile').val()))
+	})
+	function checkStrength(mobile) {
+	
+	if (mobile.length != 10) {
+	$('#resultmobile').removeClass()
+	$('#resultmobile').addClass('weak')
+	return 'Enter valid mobile number'
+	}
+
+	if (mobile.length ==10) {
+	$('#resultmobile').removeClass()
+	$('#resultmobile').addClass('short')
+	return ''
+	}}
+	});
+</script>
+
+
+
+
+<style type = "text/css">
+ .short{
+font-weight:bold;
+color:#FF0000;
+font-size:smaller;
+}
+ .weak{
+font-weight:bold;
+color:red;
+font-size:smaller;
+}
+ .good{
+font-weight:bold;
+color:orange;
+font-size:smaller;
+}
+ .strong{
+font-weight:bold;
+color: green;
+font-size:smaller;
+}
+</style>
+
 </head>
 
+
 <body>
-<%@ include file="header.jsp" %>
-	
-	<h3>Register with us!!</h3>
-	<form:form action="registersuccess" method="post" commandName="user">
-		<table>
-			<tr>
-				<td>Your good name:</td>
-				<td><form:input type="text" path="username" /></td>
-			</tr>
+ <%@ include file="header.jsp"%>
+ 
 
-			<tr>
-				<td>Email_id:</td>
-				<td><form:input type="email" id="emailId" path="emailId"  /> </td>
-			</tr>
-
-			<tr>
-				<td>Password:</td>
-				<td><form:input type="password" 
-						path="password"  /></td>
-			</tr>
-
-			<tr>
-				<td>Confirm Password:</td>
-				<td><input type="password"/> </td>
-			</tr>
-
-			<tr>
-				<td>DOB:</td>
-				<td><form:input type="text" path="dob" /></td>
-			</tr>
-			<tr>
-				<td>Mobile_No:</td>
-				<td><form:input type="text" path="mobile" pattern="[7|8|9]{10}"/> </td>
-			</tr>
-		</table>
-		<table>
-			Address:
-			
-			<tr>
-				<td>Street name:</td>
-				<td><form:input type="text" path="streetname" /></td>
-			</tr>
-
-			<tr>
-				<td>City name:</td>
-				<td><form:input type="text" path="cityname" /></td>
-			</tr>
-			<tr>
-				<td>Pincode:</td>
-				<td><form:input type="text" path="pinCode" pattern="[6]{6}"/></td>
-			</tr>
-       </table>
-       
-       <input type="submit" value="Register"/>
-	</form:form>
+            
+                 <h4 style="text-align:center">Registration Form</h4>
+                
+                
+                 <h6>Register with us!!</h6>
+                 <br>
+	             <form:form action="registersuccess" method="post" commandName="user">
+                    <label for="">Enter Your Name<span>*</span></label><br>
+                    
+                    <form:input type="text" title="id should have max 15 min 3 char" pattern="[A-Za-z]{3,15}" id="username" placeholder="Enter your username" path="username" required="true"/><span id="resultusername"></span><br>
+                    
+                    <label for="">Create Password<span>*</span></label>
+                    <form:input id="password" type="password" placeholder="Enter your Password" pattern="{5,8}[a-z0-9]" path="password" required="true" /><span id="result"></span><br>
+                    
+                    
+                    <label for="">Confirm Password<span>*</span></label>
+                    <input type="password" id="confirmpassword" placeholder="Enter your confirm Password"><span id="resultconfirmpassword"></span><br>
+                    
+                  
+                    
+                    <label for="">Email<span>*</span></label>
+                    <form:input type="email" placeholder="Enter your Email Address" id="emailId" path="emailId" required="true" style="border: 1px solid #ccc;
+  font-size: 16px;
+  height: 40px;
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 100%;"/><span id="resultemail"></span><br>
+                    
+                    <label for="">Mobile No.<span>*</span></label>
+                     <form:input type="text" id="mobile" placeholder="Enter your Mobile Number" path="mobile" pattern="[7/8/9]{10}" /> <span id="resultmobile"></span><br> 
+                    
+                    <label for=""> DOB  <span>*</span></label>
+                    <form:input type="text" placeholder="DD/MM/YY" path="dob" />
+                    
+                    <label for=""> Street Name: <span>*</span></label>
+                    <form:input type="text" placeholder="Enter your Street Name" path="streetname" />
+                    
+                    <label for="" style="width:52%;">City</label><label for="">Pin-Code</label>  <br>
+                    <form:input type="text" placeholder="Enter your City Name" path="cityname" style="width:47%;"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                
+                    <form:input type="text" placeholder="Enter your Pincode" path="pinCode" style="width:47%;"  /><br>
+                    <br><br>
+                    
+                    <input type="submit" value="Register"/>                     
+                  </form:form>
 <%@ include file="footer.jsp" %>
 <!-- Body main wrapper end -->
 

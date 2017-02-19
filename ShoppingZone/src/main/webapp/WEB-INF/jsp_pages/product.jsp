@@ -74,6 +74,7 @@
 						
 						<form:input type="text"
 								value="${values.getProductName()}" path="productName" style="border: 1px solid #ccc;
+  font-color:black;
   font-size: 16px;
   height: 40px;
   margin-bottom: 15px;
@@ -141,6 +142,7 @@
 					    <label for="">Product Name:</label><br>	
 						<form:input type="text"
 								placeholder="Enter the ProductName"  path="productName" style="border: 1px solid #ccc;
+  color:black;
   font-size: 16px;
   height: 40px;
   margin-bottom: 15px;
@@ -234,15 +236,15 @@
                       
                       <tr>
 			<td>${listValue.productId}</td>
-                        <td><a class="aa-cart-title" href="#">${listValue.productName}</a></td>
+                        <td><a class="aa-cart-title" href="#" style="color:black">${listValue.productName}</a></td>
                        <td>${listValue.productDescription}</td>
 			<td>${listValue.categoryId}</td>
 			<td>${listValue.supplierId}</td>
 			<td>${listValue.productPrice}</td>
-			<td><a href="#"><img src="<c:url value="/resources/product/${listValue.productId}.png"/>" alt="${listValue.productId}"></a></td>
+			<td><a href="#"><img  style="heigth:50px;width:50px;" src="<c:url value="/resources/images/product/${listValue.productId}.jpeg"/>" alt="${listValue.productId}"></a></td>
 			<td style="border-right:white">
-			<form action="deleteproduct"><button name="productId" class="aa-cart-view-btn"  type="submit"  value=${listValue.productId} style="heigth:2px;">Delete</button></form></td>
-			<td><form action="editproduct"><button name="productId" class="aa-cart-view-btn" type="submit" value=${listValue.productId} style="heigth:1px">Edit</button></form></td>	
+			<form action="deleteproduct"><button name="productId" class="aa-cart-view-btn"  type="submit"  value=${listValue.productId} style="heigth:2px;color:black">Delete</button></form></td>
+			<td><form action="editproduct"><button name="productId" class="aa-cart-view-btn" type="submit" value=${listValue.productId} style="heigth:1px;color:black">Edit</button></form></td>	
 		</tr>			</c:forEach>		  
 			 
                       </tbody>
