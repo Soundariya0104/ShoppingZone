@@ -135,7 +135,7 @@
 				<tr>
 					<td>${listValue.categoryId}</td>
 					<td>${listValue.categoryName}</td>
-					<td style="border-right:white"><form action="deletecategory"> <button name="categoryId" type="submit" style="color:black;" ${listValue.categoryId}>Delete</button></form></td>
+					<td style="border-right:white"><form action="deletecategory"> <button name="categoryId" type="submit" style="color:black;" value=${listValue.categoryId}>Delete</button></form></td>
 					<td><form action="editcategory"><button name="categoryId" type="submit" style="color:black;" value=${listValue.categoryId}>Edit</button></form></td>
 					</tr>
 					</c:forEach>
@@ -164,6 +164,6 @@
     <script src="<c:url value="/resources/js/plugins.js"/>"></script>
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="<c:url value="/resources/js/main.js"/>"></script>
-    </div>
+    
     </body>
     </html>

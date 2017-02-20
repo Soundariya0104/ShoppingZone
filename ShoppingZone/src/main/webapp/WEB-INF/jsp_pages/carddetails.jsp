@@ -52,9 +52,9 @@
                  <form:form action="cardpaymentsuccess" class="aa-login-form" commandName="carddetail">
                    
                     <label for="">Card Number</label><br>
-                    <form:input type="text" placeholder="First Name" path="cardNumber" value=""/>
+                    <form:input type="text" placeholder="First Name" path="cardNumber"pattern="[0123456789][0-9]{11}" title="card number should contain 12 digits and should be vaild" value=""/>
                     
-                    <label for="">Expiration Month</label>
+                    <label for="">Expiry Month</label>
                     <form:select path="expDate">
     <option value="01">Jan</option>
     <option value="02">Feb</option>
@@ -87,7 +87,7 @@
   </form:select>  <br>
                     
                     <label for="">CVV/CVC</label>
-                    <form:input type="password"  placeholder="cvv" path="cvv" value=""/>
+                    <form:input type="password"  placeholder="cvv" path="cvv" pattern="[0-9]{3}" title="cvv number should contain only 3 digits" value=""/>
              
                        
                     <label for="">Card Holder's Name:</label>

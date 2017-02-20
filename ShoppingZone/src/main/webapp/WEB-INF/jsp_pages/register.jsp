@@ -31,10 +31,7 @@
     
     <!-- Modernizr JS -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-    
-    <!-- ------------------------password strength password matching-------------------------------- -->
- 
-<script>
+    <script>
 $(document).ready(function() {
 	$('#password').keyup(function() {
 	$('#result').html(checkStrength($('#password').val()))
@@ -44,7 +41,7 @@ $(document).ready(function() {
 	if (password.length < 6) {
 	$('#result').removeClass()
 	$('#result').addClass('short')
-	return 'very short'
+	return 'Too short'
 	}
 	if (password.length > 7) strength += 1
 	// If password contains both lower and uppercase characters, increase strength value.
@@ -74,32 +71,7 @@ $(document).ready(function() {
 	});
 </script>
 
-<!-- ------------------------username strength validating-------------------------------- -->
-
-<script>
-$(document).ready(function() {
-	$('#username').keyup(function() {
-	$('#resultusername').html(checkStrength($('#username').val()))
-	})
-	function checkStrength(username) {
-	
-	if (username.length <= 3) {
-	$('#resultusername').removeClass()
-	$('#resultusername').addClass('weak')
-	return 'Enter atleast 4 Characters'
-	}
-
-	if (username.length >=4) {
-	$('#resultusername').removeClass()
-	$('#resultusername').addClass('short')
-	return ''
-	}}
-	});
-</script>
-
-<!-- ------------------------password and confirm password matching-------------------------------- -->
-
-<script>
+    <script>
 $(document).ready(function() {
 	$('#confirmpassword').keyup(function() {
 	$('#resultconfirmpassword').html(check($().val()))
@@ -124,59 +96,6 @@ $(document).ready(function() {
 
 
 
-<!-- ------------------------email validation-------------------------------- -->
-
-<script>
- $(document).ready(function() {
- 	$('#emailId').keyup(function() {
- 	$('#resultemail').html(check($().val()))
- 	})
- 	function check() {
- 		var a = document.getElementById("emailId").value;
- 		var regExpEmail = /^([_a-zA-Z0-9-]+)(\.[_a-zA-Z0-9-]+)*@([a-zA-Z0-9-]+\.)+([a-zA-Z]{2,3})$/;
- 	if (regExpMail.test(emailid) == false) {
- 	$('#resultemail').removeClass()
- 	$('#resultemail').addClass('short')
- 	return 'Enter valid email address'
- 	}
-
- 	if (regExpMail.test(emailId) == true) {
- 		$('#resultemail').removeClass()
- 		$('#resultemail').addClass('short')
- 		return ''
- 		}
- }
- 	});
-	
- </script> 
-
-
-<!-- ------------------------mobile strength validating-------------------------------- -->
-
-<script>
-$(document).ready(function() {
-	$('#mobile').keyup(function() {
-	$('#resultmobile').html(checkStrength($('#mobile').val()))
-	})
-	function checkStrength(mobile) {
-	
-	if (mobile.length != 10) {
-	$('#resultmobile').removeClass()
-	$('#resultmobile').addClass('weak')
-	return 'Enter valid mobile number'
-	}
-
-	if (mobile.length ==10) {
-	$('#resultmobile').removeClass()
-	$('#resultmobile').addClass('short')
-	return ''
-	}}
-	});
-</script>
-
-
-
-
 <style type = "text/css">
  .short{
 font-weight:bold;
@@ -185,22 +104,26 @@ font-size:smaller;
 }
  .weak{
 font-weight:bold;
-color:red;
+color:orange;
 font-size:smaller;
 }
  .good{
 font-weight:bold;
-color:orange;
+color:#2D98F3;
 font-size:smaller;
 }
  .strong{
 font-weight:bold;
-color: green;
+color: limegreen;
 font-size:smaller;
 }
 </style>
 
-</head>
+
+
+    
+    
+    </head>
 
 
 <body>
@@ -216,10 +139,10 @@ font-size:smaller;
 	             <form:form action="registersuccess" method="post" commandName="user">
                     <label for="">Enter Your Name<span>*</span></label><br>
                     
-                    <form:input type="text" title="id should have max 15 min 3 char" pattern="[A-Za-z]{3,15}" id="username" placeholder="Enter your username" path="username" required="true"/><span id="resultusername"></span><br>
+                    <form:input type="text" title="id should have max 15 min 3 char" pattern="[A-Za-z]{3,15}" id="username" placeholder="Enter your username" path="username" required="true"/><br>
                     
                     <label for="">Create Password<span>*</span></label>
-                    <form:input id="password" type="password" placeholder="Enter your Password" pattern="{5,8}[a-z0-9]" path="password" required="true" /><span id="result"></span><br>
+                    <form:input id="password" type="password" placeholder="Enter your Password" title="password should contains both lower and uppercase ,numbers,atleast one special characters  " path="password" required="true" /><span id="result"></span><br>
                     
                     
                     <label for="">Confirm Password<span>*</span></label>
@@ -233,21 +156,21 @@ font-size:smaller;
   height: 40px;
   margin-bottom: 15px;
   padding: 10px;
-  width: 100%;"/><span id="resultemail"></span><br>
+  width: 100%;"/><br>
                     
                     <label for="">Mobile No.<span>*</span></label>
-                     <form:input type="text" id="mobile" placeholder="Enter your Mobile Number" path="mobile" pattern="[7/8/9]{10}" /> <span id="resultmobile"></span><br> 
+                     <form:input type="text" id="mobile" placeholder="Enter your Mobile Number" path="mobile" title="mobile number should start with either 7/8/9 and should contain 10 digits" pattern="[789][0-9]{9}" /><br> 
                     
                     <label for=""> DOB  <span>*</span></label>
-                    <form:input type="text" placeholder="DD/MM/YY" path="dob" />
+                    <form:input type="text" placeholder="Enter your date of birth" id="dob" path="dob" />
                     
                     <label for=""> Street Name: <span>*</span></label>
                     <form:input type="text" placeholder="Enter your Street Name" path="streetname" />
                     
-                    <label for="" style="width:52%;">City</label><label for="">Pin-Code</label>  <br>
+                    <label for="" style="width:52%;">City<span>*</span></label><label for="">Pin-Code<span>*</span></label>  <br>
                     <form:input type="text" placeholder="Enter your City Name" path="cityname" style="width:47%;"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 
-                    <form:input type="text" placeholder="Enter your Pincode" path="pinCode" style="width:47%;"  /><br>
+                    <form:input type="text" placeholder="Enter your Pincode" path="pinCode" pattern="[6][0-9]{5}" title="pincode should contain 6 digits and should be valid ex:6XXXXX" style="width:47%;"  /><br>
                     <br><br>
                     
                     <input type="submit" value="Register"/>                     

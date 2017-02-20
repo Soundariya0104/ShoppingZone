@@ -50,11 +50,22 @@
                     <div class="row">
                         <div class="col-md-3 col-sm-3 col-xs-6">
                             <div class="login-register-area">
-                                <ul>
+                            <ul>
+                            <c:if test="${ isAdmin != true  }">
+                 <c:forEach var="categoryList" items="${categoryList}">
+                    
+              <li><a href="categorypage?categoryId=${categoryList.categoryId}">${categoryList.categoryName} </a></li>
+    
+                </c:forEach>
+                </c:if>
+                
+                <c:if test="${ isAdmin == true  }">
+                            
+                                
                                     <li><a href="category">Category</a></li>
                                     <li><a href="supplier">Supplier</a></li>
 									<li><a href="product">Product</a></li>
-									
+									</c:if>
                                 </ul>
                             </div>
                         </div>
@@ -94,7 +105,7 @@
                         <div class="row">
                             <div class="col-md-2 col-sm-2">
                                 <div class="logo ptb-20"><a href="index.html"> 
-                                <a href="index.html">
+                                
                                          <!--  <span class="fa fa-shopping-cart"></span>-->
                                          <p><h3 style="color:red"><b><i>Sports<strong>Focus</strong></i></b></h3></p>
                                          </a>         

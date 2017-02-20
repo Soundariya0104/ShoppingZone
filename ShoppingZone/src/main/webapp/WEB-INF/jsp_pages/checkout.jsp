@@ -71,12 +71,12 @@
                           <div class="row">
                             <div class="col-md-12">
                               <div class="aa-checkout-single-bill">
-                               Email: <form:input type="email" placeholder="Email Address*" path="billingEmail"/>
+                               Email: <form:input type="email" placeholder="Email Address*" id="emailId" path="emailId" required="true"path="billingEmail"/>
                               </div>                             
                             </div>
                             <div class="col-md-12">
                               <div class="aa-checkout-single-bill">
-                              Phone:  <form:input type="tel" placeholder="Phone*" path="billingPhone" />
+                              Phone:  <form:input type="tel" placeholder="Phone*" path="billingPhone" title="mobile number should start with either 7/8/9 and should contain 10 digits" pattern="[789][0-9]{9}" />
                               </div>
                             </div>
                           </div> 
@@ -100,12 +100,13 @@
                                   <option value="6">Goa</option>
                                   <option value="7">Kolkata</option>
                                   <option value="8">Cochin</option>
+                                  <option value="9">bangalore</option>
                                    </form:select>
                               </div>                             
                             </div>
 <div class="col-md-12">
                             PinCode:  <div class="aa-checkout-single-bill">
-                                <form:input type="text" placeholder="Postcode / ZIP*" path="billingPincode"/>
+                                <form:input type="text" placeholder="Postcode / ZIP*" pattern="[6][0-9]{5}" title="pincode should contain 6 digits and should be valid ex:6XXXXX" title="pincode should contain 6 digits and should be valid" path="billingPincode"/>
                               </div>
                             </div>                            
                           </div>

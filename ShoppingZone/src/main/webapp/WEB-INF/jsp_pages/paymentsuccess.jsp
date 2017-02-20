@@ -39,7 +39,7 @@
  <%@ include file="header_user.jsp"%>
  
   <Strong><h2>Payment has been SuccessFully done, Thank you</h2></Strong><br>
- <a href="finalindex?username=${User}"><button class="aa-browse-btn" style="color:black">Continue Shopping</button></a>
+ <a href="finalindex?username=${User}"><button class="aa-browse-btn" style="color:black;text-align:center">Continue Shopping</button></a>
  
   <%@ include file="footer.jsp"%>
  <!-- End of header area -->

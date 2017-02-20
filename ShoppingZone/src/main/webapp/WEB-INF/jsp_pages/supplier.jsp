@@ -58,82 +58,104 @@
 	<h5>Supplier page </h5>
 
 <c:choose><c:when test="${ not empty values}">
-	<table>
+	
 	<!-- spring form -->
 	<c:url var="action" value="/addsupplier"></c:url>
 	<form:form action="${action}" method="get" commandName="supplier">
 		
-					<tr>
-						<td>Supplier Id:</td>
-						<td><form:input type="text"
-								value="${values.getSupplierId() }" path="supplierId"   readonly="true" /></td>
-					</tr>
-					<tr>
-						<td>Supplier Name:</td>
-						<td><form:input type="text"
-								value="${values.getSupplierName()}" path="supplierName" /></td>
-					<tr><td>Supplier Details:</td>
-						<td><form:input type="text"
-								value="${values.getSupplierDetails()}" path="supplierDetails" />
-						</td>
-					</tr>
-		<tr><td>			<input type="submit" style="color:black;" value="Edit supplier"/></td></tr>
-		</form:form></table>
+					<label for="">Supplier Id:</label>
+						<form:input type="text"
+								value="${values.getSupplierId() }" path="supplierId"    readonly="true" style="border: 1px solid #ccc;
+  font-size: 16px;
+  height: 40px;
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 100%;" />					
+						<label for="">Supplier Name:</label>
+						<form:input type="text"
+								value="${values.getSupplierName()}" path="supplierName" style="border: 1px solid #ccc;
+  font-size: 16px;
+  height: 40px;
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 100%;"  />
+                        <label for="">Supplier Details:</label>
+						<form:input type="text"
+								value="${values.getSupplierDetails()}" path="supplierDetails" style="border: 1px solid #ccc;
+  font-size: 16px;
+  height: 40px;
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 100%;"  />
+							<button class="aa-browse-btn" type="submit" style="color:black;">Edit Supplier</button>
+		</form:form>
 				</c:when>
-				<c:otherwise><table>
+				<c:otherwise>
 	<c:url var="action" value="/addsupplier"></c:url>
 	<form:form action="${action}" method="get" commandName="supplier">
 	
-			<tr>
-						<td>Supplier Id:</td>
-						<td><form:input type="text"
-								placeholder="enter the supplier id" path="supplierId" /></td>
-					</tr>
-					<tr>
-						<td>Supplier Name:</td>
-						<td><form:input type="text"
-								placeholder="enter the suplier name" path="supplierName" /></td>
-					<tr><td>Supplier details:</td>
-						<td><form:input type="text"
-placeholder="enter the supplierdetails" path="supplierDetails" />
-						</td>
-					</tr>
-		<tr><td>			<input type="submit" style="color:black;" value="Add supplier"></td></tr>
+			<label for="">Supplier Id:</label>
+						<form:input type="text"
+								value="${values.getSupplierId() }" path="supplierId" style="border: 1px solid #ccc;
+  font-size: 16px;
+  height: 40px;
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 100%;" />					
+						<label for="">Supplier Name:</label>
+						<form:input type="text"
+								value="${values.getSupplierName()}" path="supplierName" style="border: 1px solid #ccc;
+  font-size: 16px;
+  height: 40px;
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 100%;"  />
+                        <label for="">Supplier Details:</label>
+						<form:input type="text"
+								value="${values.getSupplierDetails()}" path="supplierDetails" style="border: 1px solid #ccc;
+  font-size: 16px;
+  height: 40px;
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 100%;"  />
+							<button class="aa-browse-btn" type="submit" style="color:black;">Add Supplier</button>
+
 		</form:form>
-				</table>
+			
 					</c:otherwise>
 			</c:choose>
 	<br>
 	<br>
-	<strong>Supplier List</strong>
-	<c:if test="${not empty list}">
-
-		<table style="border: 1px solid black;">
-			<tr style="border: 1px solid black;">
+	</div></div></div></div></div></div></div></section>
+	<section id="cart-view">
+   <div class="container">
+     <div class="row">
+       <div class="col-md-12">
+         <div class="cart-view-area">
+           <div class="cart-view-table">
+			<div class="page-header"><h3><strong>Supplier List</strong></h3></div>
+               <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
 				<th>Supplier Id</th>
 				<th>Supplier Name</th>
 				<th>Supplier Details</th>
-				<th>Options</th>
-			</tr>
+				<th colspan="2">Options</th>
+			</tr></thead>
+			<tbody>
 			<c:forEach var="listValue" items="${list}">
 				<tr>
 					<td>${listValue.supplierId}</td>
 					<td>${listValue.supplierName}</td>
 					<td>${listValue.supplierDetails}</td>
-					<td><form action="deletesupplier">
-							<button name="supplierId" type="submit" style="color:black;"
-								value=${listValue.supplierId}>Delete</button>
-						</form></td>
-					<td><form action="editsupplier">
-							<button name="supplierId" type="submit" style="color:black;"
-								value=${listValue.supplierId} >Edit</button>
-						</form></td>
-				</tr>
-			</c:forEach>
-		</table>
-
-	</c:if>
-</div>
+					<td style="border-right:white"><form action="deletesupplier"> <button name="supplierId" type="submit" style="color:black;" value=${listValue.supplierId}>Delete</button></form></td>
+					<td><form action="editsupplier"><button name="supplierId" type="submit" style="color:black;" value=${listValue.supplierId}>Edit</button></form></td>
+					</tr>
+					</c:forEach>
+					    </tbody>
+                  </table>
+                </div>
 </div></div></div></div></div></section>
  <%@ include file="footer.jsp"%>
  <!-- End of header area -->

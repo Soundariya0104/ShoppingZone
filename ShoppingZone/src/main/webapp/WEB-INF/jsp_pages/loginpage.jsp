@@ -36,18 +36,38 @@
 <body>
 <%@ include file="header.jsp" %>
 <br><br><br>
-
+<h3 style="text-align:center">LOGIN PAGE</h3><br><br>
 <h4>Login here!!</h4>
-<c:url var="action" value="loginresult"></c:url>
-<form:form action="${action}" method="post" commandName="user">
-<table>
-<tr>
-<td>Username:</td> <td><form:input type="text" path="username" placeholder="Enter username"/></td></tr>
-<tr><td>Password:</td> <td><form:input type="password" path="password" placeholder="Enter password"/></td></tr>
-<tr><td><input type="submit" value="Sign in ">
-</td></tr></table>
-<input type="hidden" name="${_csrf.paramterName }" value="${_csrf.token }">
-</form:form><br>
+<form:form action="loginresult" method="post" commandName="user">
+                    <div id="collapseThree" >
+                        <div class="panel-body">
+                          <div class="row">
+                            <div class="col-md-8">
+                              <div class="aa-checkout-single-bill">
+                               Username:  <form:input type="text" placeholder="Enter your username" path="username"/> 
+                              </div>                             
+                            </div>
+                             </div> 
+                          
+                          <div class="row">
+                            <div class="col-md-8">
+                              <div class="aa-checkout-single-bill">
+                               Password: <form:input type="password" placeholder="Email your password"  path="password" />
+                              </div>                             
+                            </div>
+                            </div><br>
+                            <div class="row">
+                            <div class="col-md-8">
+                              <div class="aa-checkout-single-bill">
+                                <input type="submit" value="Login" />
+                              </div>                             
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                      
+                    <input type="hidden" name="${_csrf.paramterName }" value="${_csrf.token }">
+                    </form:form><br>
  <h5>Are you a new user?<a href="register" style="text-decoration: none; color:black;"><u>SignUp</u></a> here...</h5>
 <br><br>
 ${result}<br><br><br>
@@ -71,3 +91,4 @@ ${result}<br><br><br>
     <script src="<c:url value="/resources/js/main.js"/>"></script>
 </body>
 </html>
+

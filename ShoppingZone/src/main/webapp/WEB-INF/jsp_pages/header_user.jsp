@@ -120,7 +120,7 @@
                         <div class="row">
                             <div class="col-md-2 col-sm-2">
                                 <div class="logo ptb-20"><a href="index.html"> 
-                                <a href="index.html">
+                               
                                          <!-- <span class="fa fa-shopping-cart"></span>-->
                                         <p><h3 style="color:red"><b><i>Sports<strong>Focus</strong></i></b></h3></p>
                                          </a>         
