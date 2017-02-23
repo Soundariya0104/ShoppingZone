@@ -12,36 +12,33 @@ import org.springframework.web.servlet.ModelAndView;
 import com.niit.dao.CategoryDAO;
 import com.niit.model.Category;
 
-
 @Controller
 public class CategoryController {
-    @Autowired(required = true)
-    private CategoryDAO categoryDAO;
+	@Autowired(required = true)
+	private CategoryDAO categoryDAO;
 
-
-    Logger log = LoggerFactory.getLogger(CategoryController.class); //logger and loogerfactory class declared for this Class
-
-	// ---------------------------------category-------------------------------
-	@RequestMapping(value = "/category", method = RequestMethod.GET)	//mapping for "/category"
-	public ModelAndView categoryPage() {
-        log.debug("inside category controller");		                        //performing a logger debug
-	    ModelAndView model = new ModelAndView("category", "category", new Category()); //adding a page to ModelAndView with empty constructor
-		model.addObject("list", categoryDAO.getCategoryList());						//adding a Object to value "list"
-		
-		return model;
-		}
-
+	Logger log = LoggerFactory.getLogger(CategoryController.class); // logger and loggerfactory class declared for this class
 	
-    // ---------------------------------add----------------------------------
-	@RequestMapping(value = "/addcategory", method = RequestMethod.GET)		//mapping for "/addcategory"
+	// ---------------------------------category----------------------------------------------------//
+	@RequestMapping(value = "/category", method = RequestMethod.GET) // mapping for "/category"																		
+	public ModelAndView categoryPage() {
+		log.debug("inside category controller"); // performing a logger debug
+		ModelAndView model = new ModelAndView("category", "category", new Category()); // adding a page to ModelAndView with empty constructor
+		model.addObject("list", categoryDAO.getCategoryList()); // adding a object to value list
+        log.debug("end of category controller method");
+		return model;
+	}
+
+	// ---------------------------------addcategory--------------------------------------------------//
+	@RequestMapping(value = "/addcategory", method = RequestMethod.GET) // mapping for "/addcategory"
 	public String addCategory(Category category) {
 		log.debug("inside addcategory Controller");
 		categoryDAO.addCategory(category);
 		return "redirect:/category";
 	}
 
-	// ---------------------------------delete---------------------------------
-	@RequestMapping(value = "/deletecategory", method = RequestMethod.GET)		//mapping for "/deletecategory"
+	// ---------------------------------deletecategory-------------------------------------------------//
+	@RequestMapping(value = "/deletecategory", method = RequestMethod.GET) // mapping for "/deletecategory"
 	public String deleteCategory(@RequestParam("categoryId") String categoryId) {
 		System.out.println("hiii");
 		log.debug("inside deletecategory Controller");
@@ -50,18 +47,14 @@ public class CategoryController {
 
 	}
 
-	// ---------------------------------edit---------------------------------
-	@RequestMapping(value = "/editcategory", method = RequestMethod.GET)		//mapping for "/editcategory"
+	// ---------------------------------editcategory------------------------------------------------------------//
+	@RequestMapping(value = "/editcategory", method = RequestMethod.GET) // mapping for "/editcategory"
 	public ModelAndView editCategory(@RequestParam("categoryId") String categoryId) {
 		ModelAndView model = new ModelAndView("category", "category", new Category());
 		log.debug("inside editcategory Controller");
 		model.addObject("list", categoryDAO.getCategoryList());
-
-	model.addObject("values", categoryDAO.getById(categoryId));
-
+		model.addObject("values", categoryDAO.getById(categoryId));
 		return model;
 	}
-
-
 
 }

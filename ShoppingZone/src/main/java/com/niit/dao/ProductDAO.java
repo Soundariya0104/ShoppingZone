@@ -8,13 +8,13 @@ public interface ProductDAO {
 
 	public boolean addProduct(Product product);
 
-    public boolean deleteProduct(String productId);
+	public boolean deleteProduct(String productId);
 
 	public List<Product> getProductList();
 
-    public Product getById(String productId);
+	public Product getById(String productId);
 
-    public void saveOrUpdate(Product product);
+	public void saveOrUpdate(Product product);
 
-    public List<Product> getProductListbycategory(String string);
+	public List<Product> getProductListbycategory(String string);
 }

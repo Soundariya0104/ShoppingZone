@@ -14,15 +14,16 @@ public class WebflowHandler {
 	HttpSession session;
 	@Autowired
 	OrderDAO orderDAO;
-	
-	public Address initFlow(){
+
+	public Address initFlow() {
 		return new Address();
 	}
-	public Carddetail initFlow2(){
+
+	public Carddetail initFlow2() {
 		return new Carddetail();
 	}
 
-	public void initFlow4(){
+	public void initFlow4() {
 		orderDAO.removeorderbycartid((String) session.getAttribute("User"));
 	}
 }

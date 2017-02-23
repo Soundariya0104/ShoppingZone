@@ -9,14 +9,14 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "CATEGORY_TABLE")
-public class Category  {
+public class Category {
 
 	@Id
 	@Column(name = "categoryid")
 	private String categoryId;
 	@Column(name = "categoryname")
 	private String categoryName;
-	
+
 	public String getCategoryId() {
 		return categoryId;
 	}

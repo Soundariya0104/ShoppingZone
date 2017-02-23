@@ -42,19 +42,75 @@
 </head>
 <body>
 
-
-
 	<%@ include file="header.jsp"%>
+	<br>
+	<div class="container">
+		<div class="row">
+			<h4 class="page-header">User Profile</h4>
+			<div class="col-md-4">
+				<h2>${msg}</h2>
+				<div class="col-md-10 col-lg-10 " align="center">
+					<!--         <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" style="height:270px;width:100% "class="img-circle img-responsive">  -->
+				</div>
 
-	<%@ include file="carousel.jsp"%>
+			</div>
+			<div class="col-md-12">
+				<h3>Your details ${userDetails.username }!!</h3>
+				<div class=" col-md-9 col-lg-9 ">
+					<table class="table table-user-information">
+						<tbody>
+						<col width="200">
+						<col width="200">
 
-	<%@ include file="index-productlist.jsp"%>
+						<tr>
+							<td><span class="glyphicon glyphicon-asterisk text-primary"></span>&nbsp;&nbsp;Username
+							</td>
+							<td>:&nbsp;&nbsp; ${userDetails.username }</td>
+						</tr>
+						<tr>
+							<td><span class="glyphicon glyphicon-phone text-primary"></span>&nbsp;&nbsp;Mobile
+							</td>
+							<td>:&nbsp;&nbsp; ${userDetails.mobile }</td>
+						</tr>
 
-	<%@ include file="deliveryservice.jsp"%>
+						<tr>
+							<td><span class="glyphicon glyphicon-envelope text-primary"></span>&nbsp;&nbsp;Email
+								Id</td>
+							<td>:&nbsp;&nbsp; ${userDetails.emailId }</td>
+						</tr>
+
+						<tr>
+							<td><span class="glyphicon glyphicon-tags text-primary"></span>&nbsp;&nbsp;Streetname
+						    </td>
+							<td>:&nbsp;&nbsp; ${userDetails.streetname }</td>
+						</tr>
+						<tr>
+							<td><span class="glyphicon glyphicon-home text-primary"></span>&nbsp;&nbsp;Cityname
+								</td>
+							<td>: &nbsp;&nbsp;${userDetails.cityname }</a></td>
+						</tr>
+						<tr>
+							<td><span class="glyphicon glyphicon-send text-primary"></span>&nbsp;&nbsp;Pincode
+								</td>
+							<td>:&nbsp;&nbsp; ${userDetails.pinCode }</td>
+						</tr>
+
+
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<br>
+	<br>
+	<br>
 
 	<%@ include file="footer.jsp"%>
-	<!-- End of header area -->
-	<!-- Body main wrapper end -->
+	
+<!-- Body main wrapper end -->
 
 	<!-- Placed js at the end of the document so the pages load faster -->
 

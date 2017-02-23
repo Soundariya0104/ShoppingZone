@@ -11,10 +11,10 @@ public interface SupplierDAO {
 	public boolean deleteSupplier(String supplierId);
 
 	public List<Supplier> getSupplierList();
-	
+
 	public Supplier getById(String supplierId);
-	
+
 	public void saveOrUpdate(Supplier supplier);
 
-    public Supplier getByName(String name);
+	public Supplier getByName(String name);
 }

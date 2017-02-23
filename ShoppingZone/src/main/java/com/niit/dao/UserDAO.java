@@ -8,7 +8,7 @@ public interface UserDAO {
 	public User validationLogin(String userName, String password);
 
 	public boolean userDelete(String userName, String password);
-	
+
 	public User getById(String userName);
 
 }

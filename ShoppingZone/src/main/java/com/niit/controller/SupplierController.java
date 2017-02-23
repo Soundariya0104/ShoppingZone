@@ -15,47 +15,49 @@ import com.niit.model.Supplier;
 
 @Controller
 public class SupplierController {
-Logger log= LoggerFactory.getLogger(SupplierController.class);
+	Logger log = LoggerFactory.getLogger(SupplierController.class);
 
-    @Autowired
-    SupplierDAO supplierDAO;
-    // ---------------------------------supplier---------------------------------
-	@RequestMapping(value = "/supplier", method = RequestMethod.GET)			//mapping for "/supplier"
+	@Autowired
+	SupplierDAO supplierDAO;
+
+	// ---------------------------------supplier---------------------------------------------------------------------//
+	@RequestMapping(value = "/supplier", method = RequestMethod.GET) // mapping for supplier
 	public ModelAndView supplierPage(Model m) {
+		log.debug("inside supplier method");
 		ModelAndView model = new ModelAndView("supplier", "supplier", new Supplier());
 		model.addObject("list", supplierDAO.getSupplierList());
-		model.addObject("page_name","Supplier");
+		model.addObject("page_name", "Supplier");
+		log.debug("end of supplier method");
 		return model;
 	}
 
-    // ---------------------------------add---------------------------------
-	@RequestMapping(value = "/addsupplier", method = RequestMethod.GET)			//mapping for "addsupplier"
+	// ---------------------------------addsupplier------------------------------------------------------------------//
+	@RequestMapping(value = "/addsupplier", method = RequestMethod.GET) // mapping for addsupplier
 	public String addSupplier(Supplier supplier) {
-
+        log.debug("inside addsupplier method");
 		supplierDAO.addSupplier(supplier);
 		return "redirect:/supplier";
 
 	}
 
-	// ---------------------------------delete---------------------------------
-	@RequestMapping(value = "/deletesupplier", method = RequestMethod.GET)				//mapping for "/deletesupplier"
+	// ---------------------------------deletesupplier------------------------------------------------------------------//
+	@RequestMapping(value = "/deletesupplier", method = RequestMethod.GET) // mapping for delete supplier
 	public String deletesupplier(@RequestParam("supplierId") String supplierId) {
-
+        log.debug("inside delete supplier method");
 		supplierDAO.deleteSupplier(supplierId);
 		return "redirect:/supplier";
 
 	}
 
-    // ---------------------------------edit---------------------------------
-    @RequestMapping(value = "/editsupplier", method = RequestMethod.GET) //mapping for "/editsupplier"
-    public ModelAndView editSupplier(@RequestParam("supplierId") String supplierId) {
-	ModelAndView model = new ModelAndView("supplier", "supplier", new Supplier());
-	log.debug("inside editSupplier Controller");
-	model.addObject("list", supplierDAO.getSupplierList());
-
-	model.addObject("values", supplierDAO.getById(supplierId));
-	model.addObject("page_name","Supplier");
-	return model;
-    }
+	// ---------------------------------editsupplier-------------------------------------------------------------------//
+	@RequestMapping(value = "/editsupplier", method = RequestMethod.GET) // mapping for edit supplier
+	public ModelAndView editSupplier(@RequestParam("supplierId") String supplierId) {
+		ModelAndView model = new ModelAndView("supplier", "supplier", new Supplier());
+		log.debug("inside editupplier Controller");
+		model.addObject("list", supplierDAO.getSupplierList());
+		model.addObject("values", supplierDAO.getById(supplierId));
+		model.addObject("page_name", "Supplier");
+		return model;
+	}
 
 }

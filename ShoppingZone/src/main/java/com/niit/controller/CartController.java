@@ -2,6 +2,8 @@ package com.niit.controller;
 
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,10 +32,14 @@ public class CartController {
 
 	@Autowired
 	private CategoryDAO categoryDAO;
-
-	@RequestMapping(value = "/addtocart", method = RequestMethod.GET)
+	
+	Logger log = LoggerFactory.getLogger(CartController.class);
+    
+	//------------------------------------Add to Cart------------------------------------------------------------//
+	@RequestMapping(value = "/addtocart", method = RequestMethod.GET)          //mapping for addtocart
 	public String addtocart(@RequestParam("username") String username, @RequestParam("productId") String productId,
 			@RequestParam("quantity") int quantity, Model model) {
+		log.debug("inside the addtocart");
 		model.addAttribute("categoryList", categoryDAO.getCategoryList());
 		orderDAO.add(productDAO.getById(productId), userDAO.getById(username), quantity,
 				quantity * productDAO.getById(productId).getProductPrice());
@@ -41,59 +47,70 @@ public class CartController {
 		model.addAttribute("cartList", orderDAO.getOrderListbyname(username));
 		System.out.println(orderDAO.getOrderListbyname(username));
 		model.addAttribute("cartsize", orderDAO.getOrderListbyname(username).size());
+		log.debug("end of addtocart");
 		return "cart";
 	}
-
 	
-	@RequestMapping(value = "/cart", method = RequestMethod.GET)
+    //---------------------------------Cart----------------------------------------------------------------------//
+	@RequestMapping(value = "/cart", method = RequestMethod.GET)              //mapping for cart
 	public String addtocart(@RequestParam("username") String username, HttpSession session, Model model) {
+		log.debug("inside cart method");
 		model.addAttribute("categoryList", categoryDAO.getCategoryList());
-
 		model.addAttribute("cartList", orderDAO.getOrderListbyname(username));
 		model.addAttribute("cartsize", orderDAO.getOrderListbyname(username).size());
+		log.debug("end of cart method");
 		return "cart";
 	}
-
-	@RequestMapping(value = "/removeorder", method = RequestMethod.GET)
+	
+    //---------------------------------remove order--------------------------------------------------------------//
+	@RequestMapping(value = "/removeorder", method = RequestMethod.GET)         //mapping for removeorder
 	public String removeorder(@RequestParam("orderId") int orderId, @RequestParam("username") String username,
 			Model model) {
+		log.debug("inside remove order method");
 		model.addAttribute("categoryList", categoryDAO.getCategoryList());
-
 		orderDAO.remove(orderId);
 		model.addAttribute("cartList", orderDAO.getOrderListbyname(username));
+		log.debug("end of removeorder method");
 		return "cart";
 	}
-
-	@RequestMapping(value = "/checkout", method = RequestMethod.GET)
+    
+	//---------------------------------checkout--------------------------------------------------------------------//
+	@RequestMapping(value = "/checkout", method = RequestMethod.GET)            //mapping for checkout
 	public String checkout(@RequestParam("username") String username, Model model) {
-
+        log.debug("inside checkout method");
 		model.addAttribute("cartList", orderDAO.getOrderListbyname(username));
 		model.addAttribute("address", new Address());
 		model.addAttribute("categoryList", categoryDAO.getCategoryList());
+		log.debug("end of checkout method");
 		return "checkout";
 	}
 
+	//---------------------------------carddetails-----------------------------------------------------------------//
 	@RequestMapping(value = "/carddetails", method = RequestMethod.GET)
 	public String paymentbycard(Address address, Model model, HttpSession session) {
-
+        log.debug("inside carddetails method");
 		session.setAttribute("address", address);
 		model.addAttribute("categoryList", categoryDAO.getCategoryList());
 		model.addAttribute("carddetail", new Carddetail());
 
 		if (address.getPaymentOption().equals("By Card")) {
 			return "carddetails";
+			
 		} else {
+			log.debug("end of carddetails method");
 			return "paymentsuccess";
 
 		}
 	}
-
+	
+    //------------------------------------finalindex--------------------------------------------------------------//
 	@RequestMapping(value = "finalindex")
 	public String cardpaymentsuccess(@RequestParam("username") String username, Model model) {
+		log.debug("inside final index method");
 		model.addAttribute("categoryList", categoryDAO.getCategoryList());
 		orderDAO.removeorderbycartid(username);
 		model.addAttribute("categoryList", categoryDAO.getCategoryList());
-
+        log.debug("end of final index method");
 		return "index";
 
 	}

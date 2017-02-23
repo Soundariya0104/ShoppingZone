@@ -16,27 +16,23 @@ import javax.persistence.Table;
 public class Order implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int OrderId;
-	
+
 	@ManyToOne
-	@JoinColumn(name="username")
+	@JoinColumn(name = "username")
 	private User user;
-		
+
 	@ManyToOne
-	@JoinColumn(name="productId")
+	@JoinColumn(name = "productId")
 	private Product product;
-	 
+
 	@Column
-	private int quantity=1;
-	
+	private int quantity = 1;
+
 	@Column
 	private int total;
-	
-	
-	
-	
-	
+
 	public int getTotal() {
 		return total;
 	}
@@ -76,5 +72,5 @@ public class Order implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
+
 }
