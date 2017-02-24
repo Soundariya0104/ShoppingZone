@@ -47,6 +47,9 @@ public class User implements Serializable {
 
 	@Column(name = "role")
 	private String role = "ROLE_USER";
+	
+	@Column
+	private boolean enabled=true;
 
 	public String getUsername() {
 		return username;

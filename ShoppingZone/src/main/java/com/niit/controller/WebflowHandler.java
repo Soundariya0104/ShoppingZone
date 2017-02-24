@@ -9,21 +9,25 @@ import com.niit.dao.OrderDAO;
 import com.niit.model.Address;
 import com.niit.model.Carddetail;
 
+
 @Component
 public class WebflowHandler {
 	HttpSession session;
 	@Autowired
-	OrderDAO orderDAO;
-
-	public Address initFlow() {
+	public OrderDAO orderDAO;
+	
+	public Address initFlow(){
 		return new Address();
 	}
-
-	public Carddetail initFlow2() {
+	public Carddetail initFlow2(){
 		return new Carddetail();
 	}
+	public Address validate(Address address){
+		System.out.println(address.getBillingCity());
+		return address;
+	}
 
-	public void initFlow4() {
+	public void initFlow4(){
 		orderDAO.removeorderbycartid((String) session.getAttribute("User"));
 	}
 }

@@ -37,110 +37,6 @@
 
 <!-- Modernizr JS -->
 <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-<script>
-	$(document)
-			.ready(
-					function() {
-						$('#password')
-								.keyup(
-										function() {
-											$('#result')
-													.html(
-															checkStrength($(
-																	'#password')
-																	.val()))
-										})
-						function checkStrength(password) {
-							var strength = 0
-							if (password.length < 6) {
-								$('#result').removeClass()
-								$('#result').addClass('short')
-								return 'Too short'
-							}
-							if (password.length > 7)
-								strength += 1
-								// If password contains both lower and uppercase characters, increase strength value.
-							if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/))
-								strength += 1
-								// If it has numbers and characters, increase strength value.
-							if (password.match(/([a-zA-Z])/)
-									&& password.match(/([0-9])/))
-								strength += 1
-								// If it has one special character, increase strength value.
-							if (password.match(/([!,%,&,@,#,$,^,*,?,_,~])/))
-								strength += 1
-								// If it has two special characters, increase strength value.
-							if (password
-									.match(/(.*[!,%,&,@,#,$,^,*,?,_,~].*[!,%,&,@,#,$,^,*,?,_,~])/))
-								strength += 1
-								// Calculated strength value, we can return messages
-								// If value is less than 2
-							if (strength < 2) {
-								$('#result').removeClass()
-								$('#result').addClass('weak')
-								return 'Weak'
-							} else if (strength == 2) {
-								$('#result').removeClass()
-								$('#result').addClass('good')
-								return 'Good'
-							} else {
-								$('#result').removeClass()
-								$('#result').addClass('strong')
-								return 'Strong'
-							}
-						}
-					});
-</script>
-
-<script>
-	$(document).ready(function() {
-		$('#confirmpassword').keyup(function() {
-			$('#resultconfirmpassword').html(check($().val()))
-		})
-		function check() {
-			var a = document.getElementById("password").value;
-			var b = document.getElementById("confirmpassword").value;
-			if (a == b) {
-				$('#resultconfirmpassword').removeClass()
-				$('#resultconfirmpassword').addClass('short')
-				return ''
-			}
-
-			if (a != b) {
-				$('#resultconfirmpassword').removeClass()
-				$('#resultconfirmpassword').addClass('short')
-				return 'Password doesnt match'
-			}
-		}
-	});
-</script>
-
-
-<style type="text/css">
-.short {
-	font-weight: bold;
-	color: #FF0000;
-	font-size: smaller;
-}
-
-.weak {
-	font-weight: bold;
-	color: orange;
-	font-size: smaller;
-}
-
-.good {
-	font-weight: bold;
-	color: #2D98F3;
-	font-size: smaller;
-}
-
-.strong {
-	font-weight: bold;
-	color: limegreen;
-	font-size: smaller;
-}
-</style>
 </head>
 <body>
 	<%@ include file="header.jsp"%>
@@ -166,9 +62,8 @@
 				<label for="">Create Password<span>*</span></label>
 				<form:input id="password" type="password"
 					placeholder="Enter your Password"
-					title="password should contains both lower and uppercase ,numbers,atleast one special characters "
 					style="background-color:white" path="password" required="true" />
-				<span id="resultusername"></span>
+			
 				<br>
 
 
@@ -176,7 +71,7 @@
 				<input type="password" id="confirmpassword"
 					placeholder="Enter your confirm Password"
 					style="background-color: white">
-				<span id="resultconfirmpassword"></span>
+			
 				<br>
 
 
@@ -230,7 +125,8 @@
 
 				<input type="submit" style="background-color: white"
 					value="Register" />
-			</form:form>
+			</form:form><br>
+			<h5>Already user of this website<a href="loginpage" style="color:red"> <u>LOGIN</u></a> here...</h5>
 		</div>
 	</div>
 	<%@ include file="footer.jsp"%>

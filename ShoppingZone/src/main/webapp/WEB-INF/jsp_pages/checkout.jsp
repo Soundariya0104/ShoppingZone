@@ -78,14 +78,14 @@
 														</div>
 
 														<div class="row">
-															<div class="col-md-12">
+															   <div class="col-md-12">
 																<div class="aa-checkout-single-bill">
 																	Email:
 																	<form:input type="email" placeholder="Email Address*"
-																		id="emailId" path="emailId" required="true"
-																		path="billingEmail" />
-																</div>
-															</div>
+																		id="emailId" required="true"
+ 																		path="billingEmail" /> 
+ 																</div> 
+ 															</div> 
 															<div class="col-md-12">
 																<div class="aa-checkout-single-bill">
 																	Phone:
@@ -129,7 +129,6 @@
 																	<form:input type="text" placeholder="Postcode / ZIP*"
 																		pattern="[6][0-9]{5}"
 																		title="pincode should contain 6 digits and should be valid ex:6XXXXX"
-																		title="pincode should contain 6 digits and should be valid"
 																		path="billingPincode" />
 																</div>
 															</div>

@@ -113,7 +113,7 @@
 										</div>
 									</li>
 									<li>
-										<div class="header-cart">
+									<!--  	<div class="header-cart">
 											<div class="aa-cartbox">
 												<a class="aa-cart-link" href=" "> <span
 													class="fa fa-shopping-basket"></span> <span
@@ -127,21 +127,21 @@
 														</c:when>
 													</c:choose>
 												</a>
-												<c:choose>
+												<!--<c:choose>
 													<c:when test="${ not empty cartList}">
 														<div class="aa-cartbox-summary">
 															<ul>
 																<c:forEach var="cartList" items="${cartList}">
 																	<li><a class="aa-cartbox-img" href="#"><img
-																			src="<c:url value="resources/product/${cartList.productModel.productId}.png"/>"
+																			src="<c:url value="resources/images/product/${cartList.product.productId}.jpeg"/>"
 																			alt="img"></a>
 																		<div class="aa-cartbox-info">
 																			<h4>
-																				<a href="#">${cartList.productModel.productName}</a>
+																				${cartList.product.productName}
 																			</h4>
 																			<p>
 																				<i class="fa fa-inr"></i>
-																				${cartList.productModel.productPrice } /-
+																				${cartList.product.productPrice } /-
 																			</p>
 																		</div></li>
 																</c:forEach>
@@ -156,7 +156,7 @@
 
 												</c:choose>
 											</div>
-										</div>
+										</div>-->
 									</li>
 								</ul>
 							</div>
