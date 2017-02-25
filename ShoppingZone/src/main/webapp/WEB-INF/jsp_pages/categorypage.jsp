@@ -51,7 +51,7 @@
 	<section id="aa-product-category">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-9 col-md-9 col-sm-8 col-md-push-3">
+				<!--  <div class="col-lg-9 col-md-9 col-sm-8 col-md-push-3">
 					<div class="aa-product-catg-content">
 						<div class="aa-product-catg-head">
 							<div class="aa-product-catg-head-right">
@@ -60,17 +60,58 @@
 							</div>
 						</div>
 						<div class="aa-product-catg-body">
-							<ul class="aa-product-catg">
+							<ul class="aa-product-catg">-->
 								<!-- start single product item -->
-
 								<c:forEach var="productList" items="${values}">
+								 <div class="col-md-4 col-md-4 col-md-4 thumb">
+
+                                        <!-- single product start-->
+                                        <div class="single-product">
+                                            <div class="product-img">
+                                                <div class="single-prodcut-img  product-overlay pos-rltv">
+                                                    <a href="productpage?productId=${productList.productId}"> <img alt="" style="height:250px;width:250px" src="<c:url value="/resources/images/product/${productList.productId }.jpeg"/>"> </a>
+                                                </div>
+                                                
+                                                
+                                                <div class="product-icon socile-icon-tooltip text-center">
+                                                    <ul>
+                                                        <li><a href="addtocart?username=${User}&productId=${productList.productId}&quantity=1" style="color:black" data-tooltip="Add To Cart" class="add-cart" data-placement="left"><i class="zmdi zmdi-shopping-cart"></i></a></li>
+                                                     <!--    <li><a href="#" data-tooltip="Wishlist" class="w-list"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#" data-tooltip="Compare" class="cpare"><i class="fa fa-refresh"></i></a></li>
+                                                        <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal"><i class="fa fa-eye"></i></a></li>-->
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-text">
+                                                <div class="prodcut-name"> ${productList.productName } </div>
+                                                <div class="prodcut-ratting-price">
+                                                    <div class="prodcut-price">
+                                                        <div class="new-price"> ${productList.productPrice }-/</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- single product end-->
+                                    </div> 
+                                    </c:forEach>
+                                    
+                                    
+								
+								
+								
+								
+								
+								
+								
+
+							<!--  <c:forEach var="productList" items="${values}">
 
 									<li>
 										<figure>
 											<a class="aa-product-img"
 												href="productpage?productId=${productList.productId}"><img
 												src="<c:url value="/resources/images/product/${productList.productId }.jpeg"/>"
-												style="height: 250px; width: 250px"
+												style="height: 250px; width:200px"
 												alt="${productList.productId }"></a>
 
 											<figcaption>
@@ -93,9 +134,9 @@
 										</div>
 									</li>
 								</c:forEach>
-							</ul>
+							</ul>-->
 							<!-- quick view modal -->
-							<div class="modal fade" id="quick-view-modal" tabindex="-1"
+						<!--  	<div class="modal fade" id="quick-view-modal" tabindex="-1"
 								role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 								<div class="modal-dialog">
 									<div class="modal-content">
@@ -103,7 +144,7 @@
 											<button type="button" class="close" data-dismiss="modal"
 												aria-hidden="true">&times;</button>
 											<div class="row">
-												<!-- Modal view slider -->
+												<!-- Modal view slider 
 												<div class="col-md-6 col-sm-6 col-xs-12">
 													<div class="aa-product-view-slider">
 														<div class="simpleLens-gallery-container" id="demo-1">
@@ -128,7 +169,7 @@
 														</div>
 													</div>
 												</div>
-												<!-- Modal view content -->
+												<!-- Modal view content 
 												<div class="col-md-6 col-sm-6 col-xs-12">
 													<div class="aa-product-view-content">
 														<h3>T-Shirt</h3>
@@ -171,15 +212,15 @@
 											</div>
 										</div>
 									</div>
-									<!-- /.modal-content -->
+									<!-- /.modal-content 
 								</div>
-								<!-- /.modal-dialog -->
+								<!-- /.modal-dialog 
 							</div>
-							<!-- / quick view modal -->
-						</div>
+							<!-- / quick view modal 
+						</div>-->
 						<div class="aa-product-catg-pagination">
 							<nav>
-								<ul class="pagination">
+								<ul class="pagination" style="align:center">
 									<li><a href="#" aria-label="Previous"> <span
 											aria-hidden="true">&laquo;</span>
 									</a></li>
@@ -196,19 +237,19 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-3 col-sm-4 col-md-pull-9">
+				<!--  <div class="col-lg-3 col-md-3 col-sm-4 col-md-pull-9">
 					<aside class="aa-sidebar">
-						<!-- single sidebar -->
+						<!-- single sidebar 
 						<div class="aa-sidebar-widget">
 
 							<ul class="aa-catg-nav">
 								<li><a href="#">${categorynamelist}</a></li>
 							</ul>
 						</div>
-						<!-- single sidebar -->
+						<!-- single sidebar 
 						<div class="aa-sidebar-widget">
 							<h3>Shop By Price</h3>
-							<!-- price range -->
+							<!-- price range 
 							<div class="aa-sidebar-price-range">
 								<form action="">
 									<div id="skipstep"
@@ -222,7 +263,7 @@
 							</div>
 
 						</div>
-						<!-- single sidebar -->
+						<!-- single sidebar 
 						<div class="aa-sidebar-widget">
 							<h3>Top Rated Products</h3>
 							<div class="aa-recently-views">

@@ -88,14 +88,14 @@
 													<td><a
 														href="productpage?productId=${cartList.product.productId}">><img
 															src="<c:url value="/resources/images/product/${cartList.product.productId }.jpeg"/>"
-															alt="img"></a></td>
-													<td><a class="aa-cart-title" href="#">${cartList.product.productName}</a></td>
+															style="height: 100px; width: 80px" alt="img"></a></td>
+													<td><a class="aa-cart-title" href="#" style="color:black">${cartList.product.productName}</a></td>
 													<td><i class="fa fa-inr"></i>
 														${cartList.product.productPrice} /-</td>
 													<td>${cartList.quantity}</td>
 													<td>${cartList.total}</td>
-													<td><a
-														href="removeorder?orderId=${cartList.orderId}&username=${cartList.user.username}">Remove</a></td>
+													<td><a style="color:black"
+														href="removeorder?orderId=${cartList.orderId}&username=${cartList.user.username}"><span class="fa-fa-trash"></span>Remove</a></td>
 												</tr>
 
 												<c:set var="grandtotal"
@@ -108,7 +108,7 @@
 								</div>
 							</form>
 							<!-- Cart Total view -->
-							<div class="cart-view-total">
+							<div class="cart-view-total" style="align:center">
 								<h4>Cart Totals</h4>
 								<table class="aa-totals-table">
 									<tbody>
@@ -120,7 +120,7 @@
 									</tbody>
 								</table>
 								<%--<a href="checkout?username=${User}" class="aa-cart-view-btn">Proceed to Checkout</a> --%>
-								<a href="webflow" class="aa-cart-view-btn" style="color: black">Proceed
+								<a href="webflow" class="aa-cart-view-btn" style="color: black;text-align:center">Proceed
 									to Checkout</a>
 
 							</div>

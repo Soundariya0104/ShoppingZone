@@ -45,7 +45,7 @@
 
 
 	<!-- product category -->
-	<section id="aa-product-details">
+	 <section id="aa-product-details">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -60,7 +60,7 @@
 												<div class="simpleLens-big-image-container">
 													<a
 														data-lens-image="<c:url value="/resources/images/product/${productbyId.productId }.jpeg"/>"
-														class="simpleLens-lens-image"><img
+														style="height:180px;width:200px" class="simpleLens-lens-image"><img
 														src="<c:url value="/resources/images/product/${productbyId.productId }.jpeg"/>"
 														class="simpleLens-big-image"></a>
 												</div>
@@ -84,24 +84,24 @@
 									<div class="aa-product-view-content">
 										<h3>${productbyId.productName}</h3>
 										<div class="aa-price-block">
-											<span class="aa-product-view-price"><i
+											<b>Product price:</b><br><span class="aa-product-view-price"><i
 												class="fa fa-inr"></i> ${productbyId.productPrice}/-</span>
 											<p class="aa-product-avilability">
-												Availability: <span>15</span>
+												<b>Availability:</b><br> <span>15</span>
 											</p>
 										</div>
-										Product details:
+										<b>Product details:</b>
 										<p>${productbyId.productDescription}</p>
 										<div class="aa-prod-quantity">
 
 											<form action="addtocart">
-												Quantity: <input type="number" name="quantity" value="1"
+												<b>Quantity:</b> <input type="number" name="quantity" value="1"
 													min="1" max="5"><br> <input type="hidden"
 													name="username" value="${User}"> <input
 													type="hidden" name="productId"
 													value="${productbyId.productId }">
 												<p class="aa-prod-category">
-													Category: <a
+													<b>Category:</b><br> <a style="color:black"
 														href="categorypage?categoryId=${category.categoryId}">${category.categoryName }</a>
 												</p>
 										</div>
@@ -124,13 +124,13 @@
 			</div>
 
 			<!-- Related product -->
-			<div class="aa-product-related-item">
+		<!--  -	<div class="aa-product-related-item">
 
 				<ul class="aa-product-catg aa-related-item-slider">
 
 					<c:forEach var="productList" items="${productList}">
 
-						<!-- start single product item -->
+						<!-- start single product item 
 						<li>
 							<figure>
 								<a class="aa-product-img"
@@ -149,10 +149,10 @@
 							</figure>
 							<div class="aa-product-hvr-content">
 								<!--                     <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                             -->
-							</div>
+							<!--  </div>
 						</li>
 					</c:forEach>
-				</ul>
+				</ul>-->
 
 
 
