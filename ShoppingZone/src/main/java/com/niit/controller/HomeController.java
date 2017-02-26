@@ -11,6 +11,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -213,4 +214,13 @@ public class HomeController {
 		log.debug("end of logout method");
 		return mv;
 	}
+	
+	//--------------------------------------exception handling-----------------------------------//
+	@ExceptionHandler(Exception.class)
+	public String handleAllException(Exception ex) {
+
+		return "404error";
+
+	}
+
 }

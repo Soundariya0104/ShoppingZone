@@ -72,11 +72,7 @@
 									</c:if>
 
 
-									<c:if test="${ isAdmin == true  }">
-										<li><a href="category">Manage Category</a></li>
-										<li><a href="supplier">Manage Supplier</a></li>
-										<li><a href="product">Manage Product</a></li>
-									</c:if>
+									
 								</ul>
 							</div>
 						</div>
@@ -195,6 +191,12 @@
 
 											</c:forEach>
 										</c:if>
+										
+										<c:if test="${ isAdmin == true  }">
+										<li><a href="category">Manage Category</a></li>
+										<li><a href="supplier">Manage Supplier</a></li>
+										<li><a href="product">Manage Product</a></li>
+									</c:if>
 
 									</ul>
 								</nav>
