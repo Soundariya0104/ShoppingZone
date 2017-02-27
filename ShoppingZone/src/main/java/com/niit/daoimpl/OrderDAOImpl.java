@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.dao.OrderDAO;
 import com.niit.model.Order;
@@ -84,5 +85,41 @@ public class OrderDAOImpl implements OrderDAO {
 		log.debug("end of removeorderbycartid");
 
 	}
+	
+	@Transactional
+    @SuppressWarnings({ "unchecked", "deprecation", "rawtypes" })
+	public boolean addingproduct(String username, String productId, int quantity) {
+    	log.debug("inside getByName in categoryDAOImpl");
+    	Session session = sessionFactory.openSession();
+		session.beginTransaction();
+
+    	String hql = "from Order where username =" + "'" + username + "'"+" and productId =" + "'" + productId+"'";
+	Query<Order> query = sessionFactory.getCurrentSession().createQuery(hql);
+	List<Order> list = (List<Order>) query.list();
+	if (list != null && !list.isEmpty()) {
+		
+		
+		
+		
+		quantity=query.uniqueResult().getQuantity()+quantity;
+		
+		int orderId=query.uniqueResult().getOrderId();
+		Query query1 = session.createQuery("update Order set quantity = :quantity " +
+				" where orderid = :orderid");
+	query1.setParameter("quantity", quantity);
+	
+query1.setParameter("orderid", orderId);
+query1.executeUpdate();
+			session.getTransaction().commit();
+			session.close();
+		
+		return true;
+	}
+		else{
+	   
+		session.getTransaction().commit();
+		session.close();
+	   return false;
+	}	}
 
 }

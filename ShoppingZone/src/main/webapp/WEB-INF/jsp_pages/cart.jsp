@@ -8,7 +8,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Home || SportsFocus</title>
+<title>Home || RoyalSports</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -120,8 +120,10 @@
 									</tbody>
 								</table>
 								<%--<a href="checkout?username=${User}" class="aa-cart-view-btn">Proceed to Checkout</a> --%>
-								<a href="webflow" class="aa-cart-view-btn" style="color: black;text-align:center">Proceed
-									to Checkout</a>
+								<a href="webflow"><button class="aa-cart-view-btn" style="color: black;text-align:center">Proceed
+									to Checkout</button></a>
+									
+								<a href="index"><button class="aa-cart-view-btn" type="button" style="background-color:black"> <span class="glyphicon glyphicon-arrow-left"></span> Continue Shopping</button></a>	
 
 							</div>
 						</div>

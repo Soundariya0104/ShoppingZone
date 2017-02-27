@@ -41,14 +41,26 @@ public class CartController {
 			@RequestParam("quantity") int quantity, Model model) {
 		log.debug("inside the addtocart");
 		model.addAttribute("categoryList", categoryDAO.getCategoryList());
-		orderDAO.add(productDAO.getById(productId), userDAO.getById(username), quantity,
+		if(orderDAO.addingproduct(username, productId,quantity)){
+		
+			orderDAO.add(productDAO.getById(productId), userDAO.getById(username), quantity,
+					quantity * productDAO.getById(productId).getProductPrice());
+	            
+			model.addAttribute("cartList", orderDAO.getOrderListbyname(username));
+			System.out.println(orderDAO.getOrderListbyname(username));
+			model.addAttribute("cartsize", orderDAO.getOrderListbyname(username).size());
+			log.debug("end of addtocart");
+			return "cart";
+		}else{
+			orderDAO.add(productDAO.getById(productId), userDAO.getById(username), quantity,
 				quantity * productDAO.getById(productId).getProductPrice());
-
+              
 		model.addAttribute("cartList", orderDAO.getOrderListbyname(username));
 		System.out.println(orderDAO.getOrderListbyname(username));
 		model.addAttribute("cartsize", orderDAO.getOrderListbyname(username).size());
 		log.debug("end of addtocart");
 		return "cart";
+		}
 	}
 	
     //---------------------------------Cart----------------------------------------------------------------------//

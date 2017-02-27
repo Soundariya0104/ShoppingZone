@@ -62,6 +62,20 @@ public class HomeController {
 		log.debug("end of / method");
 		return "index";
 	}
+	
+	//----------------------------------------------------index---------------------------------------//
+	@RequestMapping(value = "/index") // mapping index page
+	public String indexpage(Model m, HttpSession session) {
+		log.debug("inside / controller");
+		m.addAttribute("categoryList", categoryDAO.getCategoryList());
+		System.out.println("am inside indexpage controller");
+		String User = (String) session.getAttribute("User");
+		m.addAttribute("cartList", orderDAO.getOrderListbyname(User));
+		m.addAttribute("cartsize", orderDAO.getOrderListbyname(User).size());
+		log.debug("end of / method");
+		return "index";
+	}
+
 
 	//----------------------------------------about us-------------------------------------------------//
 	@RequestMapping(value = "/aboutus") // mapping aboutus page

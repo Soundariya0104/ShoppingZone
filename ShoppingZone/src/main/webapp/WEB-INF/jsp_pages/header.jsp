@@ -8,7 +8,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Home || SportsFocus</title>
+<title>Home || RoyalSports</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -109,11 +109,13 @@
 										</div>
 									</li>
 									<li>
-									<!--  	<div class="header-cart">
+									 	<div class="header-cart">
 											<div class="aa-cartbox">
 												<a class="aa-cart-link" href=" "> <span
 													class="fa fa-shopping-basket"></span> <span
-													class="aa-cart-title">Cart</span> <c:choose>
+													class="aa-cart-title">Cart</span>
+													
+													 <c:choose>
 														<c:when test="${  empty cartList}">
 															<span class="aa-cart-notify"> &nbsp;</span>
 														</c:when>
@@ -123,14 +125,15 @@
 														</c:when>
 													</c:choose>
 												</a>
-												<!--<c:choose>
+												<div class="cart-content-wraper">
+												<c:choose>
 													<c:when test="${ not empty cartList}">
 														<div class="aa-cartbox-summary">
 															<ul>
 																<c:forEach var="cartList" items="${cartList}">
 																	<li><a class="aa-cartbox-img" href="#"><img
 																			src="<c:url value="resources/images/product/${cartList.product.productId}.jpeg"/>"
-																			alt="img"></a>
+																			style="height:50px;width:50px" alt="img"></a>
 																		<div class="aa-cartbox-info">
 																			<h4>
 																				${cartList.product.productName}
@@ -144,22 +147,21 @@
 															</ul>
 
 															<a class="aa-cartbox-checkout aa-primary-btn"
-																href="checkout?username=${User}">Checkout</a> <a
+																href="checkout?username=${User}" style="color:black">Checkout</a> <a
 																class="aa-cartbox-checkout aa-primary-btn"
-																href="cart?username=${User}">Cart</a>
-														</div>
+																href="cart?username=${User}" style="color:black">Cart</a>
+														</div>													
 													</c:when>
-
-												</c:choose>
-											</div>
-										</div>-->
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
+												</c:choose>												
+											</div>											
+										</div>										
+									</li>									
+								</ul>								
+							</div>							
+						</div>						
+					</div>					
 				</div>
-			</div>
+			</div>			
 
 			<div id="sticky-header" class="header-middle-area">
 				<div class="container">
@@ -170,7 +172,8 @@
 									<a href="index"> <!-- <span class="fa fa-shopping-cart"></span>-->
 										<p>
 										<h3 style="color: red">
-											<b><i>Sports<strong>Focus</strong></i></b>
+											<b><i>Royal<strong>Sports</strong></i></b>
+											<p style="color:black">Feel Royal,Think Royal</p>
 										</h3>
 										</p>
 									</a>
