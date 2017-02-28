@@ -17,7 +17,7 @@
 					<h2>404</h2>
 					<span>Sorry! Page Not Found</span>
 					<p>Sorry this content has been moved .</p>
-					<a href="#"> Go to Homepage</a>
+					<a href="index"> Go to Homepage</a>
 				</div>
 			</div>
 		</div>

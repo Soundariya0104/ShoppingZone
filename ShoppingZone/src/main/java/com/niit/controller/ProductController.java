@@ -3,6 +3,8 @@ package com.niit.controller;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.google.gson.Gson;
 import com.niit.dao.CategoryDAO;
 import com.niit.dao.OrderDAO;
 import com.niit.dao.ProductDAO;
@@ -58,6 +61,7 @@ public class ProductController {
 		model.addAttribute("product", new Product());
 		model.addAttribute("supplier", new Supplier());
 		model.addAttribute("category", new Category());
+		model.addAttribute("productList", getJson());
 		model.addAttribute("productlist", productDAO.getProductList()); // object for productlist
 		model.addAttribute("categorylist", categoryDAO.getCategoryList()); // object for categorylist
 		model.addAttribute("supplierlist", supplierDAO.getSupplierList());// object for supplierlist
@@ -130,6 +134,13 @@ public class ProductController {
 		return "redirect:/product";
 
 	}
+	
+	public String getJson(){
+	  	  ArrayList<Product> list=(ArrayList<Product>)productDAO.getProductList();
+	  		Gson gson= new Gson();
+	  		return gson.toJson(list);
+	  		
+	    }
 
 	// -------------------------------------------------USER COMMMON----------------------------------------------//
 	@RequestMapping(value = "/categorypage", method = RequestMethod.GET) // mapping for product
@@ -144,6 +155,10 @@ public class ProductController {
 		return "categorypage";
 
 	}
+	
+	 
+
+	 
 
 	//-------------------------------------------------productpage---------------------------------------------------//
 	@RequestMapping(value = "/productpage", method = RequestMethod.GET) // mapping for productpage
@@ -167,5 +182,8 @@ public class ProductController {
 		log.debug("end of productpage");
 		return "productpage";
 	}
+	
+
+
 
 }

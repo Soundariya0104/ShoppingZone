@@ -39,6 +39,8 @@
 <!-- Modernizr JS -->
 <script
 	src="<c:url value="/resources/js/vendor/modernizr-2.8.3.min.js"/>"></script>
+	
+	<script src="<c:url value="/resources/js/angular.min.js"/>"></script> 
 </head>
 
 <body>
@@ -264,62 +266,87 @@
 									<strong>Product List</strong>
 								</h3>
 							</div>
-							<div class="table-responsive">
-								<table class="table">
-									<thead>
-										<tr>
-											<th>Product Id</th>
-											<th>Product Name</th>
-											<th>Product Description</th>
-											<th>Category Id</th>
-											<th>Supplier Id</th>
-											<th>Product Price</th>
-											<th>Product Picture</th>
-											<th colspan="2">Manage Products
-											<th>
-										</tr>
-									</thead>
-									<tbody>
+							<div class="table-responsive" ng-app="productTable"
+								ng-controller="ProductController">
+								<div>
+									<label style="width: 12%" for="">Search:</label><input
+										type=text
+										style="border: 1px solid #ccc; font-size: 16px; height: 40px; margin-bottom: 15px; padding: 10px; width: 40%;"
+										placeholder="Enter product name" ng-model="searchText" />
+								</div>
 
-										<c:forEach var="listValue" items="${productlist}">
-
+								<div class="table-responsive">
+									<table class="table">
+										<thead>
 											<tr>
-												<td>${listValue.productId}</td>
-												<td><a class="aa-cart-title" href="#"
-													style="color: black">${listValue.productName}</a></td>
-												<td>${listValue.productDescription}</td>
-												<td>${listValue.categoryId}</td>
-												<td>${listValue.supplierId}</td>
-												<td>${listValue.productPrice}</td>
+												<th>Product Id</th>
+												<th>Product Name</th>
+												<th>Product Description</th>
+												<th>Category Id</th>
+												<th>Supplier Id</th>
+												<th>Product Price</th>
+												<th>Product Picture</th>
+												<th colspan="2">Manage Products
+												<th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr ng-repeat="listValue in Product|filter:searchText">
+												<td>{{listValue.productId}}</td>
+												<td><a class="aa-cart-title" style="color:black">{{listValue.productName}}</a></td>
+												<td>{{listValue.productDescription}}</td>
+												<td>{{listValue.categoryId}}</td>
+												<td>{{listValue.supplierId}}</td>
+												<td><i class="fa fa-inr"></i>
+													{{listValue.productPrice}}</td>
 												<td><a href="#"><img
-														style="heigth: 50px; width: 50px;"
-														src="<c:url value="/resources/images/product/${listValue.productId}.jpeg"/>"
-														alt="${listValue.productId}"></a></td>
+														src="<c:url value="/resources/images/product/{{listValue.productId}}.jpeg"/>"
+														style="height:50px;width:50px" alt="{{listValue.productId}}"></a></td>
 												<td style="border-right: white">
 													<form action="deleteproduct">
 														<button name="productId" class="aa-cart-view-btn"
-															type="submit" value=${listValue.productId
-															} style="heigth: 2px; color: black">Delete</button></form>
+															type="submit" value={{listValue.productId}}
+															style="heigth: 2px;color:black">Delete</button>
+													</form>
 												</td>
 												<td><form action="editproduct">
 														<button name="productId" class="aa-cart-view-btn"
-															type="submit" value=${listValue.productId
-															} style="heigth: 1px; color: black">Edit</button></form></td>
+															type="submit" value={{listValue.productId}}
+															style="heigth: 1px;color:black">Edit</button>
+													</form></td>
 											</tr>
-										</c:forEach>
 
-									</tbody>
-								</table>
+
+										</tbody>
+									</table>
+								</div>
+
+
 							</div>
-
-
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 	</section>
 	<%@ include file="footer.jsp"%>
+	
+	
+	<script>
+  var prod = ${productList}; 
+  angular.module('productTable',[]).controller('ProductController', function($scope)  
+   {
+          $scope.Product=prod;  
+       
+   
+          $scope.sort = function(keyname)
+          {
+              $scope.sortKey = keyname;   
+              $scope.reverse = !$scope.reverse; 
+          }
+              
+    });
+</script>
+	
 	<!-- End of header area -->
 	<!-- Body main wrapper end -->
 

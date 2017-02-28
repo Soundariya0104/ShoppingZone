@@ -62,7 +62,7 @@
 				<label for="">Create Password<span>*</span></label>
 				<form:input id="password" type="password"
 					placeholder="Enter your Password"
-					style="background-color:white" path="password" required="true" />
+					style="background-color:white" path="password" pattern="{5,8}" required="true" />
 			
 				<br>
 

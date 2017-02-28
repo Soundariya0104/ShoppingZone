@@ -39,6 +39,19 @@
 <!-- Modernizr JS -->
 <script
 	src="<c:url value="/resources/js/vendor/modernizr-2.8.3.min.js"/>"></script>
+    
+     <script language="javascript" type="text/javascript">
+
+
+function addHyphen() {
+    var t = document.forms['cardform'].elements['cardnumber'];
+      if (t.value.length > 0) {
+        t.value = t.value.substring(0,4) + "-" +t.value.substring(4,8)+ "-"+ t.value.substring(8,12)+ "-"+t.value.substring(12,16);
+      }
+}
+
+</script>
+	
 </head>
 <body>
 
@@ -60,10 +73,7 @@
 
 										<label for="">Card Number</label>
 										<br>
-										<form:input type="text" placeholder="First Name"
-											path="cardNumber" pattern="[0123456789][0-9]{11}"
-											title="card number should contain 12 digits and should be vaild"
-											value="" />
+										 <form:input type="text" placeholder="Enter Card 16 digit Number" maxlength="16" id="cardnumber" onChange="addHyphen()" path="cardNumber" required="true" />
 
 										<label for="">Expiry Month</label>
 										<form:select path="expDate">
@@ -99,14 +109,10 @@
 										<br>
 
 										<label for="">CVV/CVC</label>
-										<form:input type="password" placeholder="cvv" path="cvv"
-											pattern="[0-9]{3}"
-											title="cvv number should contain only 3 digits" value="" />
-
-
+										<form:input type="password"  placeholder="cvv" maxlength="3" path="cvv" value="" required="true" />
 										<label for="">Card Holder's Name:</label>
 										<form:input type="text" placeholder="Name"
-											path="cardholderName" />
+											path="cardholderName" required="true" />
 									</form:form>
 									<%--                     <a href="paymentsuccess?username=${User}"><button  class="aa-browse-btn">Make Payment</button></a>                     --%>
 									<a href="${flowExecutionUrl }&_eventId=submit"><button

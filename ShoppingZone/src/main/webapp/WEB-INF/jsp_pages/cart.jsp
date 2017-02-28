@@ -123,7 +123,7 @@
 								<a href="webflow"><button class="aa-cart-view-btn" style="color: black;text-align:center">Proceed
 									to Checkout</button></a>
 									
-								<a href="index"><button class="aa-cart-view-btn" type="button" style="background-color:black"> <span class="glyphicon glyphicon-arrow-left"></span> Continue Shopping</button></a>	
+								<a href="index?username=${User}"><button class="aa-cart-view-btn" type="button" style="background-color:black"> <span class="glyphicon glyphicon-arrow-left"></span> Continue Shopping</button></a>	
 
 							</div>
 						</div>

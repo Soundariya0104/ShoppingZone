@@ -23,10 +23,11 @@ public class OrderDAOImpl implements OrderDAO {
 
 	@Autowired
 	SessionFactory sessionFactory;
-	
+
 	Logger log = LoggerFactory.getLogger(OrderDAOImpl.class);
 
-	//--------------------------------------------------add order------------------------------------------//
+	// --------------------------------------------------add
+	// order------------------------------------------//
 	public boolean add(Product product, User user, int quantity, int total) {
 		log.debug("inside add order method");
 		Session session = sessionFactory.openSession();
@@ -39,11 +40,12 @@ public class OrderDAOImpl implements OrderDAO {
 		session.saveOrUpdate(order);
 		session.getTransaction().commit();
 		session.close();
-        log.debug("end add order method");
+		log.debug("end add order method");
 		return true;
 	}
 
-	//-------------------------------------------------list order-------------------------------------------//
+	// -------------------------------------------------list
+	// order-------------------------------------------//
 	@SuppressWarnings({ "deprecation", "unchecked" })
 	public List<Order> getOrderListbyname(String username) {
 		log.debug("inside list order method");
@@ -52,14 +54,15 @@ public class OrderDAOImpl implements OrderDAO {
 		Criteria cr = session.createCriteria(Order.class);
 		cr.add(Restrictions.like("user.username", username));
 		List<Order> list = cr.list();
-        log.debug("end of list order method");
+		log.debug("end of list order method");
 		return list;
 
 	}
-	
-    //-----------------------------------------------remove order--------------------------------------------//
+
+	// -----------------------------------------------remove
+	// order--------------------------------------------//
 	public Boolean remove(int orderId) {
-        log.debug("inside removeorder method");
+		log.debug("inside removeorder method");
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		Order orderModel = new Order();
@@ -67,14 +70,14 @@ public class OrderDAOImpl implements OrderDAO {
 		session.delete(orderModel);
 		session.getTransaction().commit();
 		session.close();
-        log.debug("end of remove ordermethod");
+		log.debug("end of remove ordermethod");
 		return true;
 
 	}
 
-	//---------------------------------------------removeorderbycartid----------------------------------------//
+	// ---------------------------------------------removeorderbycartid----------------------------------------//
 	public void removeorderbycartid(String username) {
-        log.debug("inside removeordercartbyid");
+		log.debug("inside removeordercartbyid");
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		@SuppressWarnings("rawtypes")
@@ -85,41 +88,44 @@ public class OrderDAOImpl implements OrderDAO {
 		log.debug("end of removeorderbycartid");
 
 	}
-	
+
 	@Transactional
-    @SuppressWarnings({ "unchecked", "deprecation", "rawtypes" })
+	@SuppressWarnings({ "unchecked", "deprecation", "rawtypes" })
 	public boolean addingproduct(String username, String productId, int quantity) {
-    	log.debug("inside getByName in categoryDAOImpl");
-    	Session session = sessionFactory.openSession();
+		log.debug("inside getByName in categoryDAOImpl");
+		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 
-    	String hql = "from Order where username =" + "'" + username + "'"+" and productId =" + "'" + productId+"'";
-	Query<Order> query = sessionFactory.getCurrentSession().createQuery(hql);
-	List<Order> list = (List<Order>) query.list();
-	if (list != null && !list.isEmpty()) {
-		
-		
-		
-		
-		quantity=query.uniqueResult().getQuantity()+quantity;
-		
-		int orderId=query.uniqueResult().getOrderId();
-		Query query1 = session.createQuery("update Order set quantity = :quantity " +
-				" where orderid = :orderid");
-	query1.setParameter("quantity", quantity);
-	
-query1.setParameter("orderid", orderId);
-query1.executeUpdate();
+		String hql = "from Order where username =" + "'" + username + "'" + " and productId =" + "'" + productId + "'";
+		Query<Order> query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<Order> list = (List<Order>) query.list();
+		if (list != null && !list.isEmpty()) {
+
+			quantity = query.uniqueResult().getQuantity() + quantity;
+			int total = quantity * query.uniqueResult().getProduct().getProductPrice();
+
+			int orderId = query.uniqueResult().getOrderId();
+			Query query1 = session.createQuery("update Order set quantity = :quantity " + " where orderid = :orderid");
+			query1.setParameter("quantity", quantity);
+
+			query1.setParameter("orderid", orderId);
+			query1.executeUpdate();
+			Query query2 = session.createQuery("update Order set total = :total " + " where orderid = :orderid");
+			query2.setParameter("total", total);
+
+			query2.setParameter("orderid", orderId);
+			query2.executeUpdate();
+
 			session.getTransaction().commit();
 			session.close();
-		
-		return true;
+
+			return true;
+		} else {
+
+			session.getTransaction().commit();
+			session.close();
+			return false;
+		}
 	}
-		else{
-	   
-		session.getTransaction().commit();
-		session.close();
-	   return false;
-	}	}
 
 }

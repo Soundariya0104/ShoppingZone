@@ -1099,11 +1099,9 @@
 											<p class="font-bold">Rs.699</p>
 											<div class="social-icon socile-icon-style-1 mt-15">
 												<ul>
-													<li><a href="cart"><i
+													<li><a href="addtocart?username=${User}&productId=${productList.productId}&quantity=1"><i
 															class="zmdi zmdi-shopping-cart"></i></a></li>
-													<li><a href="#" data-tooltip="Quick View"
-														class="q-view" data-toggle="modal" data-target=".modal"
-														tabindex="0"><i class="zmdi zmdi-eye"></i></a></li>
+												
 												</ul>
 											</div>
 										</div>
@@ -1125,11 +1123,8 @@
 											<p class="font-bold">Rs.99</p>
 											<div class="social-icon socile-icon-style-1 mt-15">
 												<ul>
-													<li><a href="cart"><i
+													<li><a href="addtocart?username=${User}&productId=${productList.productId}&quantity=1"><i
 															class="zmdi zmdi-shopping-cart"></i></a></li>
-													<li><a href="#" data-tooltip="Quick View"
-														class="q-view" data-toggle="modal" data-target=".modal"
-														tabindex="0"><i class="zmdi zmdi-eye"></i></a></li>
 												</ul>
 											</div>
 										</div>
@@ -1153,11 +1148,8 @@
 											<p class="font-bold">Rs.369</p>
 											<div class="social-icon socile-icon-style-1 mt-15">
 												<ul>
-													<li><a href="cart"><i
+													<li><a href="addtocart?username=${User}&productId=${productList.productId}&quantity=1"><i
 															class="zmdi zmdi-shopping-cart"></i></a></li>
-													<li><a href="#" data-tooltip="Quick View"
-														class="q-view" data-toggle="modal" data-target=".modal"
-														tabindex="0"><i class="zmdi zmdi-eye"></i></a></li>
 												</ul>
 											</div>
 										</div>
@@ -1216,11 +1208,9 @@
 												<p class="font-bold">Rs.450</p>
 												<div class="social-icon socile-icon-style-1 mt-15">
 													<ul>
-														<li><a href="cart"><i
+														<li><a href="addtocart?username=${User}&productId=${productList.productId}&quantity=1"><i
 																class="zmdi zmdi-shopping-cart"></i></a></li>
-														<li><a href="#" data-tooltip="Quick View"
-															class="q-view" data-toggle="modal" data-target=".modal"
-															tabindex="0"><i class="zmdi zmdi-eye"></i></a></li>
+														
 													</ul>
 												</div>
 											</div>
@@ -1242,11 +1232,9 @@
 												<p class="font-bold">Rs.699</p>
 												<div class="social-icon socile-icon-style-1 mt-15">
 													<ul>
-														<li><a href="cart"><i
+														<li><a href="addtocart?username=${User}&productId=${productList.productId}&quantity=1"><i
 																class="zmdi zmdi-shopping-cart"></i></a></li>
-														<li><a href="#" data-tooltip="Quick View"
-															class="q-view" data-toggle="modal" data-target=".modal"
-															tabindex="0"><i class="zmdi zmdi-eye"></i></a></li>
+														
 													</ul>
 												</div>
 											</div>
@@ -1272,9 +1260,7 @@
 													<ul>
 														<li><a href="cart"><i
 																class="zmdi zmdi-shopping-cart"></i></a></li>
-														<li><a href="#" data-tooltip="Quick View"
-															class="q-view" data-toggle="modal" data-target=".modal"
-															tabindex="0"><i class="zmdi zmdi-eye"></i></a></li>
+														
 													</ul>
 												</div>
 											</div>
@@ -1334,11 +1320,9 @@
 												<p class="font-bold">Rs.1999</p>
 												<div class="social-icon socile-icon-style-1 mt-15">
 													<ul>
-														<li><a href="cart"><i
+														<li><a href="addtocart?username=${User}&productId=${productList.productId}&quantity=1"><i
 																class="zmdi zmdi-shopping-cart"></i></a></li>
-														<li><a href="#" data-tooltip="Quick View"
-															class="q-view" data-toggle="modal" data-target=".modal"
-															tabindex="0"><i class="zmdi zmdi-eye"></i></a></li>
+														
 													</ul>
 												</div>
 											</div>
@@ -1360,11 +1344,9 @@
 												<p class="font-bold">Rs.380</p>
 												<div class="social-icon socile-icon-style-1 mt-15">
 													<ul>
-														<li><a href="cart"><i
+														<li><a href="addtocart?username=${User}&productId=${productList.productId}&quantity=1"><i
 																class="zmdi zmdi-shopping-cart"></i></a></li>
-														<li><a href="#" data-tooltip="Quick View"
-															class="q-view" data-toggle="modal" data-target=".modal"
-															tabindex="0"><i class="zmdi zmdi-eye"></i></a></li>
+														
 													</ul>
 												</div>
 											</div>

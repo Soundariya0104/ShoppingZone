@@ -35,33 +35,33 @@ public class CartController {
 	
 	Logger log = LoggerFactory.getLogger(CartController.class);
     
-	//------------------------------------Add to Cart------------------------------------------------------------//
-	@RequestMapping(value = "/addtocart", method = RequestMethod.GET)          //mapping for addtocart
-	public String addtocart(@RequestParam("username") String username, @RequestParam("productId") String productId,
-			@RequestParam("quantity") int quantity, Model model) {
-		log.debug("inside the addtocart");
-		model.addAttribute("categoryList", categoryDAO.getCategoryList());
-		if(orderDAO.addingproduct(username, productId,quantity)){
-		
-			orderDAO.add(productDAO.getById(productId), userDAO.getById(username), quantity,
-					quantity * productDAO.getById(productId).getProductPrice());
-	            
-			model.addAttribute("cartList", orderDAO.getOrderListbyname(username));
-			System.out.println(orderDAO.getOrderListbyname(username));
+	//-------------------------------------------------------Add to cart----------------------------------------------------------------------------------------------
+		 @RequestMapping(value="/addtocart",method=RequestMethod.GET)
+		    public String addtocart(@RequestParam("username")String username, @RequestParam("productId")String productId, @RequestParam("quantity") int quantity, HttpSession session,Model model){
+			 log.debug("inside addtocart controller");
+
+			 if(orderDAO.addingproduct(username, productId,quantity)){
+				 
+
+				 model.addAttribute("categoryList", categoryDAO.getCategoryList());
+				 model.addAttribute("cartList", orderDAO.getOrderListbyname(username));
+				model.addAttribute("cartsize", orderDAO.getOrderListbyname(username).size());
+				model.addAttribute("cartId", "ganesh");
+					 log.debug("leaving addtocart controller");
+				return "cart";		    
+			 }
+			 else{
+			 
+			 
+			 model.addAttribute("categoryList", categoryDAO.getCategoryList());
+			 orderDAO.add(productDAO.getById(productId),userDAO.getById(username),quantity,quantity*productDAO.getById(productId).getProductPrice());
+			 model.addAttribute("cartList", orderDAO.getOrderListbyname(username));
 			model.addAttribute("cartsize", orderDAO.getOrderListbyname(username).size());
-			log.debug("end of addtocart");
+			log.debug("leaving addtocart controller");
 			return "cart";
-		}else{
-			orderDAO.add(productDAO.getById(productId), userDAO.getById(username), quantity,
-				quantity * productDAO.getById(productId).getProductPrice());
-              
-		model.addAttribute("cartList", orderDAO.getOrderListbyname(username));
-		System.out.println(orderDAO.getOrderListbyname(username));
-		model.addAttribute("cartsize", orderDAO.getOrderListbyname(username).size());
-		log.debug("end of addtocart");
-		return "cart";
-		}
-	}
+		    }}
+		
+
 	
     //---------------------------------Cart----------------------------------------------------------------------//
 	@RequestMapping(value = "/cart", method = RequestMethod.GET)              //mapping for cart

@@ -99,7 +99,7 @@
 							</div>
 							<div class="informatoin">
 								<ul>
-									<li><a href="#">My Account</a></li>
+									<li><a href="userpage?username=${User }">My Account</a></li>
 									<li><a href="#">Order History</a></li>
 									<li><a href="#">Wishlist</a></li>
 									<li><a href="#">Returnes</a></li>

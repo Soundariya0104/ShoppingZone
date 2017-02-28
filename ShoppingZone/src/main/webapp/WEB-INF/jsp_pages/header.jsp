@@ -205,26 +205,10 @@
 								</nav>
 							</div>
 
-							<div class="col-md-3 hidden-sm hidden-xs">
-								<div class="search-box global-table">
-									<div class="global-row">
-										<div class="global-cell">
-											<form action="#">
-												<div class="input-box">
-													<input class="single-input" placeholder="Search anything"
-														type="text">
-													<button class="src-btn">
-														<i class="fa fa-search"></i>
-													</button>
-												</div>
-											</form>
-										</div>
-									</div>
+															   </div>
 								</div>
 							</div>
-
-
-
+						</div>
 						</div>
 					</div>
 				</div>
