@@ -1,5 +1,6 @@
 Project Description:
-      SportsFocus
+     RoyalSports
+     Feel Royal,Think Royal
  An Ultimate Online Sports Shop
     (E-Commerce Portal)
 
