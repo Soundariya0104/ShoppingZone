@@ -39,9 +39,10 @@
 <!-- Modernizr JS -->
 <script
 	src="<c:url value="/resources/js/vendor/modernizr-2.8.3.min.js"/>"></script>
+	<script src="<c:url value="/resources/js/angular.min.js"/>"></script>
 </head>
 
-<body>
+<body  ng-app="productTable" ng-controller="ProductController">
 	<!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -180,6 +181,7 @@
 									<!-- <img src="<c:url value="/resources/images/logo/logo.png"/>" alt="main logo"/>-->
 								</div>
 							</div>
+							
 							<div class="col-md-7 col-sm-10 hidden-xs">
 								<nav id="primary-menu">
 									<ul class="main-menu">
@@ -204,8 +206,25 @@
 									</ul>
 								</nav>
 							</div>
+							<div class="col-md-3 hidden-sm hidden-xs">
+                                <div class="search-box global-table">
+                                    <div class="global-row">
+                                        <div class="global-cell">
+                                            <form action="#">
+                                                <div class="table-responsive">
+								                    <div class="input-box">
+                                                    <input class="single-input" placeholder="Search anything" type="text" ng-model="searchText">
+                                                    <button class="src-btn"><i class="fa fa-search"></i></button>
+                                                </div></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
 															   </div>
+															   
+															   
 								</div>
 							</div>
 						</div>
@@ -213,7 +232,25 @@
 					</div>
 				</div>
 			</div>
+			
 		</header>
+		<script>
+		var prod = ${productList}; 
+  angular.module('productTable',[]).controller('ProductController', function($scope)  
+   {
+          $scope.Product=prod;  
+       
+   
+          $scope.sort = function(keyname)
+          {
+              $scope.sortKey = keyname;   
+              $scope.reverse = !$scope.reverse; 
+          }
+              
+    });
+</script>
+		
+		
 		<!-- End of header area -->
 		<!-- Body main wrapper end -->
 

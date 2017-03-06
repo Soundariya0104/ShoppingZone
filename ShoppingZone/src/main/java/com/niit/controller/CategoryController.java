@@ -1,5 +1,7 @@
 package com.niit.controller;
 
+import java.util.ArrayList;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.Gson;
 import com.niit.dao.CategoryDAO;
 import com.niit.model.Category;
+import com.niit.model.Supplier;
 
 @Controller
 public class CategoryController {
@@ -24,7 +28,10 @@ public class CategoryController {
 	public ModelAndView categoryPage() {
 		log.debug("inside category controller"); // performing a logger debug
 		ModelAndView model = new ModelAndView("category", "category", new Category()); // adding a page to ModelAndView with empty constructor
-		model.addObject("list", categoryDAO.getCategoryList()); // adding a object to value list
+		//model.addObject("list", categoryDAO.getCategoryList()); // adding a object to value list
+		 ArrayList<Category> list=(ArrayList<Category>)categoryDAO.getCategoryList();
+	  		Gson gson= new Gson();
+	  		model.addObject	 ("list",gson.toJson(list));
         log.debug("end of category controller method");
 		return model;
 	}

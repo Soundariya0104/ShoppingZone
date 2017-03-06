@@ -73,7 +73,7 @@ function addHyphen() {
 
 										<label for="">Card Number</label>
 										<br>
-										 <form:input type="text" placeholder="Enter Card 16 digit Number" maxlength="16" id="cardnumber" onChange="addHyphen()" path="cardNumber" required="true" />
+										 <form:input type="text" placeholder="Enter 16 digit Card Number" maxlength="16" id="cardnumber" onChange="addHyphen()" path="cardNumber" required="true" />
 
 										<label for="">Expiry Month</label>
 										<form:select path="expDate">

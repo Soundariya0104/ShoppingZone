@@ -67,7 +67,8 @@
 				<div class="col-md-12">
 					<div class="cart-view-area">
 						<div class="cart-view-table">
-							<form action="">
+							<form action="updateactionquantity">
+											
 								<div class="table-responsive">
 									<table class="table">
 										<thead>
@@ -85,17 +86,27 @@
 											<c:set var="grandtotal" value="${0}" />
 											<c:forEach var="cartList" items="${cartList}">
 												<tr>
-													<td><a
-														href="productpage?productId=${cartList.product.productId}">><img
+													<td>
+			
+													<a href="productpage?productId=${cartList.product.productId}">><img
 															src="<c:url value="/resources/images/product/${cartList.product.productId }.jpeg"/>"
 															style="height: 100px; width: 80px" alt="img"></a></td>
 													<td><a class="aa-cart-title" href="#" style="color:black">${cartList.product.productName}</a></td>
 													<td><i class="fa fa-inr"></i>
 														${cartList.product.productPrice} /-</td>
-													<td>${cartList.quantity}</td>
+													<td>
+			
+<input type="number" name="quantity" value="${cartList.quantity}"	min="1" max="50"><br> 
+<input type="hidden" name="username" value="${User}"> 
+<input	type="hidden" name="productId" value="${cartList.product.productId }">
+ 
+							<input type="submit" value="Update">
+												</td>
 													<td>${cartList.total}</td>
-													<td><a style="color:black"
-														href="removeorder?orderId=${cartList.orderId}&username=${cartList.user.username}"><span class="fa-fa-trash"></span>Remove</a></td>
+		<td><a style="color:black"	href="removeorder?orderId=${cartList.orderId}&username=${cartList.user.username}"><span class="fa-fa-trash"></span>Remove</a>
+													
+													</td>
+
 												</tr>
 
 												<c:set var="grandtotal"
@@ -105,6 +116,7 @@
 
 										</tbody>
 									</table>
+									
 								</div>
 							</form>
 							<!-- Cart Total view -->

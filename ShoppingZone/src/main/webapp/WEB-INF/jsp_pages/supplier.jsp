@@ -39,13 +39,13 @@
 <!-- Modernizr JS -->
 <script
 	src="<c:url value="/resources/js/vendor/modernizr-2.8.3.min.js"/>"></script>
+	<script src="<c:url value="/resources/js/angular.min.js"/>"></script>
 </head>
 
-<body>
 	<!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-<body>
+<body ng-app="supplierTable" ng-controller="SupplierController">
 
 
 	<%@ include file="header.jsp"%>
@@ -162,6 +162,15 @@
 								</h3>
 							</div>
 							<div class="table-responsive">
+								<div>
+									<label style="width: 12%" for="">Search:</label><input
+										type=text
+										style="border: 1px solid #ccc; font-size: 16px; height: 40px; margin-bottom: 15px; padding: 10px; width: 40%;"
+										placeholder="Enter supplier name" ng-model="searchText" />
+								</div>
+							
+							
+							<div class="table-responsive">
 								<table class="table">
 									<thead>
 										<tr>
@@ -172,22 +181,24 @@
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach var="listValue" items="${list}">
-											<tr>
-												<td>${listValue.supplierId}</td>
-												<td>${listValue.supplierName}</td>
-												<td>${listValue.supplierDetails}</td>
-												<td style="border-right: white"><form
-														action="deletesupplier">
-														<button name="supplierId" type="submit"
-															style="color: black;" value=${listValue.supplierId}>Delete</button>
-													</form></td>
+										<tr ng-repeat="listValue in Supplier|filter:searchText">
+												<td>{{listValue.supplierId}}</td>
+												<td><a class="aa-cart-title" style="color:black">{{listValue.supplierName}}</a></td>
+												<td>{{listValue.supplierDetails}}</td>
+												<td style="border-right: white">
+													<form action="deletesupplier">
+														<button name="supplierId" class="aa-cart-view-btn"
+															type="submit" value={{listValue.supplierId}}
+															style="heigth: 2px;color:black">Delete</button>
+													</form>
+												</td>
 												<td><form action="editsupplier">
-														<button name="supplierId" type="submit"
-															style="color: black;" value=${listValue.supplierId}>Edit</button>
+														<button name="supplierId" class="aa-cart-view-btn"
+															type="submit" value={{listValue.supplierId}}
+															style="heigth: 1px;color:black">Edit</button>
 													</form></td>
 											</tr>
-										</c:forEach>
+
 									</tbody>
 								</table>
 							</div>
@@ -198,6 +209,18 @@
 		</div>
 	</section>
 	<%@ include file="footer.jsp"%>
+	
+	<script>
+  var supp = ${list}; 
+  angular.module('supplierTable',[]).controller('SupplierController', function($scope)  
+   {
+          $scope.Supplier=supp;  
+       
+              
+    });
+</script>
+	
+	
 	<!-- End of header area -->
 	<!-- Body main wrapper end -->
 

@@ -62,7 +62,7 @@ public class ProductController {
 		model.addAttribute("supplier", new Supplier());
 		model.addAttribute("category", new Category());
 		model.addAttribute("productList", getJson());
-		model.addAttribute("productlist", productDAO.getProductList()); // object for productlist
+		//model.addAttribute("productlist", productDAO.getProductList()); // object for productlist
 		model.addAttribute("categorylist", categoryDAO.getCategoryList()); // object for categorylist
 		model.addAttribute("supplierlist", supplierDAO.getSupplierList());// object for supplierlist
     	model.addAttribute("page_name", "Product");
@@ -146,9 +146,12 @@ public class ProductController {
 	@RequestMapping(value = "/categorypage", method = RequestMethod.GET) // mapping for product
 	public String categoryPageUser(Model model, @RequestParam("categoryId") String categoryId, HttpSession session) {
 		log.debug("inside categorypage method");
-		model.addAttribute("values", productDAO.getProductListbycategory(categoryId));
+		//model.addAttribute("values", productDAO.getProductListbycategory(categoryId));
 		model.addAttribute("categoryList", categoryDAO.getCategoryList());
 		String User = (String) session.getAttribute("User");
+		ArrayList<Product> list=(ArrayList<Product>)productDAO.getProductListbycategory(categoryId);
+  		Gson gson= new Gson();
+  		model.addAttribute("productList",gson.toJson(list));
 		model.addAttribute("cartList", orderDAO.getOrderListbyname(User));
 		model.addAttribute("cartsize", orderDAO.getOrderListbyname(User).size());
         log.debug("end of categorypage method");

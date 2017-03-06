@@ -1,5 +1,7 @@
 package com.niit.controller;
 
+import java.util.ArrayList;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.Gson;
 import com.niit.dao.SupplierDAO;
+import com.niit.model.Product;
 import com.niit.model.Supplier;
 
 @Controller
@@ -25,12 +29,20 @@ public class SupplierController {
 	public ModelAndView supplierPage(Model m) {
 		log.debug("inside supplier method");
 		ModelAndView model = new ModelAndView("supplier", "supplier", new Supplier());
-		model.addObject("list", supplierDAO.getSupplierList());
+		//model.addObject("list", supplierDAO.getSupplierList());
+		
+		  	  ArrayList<Supplier> list=(ArrayList<Supplier>)supplierDAO.getSupplierList();
+		  		Gson gson= new Gson();
+		  		model.addObject	 ("list",gson.toJson(list));
+		  		
+
 		model.addObject("page_name", "Supplier");
 		log.debug("end of supplier method");
 		return model;
 	}
 
+	
+	
 	// ---------------------------------addsupplier------------------------------------------------------------------//
 	@RequestMapping(value = "/addsupplier", method = RequestMethod.GET) // mapping for addsupplier
 	public String addSupplier(Supplier supplier) {

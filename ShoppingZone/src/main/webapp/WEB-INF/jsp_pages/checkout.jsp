@@ -71,7 +71,7 @@
 															<div class="col-md-12">
 																<div class="aa-checkout-single-bill">
 																	Name:
-																	<form:input type="text" placeholder="Name"
+																	<form:input type="text" placeholder="Name" required="true"
 																		path="billingFirstname" />
 																</div>
 															</div>
@@ -90,7 +90,7 @@
 																<div class="aa-checkout-single-bill">
 																	Phone:
 																	<form:input type="tel" placeholder="Phone*"
-																		path="billingPhone"
+																		path="billingPhone" required="true"
 																		title="mobile number should start with either 7/8/9 and should contain 10 digits"
 																		pattern="[789][0-9]{9}" />
 																</div>
@@ -100,7 +100,7 @@
 															<div class="col-md-12">
 																<div class="aa-checkout-single-bill">
 																	Address:
-																	<form:textarea cols="8" rows="3" path="billingAddress" />
+																	<form:textarea cols="8" rows="3" path="billingAddress" required="true"/>
 																	</textarea>
 																</div>
 															</div>
@@ -129,7 +129,7 @@
 																	<form:input type="text" placeholder="Postcode / ZIP*"
 																		pattern="[6][0-9]{5}"
 																		title="pincode should contain 6 digits and should be valid ex:6XXXXX"
-																		path="billingPincode" />
+																		path="billingPincode" required="true" />
 																</div>
 															</div>
 														</div>

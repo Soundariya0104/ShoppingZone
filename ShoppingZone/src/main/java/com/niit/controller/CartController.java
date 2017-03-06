@@ -62,7 +62,25 @@ public class CartController {
 		    }}
 		
 
-	
+	// ---------------------------------Cart----------------------------------------------------------------------//
+	@RequestMapping(value = "/updateactionquantity", method = RequestMethod.GET) // mapping
+																					// for
+																					// cart
+	public String addquantity(@RequestParam("username") String username, @RequestParam("quantity") int quantity,
+			@RequestParam("productId") String productId, HttpSession session, Model model) {
+		log.debug("inside cart method");
+		model.addAttribute("categoryList", categoryDAO.getCategoryList());
+
+		orderDAO.addquantity(username, productId, quantity);
+
+				model.addAttribute("cartList", orderDAO.getOrderListbyname(username));
+		model.addAttribute("cartsize", orderDAO.getOrderListbyname(username).size());
+		log.debug("end of cart method");
+		return "cart";
+	}			
+		 
+		 
+		 
     //---------------------------------Cart----------------------------------------------------------------------//
 	@RequestMapping(value = "/cart", method = RequestMethod.GET)              //mapping for cart
 	public String addtocart(@RequestParam("username") String username, HttpSession session, Model model) {

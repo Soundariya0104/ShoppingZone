@@ -89,6 +89,34 @@ public class OrderDAOImpl implements OrderDAO {
 
 	}
 
+	
+	
+	public void addquantity(String username,String productId, int quantity ) {
+		log.debug("inside removeordercartbyid");
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+	Product product= new Product();
+	product.setProductId(productId);
+	User user=new User();
+	user.setUsername(username);
+	
+		Order order=new Order();
+		order.setUser(user);
+		order.setProduct(product);
+		order.setQuantity(quantity);
+		
+		
+		session.saveOrUpdate(order);
+		
+		session.getTransaction().commit();
+		session.close();
+		log.debug("end of removeorderbycartid");
+
+	}
+
+
+	
+	
 	@Transactional
 	@SuppressWarnings({ "unchecked", "deprecation", "rawtypes" })
 	public boolean addingproduct(String username, String productId, int quantity) {
@@ -127,5 +155,7 @@ public class OrderDAOImpl implements OrderDAO {
 			return false;
 		}
 	}
+	
+	
 
 }

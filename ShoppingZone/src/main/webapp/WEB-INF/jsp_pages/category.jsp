@@ -39,16 +39,14 @@
 <!-- Modernizr JS -->
 <script
 	src="<c:url value="/resources/js/vendor/modernizr-2.8.3.min.js"/>"></script>
+	<script src="<c:url value="/resources/js/angular.min.js"/>"></script>
 </head>
 
-<body>
 	<!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-</head>
-<body>
 
-
+<body ng-app="categoryTable" ng-controller="CategoryController">
 
 	<%@ include file="header.jsp"%>
 
@@ -144,6 +142,15 @@
 									<strong>Category List</strong>
 								</h3>
 							</div>
+							
+							<div class="table-responsive" >
+								<div>
+									<label style="width: 12%" for="">Search:</label><input
+										type=text
+										style="border: 1px solid #ccc; font-size: 16px; height: 40px; margin-bottom: 15px; padding: 10px; width: 40%;"
+										placeholder="Enter category name" ng-model="searchText" />
+								</div>
+							
 							<div class="table-responsive">
 								<table class="table">
 									<thead>
@@ -154,21 +161,23 @@
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach var="listValue" items="${list}">
-											<tr>
-												<td>${listValue.categoryId}</td>
-												<td>${listValue.categoryName}</td>
-												<td style="border-right: white"><form
-														action="deletecategory">
-														<button name="categoryId" type="submit"
-															style="color: black;" value=${listValue.categoryId}>Delete</button>
-													</form></td>
+										<tr ng-repeat="listValue in Category|filter:searchText">
+												<td>{{listValue.categoryId}}</td>
+												<td><a class="aa-cart-title" style="color:black">{{listValue.categoryName}}</a></td>
+												
+												<td style="border-right: white">
+													<form action="deletecategory">
+														<button name="categoryId" class="aa-cart-view-btn"
+															type="submit" value={{listValue.categoryId}}
+															style="heigth: 2px;color:black">Delete</button>
+													</form>
+												</td>
 												<td><form action="editcategory">
-														<button name="categoryId" type="submit"
-															style="color: black;" value=${listValue.categoryId}>Edit</button>
+														<button name="categoryId" class="aa-cart-view-btn"
+															type="submit" value={{listValue.categoryId}}
+															style="heigth: 1px;color:black">Edit</button>
 													</form></td>
 											</tr>
-										</c:forEach>
 									</tbody>
 								</table>
 							</div>
@@ -176,11 +185,21 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div></div>
 	</section>
 
 
 	<%@ include file="footer.jsp"%>
+	
+<script>
+  var cat = ${list}; 
+  angular.module('categoryTable',[]).controller('CategoryController', function($scope)  
+   {
+          $scope.Category=cat;  
+                  
+    });
+</script>
+	
 	<!-- End of header area -->
 	<!-- Body main wrapper end -->
 
