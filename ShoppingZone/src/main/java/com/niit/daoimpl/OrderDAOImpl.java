@@ -91,32 +91,40 @@ public class OrderDAOImpl implements OrderDAO {
 
 	
 	
-	public void addquantity(String username,String productId, int quantity ) {
-		log.debug("inside removeordercartbyid");
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
-	Product product= new Product();
-	product.setProductId(productId);
-	User user=new User();
-	user.setUsername(username);
-	
-		Order order=new Order();
-		order.setUser(user);
-		order.setProduct(product);
-		order.setQuantity(quantity);
-		
-		
-		session.saveOrUpdate(order);
-		
-		session.getTransaction().commit();
-		session.close();
-		log.debug("end of removeorderbycartid");
+	@Transactional
+	@SuppressWarnings({ "unchecked", "deprecation", "rawtypes" })
+	public boolean updatequantity(String username, String productId, int quantity) {
 
+
+	log.debug("inside getByName in categoryDAOImpl");
+	Session session = sessionFactory.openSession();
+	session.beginTransaction();
+
+	String hql = "from Order where username =" + "'" + username + "'"+" and productId =" + "'" + productId+"'";
+	Query<Order> query = sessionFactory.getCurrentSession().createQuery(hql);
+
+
+	int total=quantity*query.uniqueResult().getProduct().getProductPrice();
+	System.out.println("total"+total);
+	int orderId=query.uniqueResult().getOrderId();
+	Query query1 = session.createQuery("update Order set quantity = :quantity " +
+			" where orderid = :orderid");
+	query1.setParameter("quantity", quantity);
+
+	query1.setParameter("orderid", orderId);
+	query1.executeUpdate();
+	Query query2 = session.createQuery("update Order set total = :total " +
+	" where orderid = :orderid");
+	query2.setParameter("total", total);
+
+	query2.setParameter("orderid", orderId);
+	query2.executeUpdate();
+
+	session.getTransaction().commit();
+		session.close();
+	return true;
 	}
 
-
-	
-	
 	@Transactional
 	@SuppressWarnings({ "unchecked", "deprecation", "rawtypes" })
 	public boolean addingproduct(String username, String productId, int quantity) {

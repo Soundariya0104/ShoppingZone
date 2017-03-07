@@ -16,6 +16,7 @@ public interface OrderDAO {
 	public void removeorderbycartid(String username);
 	
     public boolean addingproduct(String username, String productId, int quantity);
-    public void addquantity(String username,String productId, int quantity );
+    
+    public boolean updatequantity(String username,String productId, int quantity );
     	
 }

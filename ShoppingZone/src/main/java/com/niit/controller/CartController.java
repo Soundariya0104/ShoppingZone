@@ -62,22 +62,20 @@ public class CartController {
 		    }}
 		
 
-	// ---------------------------------Cart----------------------------------------------------------------------//
-	@RequestMapping(value = "/updateactionquantity", method = RequestMethod.GET) // mapping
-																					// for
-																					// cart
-	public String addquantity(@RequestParam("username") String username, @RequestParam("quantity") int quantity,
-			@RequestParam("productId") String productId, HttpSession session, Model model) {
-		log.debug("inside cart method");
-		model.addAttribute("categoryList", categoryDAO.getCategoryList());
+	// ---------------------------------adding quantity----------------------------------------------------------------------//
+		 @RequestMapping(value="/addingquantity",method=RequestMethod.GET)
+		    public String addtoquantityu(@RequestParam("username")String username, @RequestParam("productId")String productId, @RequestParam("quantity") int quantity, HttpSession session,Model model){
 
-		orderDAO.addquantity(username, productId, quantity);
+			 orderDAO.updatequantity(username, productId, quantity);
+			 model.addAttribute("categoryList", categoryDAO.getCategoryList());
+			 model.addAttribute("cartList", orderDAO.getOrderListbyname(username));
+			model.addAttribute("cartsize", orderDAO.getOrderListbyname(username).size());
+			model.addAttribute("cartId", "ganesh");
+				 log.debug("leaving addtocart controller");
+			return "cart";
+			}
+				 
 
-				model.addAttribute("cartList", orderDAO.getOrderListbyname(username));
-		model.addAttribute("cartsize", orderDAO.getOrderListbyname(username).size());
-		log.debug("end of cart method");
-		return "cart";
-	}			
 		 
 		 
 		 

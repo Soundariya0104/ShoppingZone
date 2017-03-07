@@ -60,95 +60,91 @@
 	</section>
 	<!-- /  header  section -->
 
-	<!-- Cart view section -->
-	<section id="cart-view">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="cart-view-area">
-						<div class="cart-view-table">
-							<form action="updateactionquantity">
-											
-								<div class="table-responsive">
-									<table class="table">
-										<thead>
-											<tr>
-
-												<th>Product Display</th>
-												<th>Product</th>
-												<th>Price</th>
-												<th>Quantity</th>
-												<th>Total</th>
-												<th>Remove</th>
-											</tr>
-										</thead>
-										<tbody>
-											<c:set var="grandtotal" value="${0}" />
-											<c:forEach var="cartList" items="${cartList}">
-												<tr>
-													<td>
-			
-													<a href="productpage?productId=${cartList.product.productId}">><img
-															src="<c:url value="/resources/images/product/${cartList.product.productId }.jpeg"/>"
-															style="height: 100px; width: 80px" alt="img"></a></td>
-													<td><a class="aa-cart-title" href="#" style="color:black">${cartList.product.productName}</a></td>
-													<td><i class="fa fa-inr"></i>
-														${cartList.product.productPrice} /-</td>
-													<td>
-			
-<input type="number" name="quantity" value="${cartList.quantity}"	min="1" max="50"><br> 
-<input type="hidden" name="username" value="${User}"> 
-<input	type="hidden" name="productId" value="${cartList.product.productId }">
- 
-							<input type="submit" value="Update">
-												</td>
-													<td>${cartList.total}</td>
-		<td><a style="color:black"	href="removeorder?orderId=${cartList.orderId}&username=${cartList.user.username}"><span class="fa-fa-trash"></span>Remove</a>
-													
-													</td>
-
-												</tr>
-
-												<c:set var="grandtotal"
-													value="${grandtotal + cartList.total}" />
-
-											</c:forEach>
-
-										</tbody>
-									</table>
-									
-								</div>
-							</form>
-							<!-- Cart Total view -->
-							<div class="cart-view-total" style="align:center">
-								<h4>Cart Totals</h4>
-								<table class="aa-totals-table">
-									<tbody>
-										<tr>
-											<th>Grand Total</th>
-											<td><strong id="total"><span id="sum"><i
-														class="fa fa-inr"></i> ${grandtotal} /-</span></strong></td>
-										</tr>
-									</tbody>
-								</table>
-								<%--<a href="checkout?username=${User}" class="aa-cart-view-btn">Proceed to Checkout</a> --%>
-								<a href="webflow"><button class="aa-cart-view-btn" style="color: black;text-align:center">Proceed
-									to Checkout</button></a>
-									
-								<a href="index?username=${User}"><button class="aa-cart-view-btn" type="button" style="background-color:black"> <span class="glyphicon glyphicon-arrow-left"></span> Continue Shopping</button></a>	
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- / Cart view section -->
-
-
-
-
+	
+ <!-- Cart view section -->
+ <section id="cart-view">
+   <div class="container">
+     <div class="row">
+       <div class="col-md-12">
+         <div class="cart-view-area">
+           <div class="cart-view-table">
+            <c:if test="${ not empty cartList  }">
+                 <form action="addingquantity">
+               <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        
+                        <th>Product Display</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+						<th>Remove</th>
+						<th>Update</th>
+					  </tr>
+                    </thead>
+                    <tbody >
+                    <c:set var="grandtotal" value="${0}"/>
+                    <c:forEach var="cartList" items="${cartList}">
+                    
+<input type="hidden" name="username" value="${User}">
+<input type="hidden" name="productId" value="${cartList.product.productId }">      
+                    
+                               <tr>			
+                        <td><a href="productpage?productId=${cartList.product.productId}">
+                        <img style="height:50px;width:50px" src="<c:url value="/resources/images/product/${cartList.product.productId }.jpeg"/>" alt="img"></a></td>
+                        <td><a class="aa-cart-title" href="#" style="color:black">${cartList.product.productName}</a></td>
+                        <td><i class="fa fa-inr" ></i> ${cartList.product.productPrice} /-</td>
+                        <td>  <input type="number" name="quantity" value="${cartList.quantity}" min="1" max="50"></td>
+                        <td>${cartList.total}</td>
+						<td><a class="aa-cart-view-btn" style="color:black" href="removeorder?orderId=${cartList.orderId}&username=${cartList.user.username}"> Remove</a> </td>
+						<td><input type="submit" value="update"></td></tr>
+	
+				     <c:set var="grandtotal" value="${grandtotal + cartList.total}" />
+				      
+                		</c:forEach>
+                      
+                      </tbody>
+                  </table>
+                </div>
+             </form>
+             <!-- Cart Total view -->
+             <div class="cart-view-total">
+               <h4>Cart Totals</h4>
+               <table class="aa-totals-table">
+                 <tbody>
+                   <tr>
+                     <th>Grand Total</th>
+                     <td><strong id="total"><span id="sum"><i class="fa fa-inr" ></i> ${grandtotal} /-</span></strong></td>
+                   </tr>
+                 </tbody>
+<%--                 
+<%--                <a href="checkout?username=${User}" class="aa-cart-view-btn">Proceed to Checkout</a> --%>
+             <a href="webflow" class="aa-cart-view-btn" style="background-color:black">Proceed to Checkout <span class="glyphicon glyphicon-arrow-right"></span></a>
+               <a href="index"><button class="aa-cart-view-btn" style="background-color:black"> <span class="glyphicon glyphicon-arrow-right"></span> Continue Shopping</button></a>
+         
+             </div></c:if>
+               <c:if test="${  empty cartList  }">
+          <div class="page-header"><h2>Your cart is empty</h2></div><br>
+             <div class="cart-view-total">
+             
+             
+             
+<%--                <a href="checkout?username=${User}" class="aa-cart-view-btn">Proceed to Checkout</a> --%>
+               <a href="index"><button class="aa-cart-view-btn"> <span class="glyphicon glyphicon-arrow-left"></span> Continue Shopping</button></a>
+             </div>
+             
+             
+             
+          </c:if>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+ <!-- / Cart view section -->
 	<%@ include file="footer.jsp"%>
 	<!-- End of header area -->
 	<!-- Body main wrapper end -->
