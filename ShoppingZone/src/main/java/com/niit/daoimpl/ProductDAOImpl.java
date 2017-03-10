@@ -30,7 +30,7 @@ public class ProductDAOImpl implements ProductDAO {
 		log.debug("inside add product method");
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
-		session.save(product);
+		session.saveOrUpdate(product);
 		session.getTransaction().commit();
 		session.close();
         log.debug("end of add product method");

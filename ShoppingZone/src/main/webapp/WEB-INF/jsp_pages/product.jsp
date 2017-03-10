@@ -71,7 +71,7 @@
 
 												<label for="" style="width: 51%">Product Id: </label>
 												<form:input type="text" value="${values.getProductId() }"
-													path="productId" disabled="true" readonly="true"
+													path="productId"  readonly="true"
 													style="border: 1px solid #ccc;
   font-size: 16px;
   height: 40px;
@@ -303,13 +303,13 @@
 														src="<c:url value="/resources/images/product/{{listValue.productId}}.jpeg"/>"
 														style="height:50px;width:50px" alt="{{listValue.productId}}"></a></td>
 												<td style="border-right: white">
-													<form action="deleteproduct">
+													<form action="deleteProduct">
 														<button name="productId" class="aa-cart-view-btn"
 															type="submit" value={{listValue.productId}}
 															style="heigth: 2px;color:black">Delete</button>
 													</form>
 												</td>
-												<td><form action="editproduct">
+												<td><form action="editProduct">
 														<button name="productId" class="aa-cart-view-btn"
 															type="submit" value={{listValue.productId}}
 															style="heigth: 1px;color:black">Edit</button>
